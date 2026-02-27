@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Quantum R&D | Innovation Lab | Viantha Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to AI & Quantum page */
+        .quantum-hero {
+            padding: 120px 0 100px;
+            background: linear-gradient(135deg, #0A0F1E 0%, #1A1035 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quantum-hero::before {
+            content: '';
+            position: absolute;
+            top: -300px;
+            right: -200px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.2) 0%, rgba(0, 102, 255, 0.1) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: quantumPulse 15s infinite;
+            z-index: 1;
+        }
+        
+        .quantum-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -300px;
+            left: -200px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 201, 167, 0.15) 0%, rgba(108, 92, 231, 0.1) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: quantumPulse 20s reverse infinite;
+            z-index: 1;
+        }
+        
+        @keyframes quantumPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+            50% { transform: scale(1.2) rotate(5deg); opacity: 0.8; }
+        }
+        
+        .quantum-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quantum-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .quantum-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .quantum-hero .gradient-text {
+            background: linear-gradient(135deg, #6C5CE7 0%, #00C9A7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .quantum-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .quantum-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+        }
+        
+        .quantum-stat {
+            text-align: center;
+        }
+        
+        .quantum-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6C5CE7 0%, #00C9A7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .quantum-stat .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .innovation-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(108, 92, 231, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 100px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .lab-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .lab-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .lab-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .lab-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .lab-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lab-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(108, 92, 231, 0.1);
+            border-color: #6C5CE7;
+        }
+        
+        .lab-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #6C5CE7 0%, #00C9A7 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .lab-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .lab-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(0, 201, 167, 0.1) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        
+        .lab-icon i {
+            font-size: 2.5rem;
+            color: #6C5CE7;
+        }
+        
+        .lab-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .lab-card p {
+            color: var(--gray);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .lab-features {
+            list-style: none;
+        }
+        
+        .lab-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .lab-features i {
+            color: #00C9A7;
+            font-size: 0.9rem;
+        }
+        
+        .quantum-showcase {
+            padding: 100px 0;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quantum-showcase::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.05) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+        }
+        
+        .quantum-showcase .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quantum-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 60px 0;
+        }
+        
+        .quantum-content h3 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+        
+        .quantum-content p {
+            color: var(--gray);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        
+        .quantum-highlight {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 30px;
+            border-left: 4px solid #6C5CE7;
+        }
+        
+        .quantum-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantum-particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #6C5CE7;
+            border-radius: 50%;
+            animation: particleFloat 3s infinite;
+        }
+        
+        .particle-1 { top: 20%; left: 20%; animation-delay: 0s; }
+        .particle-2 { top: 60%; left: 30%; animation-delay: 0.5s; }
+        .particle-3 { top: 30%; left: 70%; animation-delay: 1s; }
+        .particle-4 { top: 70%; left: 80%; animation-delay: 1.5s; }
+        .particle-5 { top: 40%; left: 40%; animation-delay: 2s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            50% { transform: translate(20px, -20px) scale(1.5); opacity: 1; }
+        }
+        
+        .quantum-network {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(108, 92, 231, 0.2);
+            border-radius: 50%;
+            position: relative;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .quantum-network::before,
+        .quantum-network::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(0, 201, 167, 0.2);
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+        }
+        
+        .quantum-network::before {
+            transform: rotate(45deg);
+        }
+        
+        .quantum-network::after {
+            transform: rotate(90deg);
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .ml-platforms {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .ml-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .ml-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .ml-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .ml-card i {
+            font-size: 2rem;
+            color: #6C5CE7;
+            margin-bottom: 16px;
+        }
+        
+        .ml-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .ml-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .research-partners {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .partner-item {
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .partner-item i {
+            color: #6C5CE7;
+        }
+        
+        .partner-item:hover {
+            opacity: 1;
+        }
+        
+        .innovation-program {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0A0F1E 0%, #1A1035 100%);
+            color: white;
+        }
+        
+        .program-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .program-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .program-content p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .program-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .program-card i {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00C9A7;
+        }
+        
+        .program-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .program-card p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 1024px) {
+            .lab-grid,
+            .ml-grid,
+            .program-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .quantum-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .quantum-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .quantum-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .lab-grid,
+            .ml-grid,
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partners-grid {
+                gap: 30px;
+            }
+            
+            .quantum-visual {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a class="navbar-brand logo" href="index.html">
+    				<img src="images/FinalLogo-With.png" alt="Viantha Solutions" height="115">
+				</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ai-quantum.html" class="active">AI & Quantum</a></li>
+                    <li><a href="banking.html">Banking</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="quantum-hero">
+        <div class="container">
+            <div class="quantum-hero-content fade-in">
+                <span class="innovation-tag">INNOVATION LAB • RESEARCH & DEVELOPMENT</span>
+                <h1>Pioneering the <span class="gradient-text">Quantum-AI Frontier</span></h1>
+                <p>Exploring the intersection of artificial intelligence and quantum computing to solve humanity's most complex challenges. Our research today defines the technology of tomorrow.</p>
+                
+                <div class="quantum-stats">
+                    <div class="quantum-stat">
+                        <span class="stat-number">$10M+</span>
+                        <span class="stat-label">Annual R&D Investment</span>
+                    </div>
+                    <div class="quantum-stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Research Scientists</span>
+                    </div>
+                    <div class="quantum-stat">
+                        <span class="stat-number">17</span>
+                        <span class="stat-label">Active Patents</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Research & Innovation Lab -->
+    <section class="lab-section">
+        <div class="container">
+            <div class="lab-header">
+                <h2>AI Research & <span class="gradient-text">Innovation Lab</span></h2>
+                <p>Pushing the boundaries of artificial intelligence through fundamental research and applied innovation</p>
+            </div>
+            
+            <div class="lab-grid">
+                <div class="lab-card fade-in-up">
+                    <div class="lab-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neural Architecture</h3>
+                    <p>Developing novel neural network architectures inspired by biological intelligence and quantum principles.</p>
+                    <ul class="lab-features">
+                        <li><i class="fas fa-check-circle"></i> Spiking neural networks</li>
+                        <li><i class="fas fa-check-circle"></i> Neuromorphic computing</li>
+                        <li><i class="fas fa-check-circle"></i> Attention mechanisms</li>
+                        <li><i class="fas fa-check-circle"></i> Energy-efficient AI</li>
+                    </ul>
+                </div>
+                
+                <div class="lab-card fade-in-up" style="animation-delay: 0.1s">
+                    <div class="lab-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Foundation Models</h3>
+                    <p>Training large-scale foundation models for specialized enterprise applications and scientific discovery.</p>
+                    <ul class="lab-features">
+                        <li><i class="fas fa-check-circle"></i> Domain-specific LLMs</li>
+                        <li><i class="fas fa-check-circle"></i> Multimodal learning</li>
+                        <li><i class="fas fa-check-circle"></i> Few-shot learning</li>
+                        <li><i class="fas fa-check-circle"></i> Model compression</li>
+                    </ul>
+                </div>
+                
+                <div class="lab-card fade-in-up" style="animation-delay: 0.2s">
+                    <div class="lab-icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3>AI Ethics & Safety</h3>
+                    <p>Ensuring responsible AI development through robust safety frameworks and ethical guidelines.</p>
+                    <ul class="lab-features">
+                        <li><i class="fas fa-check-circle"></i> Explainable AI</li>
+                        <li><i class="fas fa-check-circle"></i> Bias detection</li>
+                        <li><i class="fas fa-check-circle"></i> Robustness testing</li>
+                        <li><i class="fas fa-check-circle"></i> AI governance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Machine Learning Platforms -->
+    <section class="ml-platforms">
+        <div class="container">
+            <div class="lab-header">
+                <h2>Machine Learning <span class="gradient-text">Platforms</span></h2>
+                <p>Enterprise-grade ML infrastructure for scalable AI deployment</p>
+            </div>
+            
+            <div class="ml-grid">
+                <div class="ml-card">
+                    <i class="fas fa-database"></i>
+                    <h4>MLOps Platform</h4>
+                    <p>End-to-end ML lifecycle management with automated training and deployment</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>AutoML</h4>
+                    <p>Automated model selection and hyperparameter optimization</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-eye"></i>
+                    <h4>Computer Vision</h4>
+                    <p>State-of-the-art vision models for object detection and segmentation</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-language"></i>
+                    <h4>NLP Engine</h4>
+                    <p>Multilingual NLP for document understanding and sentiment analysis</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Time Series</h4>
+                    <p>Advanced forecasting and anomaly detection for temporal data</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Recommendation</h4>
+                    <p>Personalized recommendation engines for enterprise applications</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Predictive Analytics</h4>
+                    <p>Business intelligence with ML-powered predictions</p>
+                </div>
+                <div class="ml-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Model Serving</h4>
+                    <p>Low-latency inference at scale with GPU acceleration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intelligent Automation -->
+    <section class="lab-section" style="background: var(--light);">
+        <div class="container">
+            <div class="lab-header">
+                <h2>Intelligent <span class="gradient-text">Automation</span></h2>
+                <p>Autonomous systems that learn, adapt, and optimize business processes</p>
+            </div>
+            
+            <div class="lab-grid">
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Autonomous Agents</h3>
+                    <p>AI agents that autonomously execute complex workflows and decision-making processes.</p>
+                    <ul class="lab-features">
+                        <li><i class="fas fa-check-circle"></i> Multi-agent systems</li>
+                        <li><i class="fas fa-check-circle"></i> Reinforcement learning</li>
+                        <li><i class="fas fa-check-circle"></i> Process optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Self-healing workflows</li>
+                    </ul>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Process Mining</h3>
+                    <p>Discover, monitor, and optimize business processes using event data and ML.</p>
+                    <ul class="lab-features">
+                        <li><i class="fas fa-check-circle"></i> Conformance checking</li>
+                        <li><i class="fas fa-check-circle"></i> Bottleneck detection</li>
+                        <li><i class="fas fa-check-circle"></i> Predictive monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Process enhancement</li>
+                    </ul>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Intelligent Document Processing</h3>
+                    <p>Extract, classify, and process documents with human-level accuracy.</p>
+                    <ul class="lab-features">
+                        <li><i class="fas fa-check-circle"></i> OCR enhancement</li>
+                        <li><i class="fas fa-check-circle"></i> Document classification</li>
+                        <li><i class="fas fa-check-circle"></i> Entity extraction</li>
+                        <li><i class="fas fa-check-circle"></i> Form processing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Predictive Analytics -->
+    <section class="lab-section">
+        <div class="container">
+            <div class="lab-header">
+                <h2>Predictive <span class="gradient-text">Analytics</span></h2>
+                <p>Forecast future outcomes with precision using advanced ML models</p>
+            </div>
+            
+            <div class="quantum-grid">
+                <div class="quantum-content">
+                    <p>Our predictive analytics solutions help enterprises anticipate market trends, customer behavior, and operational risks with unprecedented accuracy.</p>
+                    
+                    <div class="quantum-highlight">
+                        <h4>Key Capabilities</h4>
+                        <ul class="lab-features" style="margin-top: 15px;">
+                            <li><i class="fas fa-chart-line"></i> Demand forecasting with 95% accuracy</li>
+                            <li><i class="fas fa-chart-line"></i> Customer churn prediction</li>
+                            <li><i class="fas fa-chart-line"></i> Credit risk modeling</li>
+                            <li><i class="fas fa-chart-line"></i> Predictive maintenance</li>
+                            <li><i class="fas fa-chart-line"></i> Fraud detection in real-time</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quantum-visual">
+                    <i class="fas fa-chart-pie" style="font-size: 8rem; color: #6C5CE7;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Computing Research -->
+    <section class="quantum-showcase">
+        <div class="container">
+            <div class="lab-header">
+                <h2>Quantum Computing <span class="gradient-text">Research</span></h2>
+                <p>Pioneering the next revolution in computing power</p>
+            </div>
+            
+            <div class="quantum-grid">
+                <div class="quantum-visual">
+                    <div class="quantum-network">
+                        <div class="quantum-particle particle-1"></div>
+                        <div class="quantum-particle particle-2"></div>
+                        <div class="quantum-particle particle-3"></div>
+                        <div class="quantum-particle particle-4"></div>
+                        <div class="quantum-particle particle-5"></div>
+                    </div>
+                </div>
+                
+                <div class="quantum-content">
+                    <h3>Quantum Algorithms</h3>
+                    <p>Developing quantum algorithms that solve previously intractable problems in optimization, cryptography, and molecular simulation.</p>
+                    
+                    <ul class="lab-features">
+                        <li><i class="fas fa-atom"></i> Quantum machine learning</li>
+                        <li><i class="fas fa-atom"></i> Optimization algorithms (QAOA)</li>
+                        <li><i class="fas fa-atom"></i> Quantum chemistry simulation</li>
+                        <li><i class="fas fa-atom"></i> Post-quantum cryptography</li>
+                        <li><i class="fas fa-atom"></i> Hybrid classical-quantum systems</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="quantum-grid" style="margin-top: 60px;">
+                <div class="quantum-content">
+                    <h3>Quantum Hardware Partnerships</h3>
+                    <p>Collaborating with leading quantum hardware providers to access cutting-edge quantum processors.</p>
+                    
+                    <div class="partners-grid" style="justify-content: flex-start; gap: 30px;">
+                        <span class="partner-item"><i class="fas fa-microchip"></i> IBM Quantum</span>
+                        <span class="partner-item"><i class="fas fa-microchip"></i> Google Quantum AI</span>
+                        <span class="partner-item"><i class="fas fa-microchip"></i> Rigetti</span>
+                        <span class="partner-item"><i class="fas fa-microchip"></i> IonQ</span>
+                    </div>
+                </div>
+                <div class="quantum-content">
+                    <h3>Quantum Advantage</h3>
+                    <p>Our research focuses on achieving quantum advantage for specific enterprise use cases, particularly in financial modeling and logistics optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Technology Exploration -->
+    <section class="lab-section" style="background: white;">
+        <div class="container">
+            <div class="lab-header">
+                <h2>Future Technology <span class="gradient-text">Exploration</span></h2>
+                <p>Investigating emerging paradigms beyond current horizons</p>
+            </div>
+            
+            <div class="lab-grid">
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Neuromorphic Computing</h3>
+                    <p>Hardware architectures that mimic biological neural networks for ultra-efficient AI.</p>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Bio-inspired AI</h3>
+                    <p>Algorithms inspired by evolutionary biology, swarm intelligence, and natural systems.</p>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Edge Intelligence</h3>
+                    <p>Distributed AI that runs on edge devices with minimal latency and bandwidth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Innovation Programs -->
+    <section class="innovation-program">
+        <div class="container">
+            <div class="program-content">
+                <h2>Internal Innovation <span class="gradient-text">Programs</span></h2>
+                <p>Cultivating a culture of innovation from within</p>
+                
+                <div class="program-grid">
+                    <div class="program-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Innovation Incubator</h4>
+                        <p>Internal program funding experimental projects with high-risk, high-reward potential.</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Research Fellowships</h4>
+                        <p>Supporting PhD candidates and postdoctoral researchers in quantum and AI fields.</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Tech Challenges</h4>
+                        <p>Internal hackathons and challenges driving breakthrough innovations.</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <i class="fas fa-book"></i>
+                        <h4>Paper Publishing</h4>
+                        <p>Encouraging publication in top-tier journals and conferences.</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Academic Partnerships</h4>
+                        <p>Collaborations with leading universities for joint research.</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <i class="fas fa-microphone"></i>
+                        <h4>Speaker Series</h4>
+                        <p>Bringing thought leaders to inspire and challenge our researchers.</p>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--primary);">Join Our Research Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Partners -->
+    <section class="research-partners">
+        <div class="container">
+            <div class="lab-header">
+                <h2>Research <span class="gradient-text">Partners</span></h2>
+                <p>Collaborating with world-leading institutions</p>
+            </div>
+            
+            <div class="partners-grid">
+                <span class="partner-item"><i class="fas fa-university"></i> MIT</span>
+                <span class="partner-item"><i class="fas fa-university"></i> Stanford</span>
+                <span class="partner-item"><i class="fas fa-university"></i> ETH Zurich</span>
+                <span class="partner-item"><i class="fas fa-university"></i> NUS</span>
+                <span class="partner-item"><i class="fas fa-university"></i> Oxford</span>
+                <span class="partner-item"><i class="fas fa-university"></i> Caltech</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Shape the Future with Us</h2>
+                <p>Partner with our research team to explore the next frontier of technology.</p>
+                <a href="contact.html" class="btn btn-primary">Collaborate on Research</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">NexGen<span>Tech</span></div>
+                    <p>Engineering the future of enterprise technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                        <li><a href="banking.html">Banking</a></li>
+                        <li><a href="services.html">Cloud & DevOps</a></li>
+                        <li><a href="services.html">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 (4322) 223-098</li>
+                        <li><i class="fas fa-envelope"></i> contact@vianthait.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Singapore & India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Viantha Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

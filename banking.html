@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Technology Solutions | Global Financial Institutions | Viantha Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to banking page */
+        .banking-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #0A0F1E 0%, #1A1F2E 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banking-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+            animation: float 20s infinite;
+        }
+        
+        .banking-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 201, 167, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+            animation: float 15s reverse infinite;
+        }
+        
+        .banking-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .banking-hero-content {
+            max-width: 800px;
+        }
+        
+        .banking-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .banking-hero .gradient-text {
+            background: linear-gradient(135deg, #0066FF 0%, #00C9A7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .banking-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+        
+        .trust-badge {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .trust-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .trust-badge-item i {
+            font-size: 1.5rem;
+            color: #00C9A7;
+        }
+        
+        .trust-badge-item span {
+            font-weight: 600;
+        }
+        
+        .stats-banner {
+            padding: 40px 0;
+            background: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-block .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .stat-block .stat-label {
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .security-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .security-badges {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .security-badge {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .security-badge i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .security-badge span {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .security-badge small {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+        
+        .solution-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .solution-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .solution-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .solution-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .solution-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 102, 255, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+        
+        .solution-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .solution-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        
+        .solution-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .solution-card p {
+            color: var(--gray);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .solution-features {
+            list-style: none;
+        }
+        
+        .solution-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .solution-features i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .case-study-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .case-study-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            transition: transform 0.3s;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .client-logo {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .client-badge {
+            background: rgba(0, 201, 167, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .case-study-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .client-name {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .case-study-stats {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .case-stat {
+            text-align: center;
+        }
+        
+        .case-stat .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .case-stat .stat-label {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--light);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .compliance-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .compliance-item {
+            padding: 30px 20px;
+            background: var(--light);
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        
+        .compliance-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .compliance-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .compliance-item span {
+            font-weight: 600;
+            display: block;
+        }
+        
+        .cta-banking {
+            padding: 80px 0;
+            background: var(--gradient-1);
+            color: white;
+        }
+        
+        .cta-banking-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-banking-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-banking-content p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-banking .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .cta-banking .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 1024px) {
+            .stats-grid,
+            .solution-grid,
+            .compliance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banking-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid,
+            .solution-grid,
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-badge {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a class="navbar-brand logo" href="index.html">
+    				<img src="images/FinalLogo-With.png" alt="Viantha Solutions" height="115">
+				</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                    <li><a href="banking.html" class="active">Banking</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banking Hero Section -->
+    <section class="banking-hero">
+        <div class="container">
+            <div class="banking-hero-content fade-in">
+                <h1>Banking Technology <span class="gradient-text">Solutions</span></h1>
+                <p>Secure, scalable, and innovative technology platforms for the world's leading financial institutions. Powering the future of global finance.</p>
+                <div class="hero-buttons">
+                    <a href="#solutions" class="btn btn-primary">Explore Solutions</a>
+                    <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Contact Banking Team</a>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Banking-Grade Security</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <i class="fas fa-lock"></i>
+                        <span>ISO 27001 Certified</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Global Payment Processing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-block">
+                    <span class="stat-number">$10B+</span>
+                    <span class="stat-label">Annual Transaction Volume</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Financial Institutions</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">99.99%</span>
+                    <span class="stat-label">Platform Uptime</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years Banking Expertise</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Trust Section -->
+    <section class="security-section">
+        <div class="container">
+            <div class="security-grid">
+                <div class="security-content slide-in-left">
+                    <div class="highlight-tag" style="background: rgba(0, 201, 167, 0.1); color: var(--accent);">UNMATCHED SECURITY</div>
+                    <h2>Banking-Grade Security & Compliance</h2>
+                    <p>Our platforms meet the highest standards of financial security and regulatory compliance, ensuring your institution operates with confidence in any jurisdiction.</p>
+                    
+                    <div class="security-badges">
+                        <div class="security-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>ISO 27001</span>
+                            <small>Information Security</small>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>SOC 2 Type II</span>
+                            <small>Security & Privacy</small>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>PCI DSS</span>
+                            <small>Payment Security</small>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-gavel"></i>
+                            <span>GDPR Compliant</span>
+                            <small>Data Protection</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="security-visual slide-in-right">
+                    <div class="service-visual" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 201, 167, 0.1) 100%);">
+                        <i class="fas fa-shield-virus" style="font-size: 8rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banking Solutions Grid -->
+    <section id="solutions" class="solution-section">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Comprehensive <span class="gradient-text">Banking Solutions</span></h2>
+                <p>End-to-end technology platforms designed for modern financial institutions</p>
+            </div>
+            
+            <div class="solution-grid">
+                <!-- Core Banking Transformation -->
+                <div class="solution-card fade-in-up">
+                    <div class="solution-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Core Banking Transformation</h3>
+                    <p>Modernize legacy core banking systems with cloud-native architecture for enhanced agility and scalability.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Real-time account processing</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-currency & multi-entity</li>
+                        <li><i class="fas fa-check-circle"></i> Core system modernization</li>
+                        <li><i class="fas fa-check-circle"></i> Legacy data migration</li>
+                    </ul>
+                </div>
+
+                <!-- Digital Payments Platforms -->
+                <div class="solution-card fade-in-up" style="animation-delay: 0.1s">
+                    <div class="solution-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Digital Payments Platforms</h3>
+                    <p>Scalable payment processing solutions supporting multiple payment methods and channels.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Real-time payment processing</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile & online payments</li>
+                        <li><i class="fas fa-check-circle"></i> Instant settlements</li>
+                        <li><i class="fas fa-check-circle"></i> Payment gateway integration</li>
+                    </ul>
+                </div>
+
+                <!-- Cross-Border Payments -->
+                <div class="solution-card fade-in-up" style="animation-delay: 0.2s">
+                    <div class="solution-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Cross-Border Payments</h3>
+                    <p>International payment solutions with real-time FX and compliance for global money movement.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Multi-currency processing</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time FX rates</li>
+                        <li><i class="fas fa-check-circle"></i> SWIFT & SEPA integration</li>
+                        <li><i class="fas fa-check-circle"></i> Compliance screening</li>
+                    </ul>
+                </div>
+
+                <!-- Open Banking & API Platforms -->
+                <div class="solution-card fade-in-up" style="animation-delay: 0.3s">
+                    <div class="solution-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Open Banking & API Platforms</h3>
+                    <p>Secure API platforms enabling third-party integration and open banking compliance.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> PSD2 compliance</li>
+                        <li><i class="fas fa-check-circle"></i> Developer portals</li>
+                        <li><i class="fas fa-check-circle"></i> API security & monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Third-party onboarding</li>
+                    </ul>
+                </div>
+
+                <!-- Regulatory & Compliance Technology -->
+                <div class="solution-card fade-in-up" style="animation-delay: 0.4s">
+                    <div class="solution-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Regulatory & Compliance Technology</h3>
+                    <p>Automated compliance solutions for KYC, AML, and regulatory reporting requirements.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Automated KYC/CDD</li>
+                        <li><i class="fas fa-check-circle"></i> AML transaction monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Regulatory reporting</li>
+                        <li><i class="fas fa-check-circle"></i> Sanctions screening</li>
+                    </ul>
+                </div>
+
+                <!-- Fraud Detection & Risk Analytics -->
+                <div class="solution-card fade-in-up" style="animation-delay: 0.5s">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Fraud Detection & Risk Analytics</h3>
+                    <p>AI-powered fraud detection and real-time risk analytics for proactive threat prevention.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Real-time fraud scoring</li>
+                        <li><i class="fas fa-check-circle"></i> Behavioral analytics</li>
+                        <li><i class="fas fa-check-circle"></i> Anomaly detection</li>
+                        <li><i class="fas fa-check-circle"></i> Risk visualization</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud-native Banking Solutions -->
+                <div class="solution-card fade-in-up" style="animation-delay: 0.6s">
+                    <div class="solution-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud-native Banking Solutions</h3>
+                    <p>Microservices-based banking platforms built for cloud scalability and resilience.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check-circle"></i> Kubernetes orchestration</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-cloud deployment</li>
+                        <li><i class="fas fa-check-circle"></i> Auto-scaling architecture</li>
+                        <li><i class="fas fa-check-circle"></i> Disaster recovery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-study-section">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Client <span class="gradient-text">Success Stories</span></h2>
+                <p>Real results delivered for global financial institutions</p>
+            </div>
+            
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="client-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <span class="client-badge">Global Bank</span>
+                    </div>
+                    <h3>Core Banking Modernization</h3>
+                    <span class="client-name">European Financial Group</span>
+                    <p>Complete transformation of legacy core banking systems serving 5 million customers across 12 countries.</p>
+                    
+                    <div class="case-study-stats">
+                        <div class="case-stat">
+                            <span class="stat-value">40%</span>
+                            <span class="stat-label">Cost Reduction</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="stat-value">3x</span>
+                            <span class="stat-label">Transaction Speed</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="stat-value">99.99%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <span class="tech-tag">Temenos</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Kubernetes</span>
+                    </div>
+                </div>
+                
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <div class="client-logo">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <span class="client-badge">Payment Processor</span>
+                    </div>
+                    <h3>Real-time Payments Platform</h3>
+                    <span class="client-name">Global Payments Inc.</span>
+                    <p>Scalable payment platform processing 1M+ transactions daily across 30+ countries.</p>
+                    
+                    <div class="case-study-stats">
+                        <div class="case-stat">
+                            <span class="stat-value">1M+</span>
+                            <span class="stat-label">Daily Transactions</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="stat-value">50ms</span>
+                            <span class="stat-label">Processing Time</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="stat-value">30+</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <span class="tech-tag">ISO 20022</span>
+                        <span class="tech-tag">SWIFT</span>
+                        <span class="tech-tag">SEPA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance & Certifications -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Regulatory <span class="gradient-text">Compliance</span></h2>
+                <p>Certified and compliant with global financial regulations</p>
+            </div>
+            
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>PSD2</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GDPR</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>PCI DSS</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SOX</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Basel III</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>MiFID II</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>CCPA</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>MAS</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>DFSA</span>
+                </div>
+                <div class="compliance-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>FINRA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banking">
+        <div class="container">
+            <div class="cta-banking-content">
+                <h2>Transform Your Banking Technology</h2>
+                <p>Partner with us to build secure, scalable, and innovative solutions for your financial institution.</p>
+                <a href="contact.html" class="btn btn-primary">Speak with a Banking Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">NexGen<span>Tech</span></div>
+                    <p>Engineering the future of enterprise technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                        <li><a href="banking.html">Banking</a></li>
+                        <li><a href="services.html">Cloud & DevOps</a></li>
+                        <li><a href="services.html">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 (4322) 223-098</li>
+                        <li><i class="fas fa-envelope"></i> contact@vianthait.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Singapore & India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Viantha Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

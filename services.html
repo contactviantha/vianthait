@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise IT Services | Viantha Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to services page */
+        .service-detail-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .service-detail-grid.reverse {
+            direction: rtl;
+        }
+        
+        .service-detail-grid.reverse .service-detail-content {
+            direction: ltr;
+        }
+        
+        .service-icon-large {
+            font-size: 4rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 24px;
+        }
+        
+        .service-detail-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .service-detail-content p {
+            color: var(--gray);
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .benefits-list i {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-top: 3px;
+        }
+        
+        .benefits-list strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-list span {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .outcome-tag {
+            background: rgba(0, 201, 167, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 16px;
+        }
+        
+        .service-visual {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(108, 92, 231, 0.05) 100%);
+            border-radius: 24px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-visual i {
+            font-size: 8rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-visual::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 0.2; }
+        }
+        
+        .service-card-large {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 24px;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .service-card-large:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+        }
+        
+        .breadcrumb {
+            padding: 120px 0 40px;
+            background: white;
+        }
+        
+        .breadcrumb ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .breadcrumb li {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .breadcrumb li:not(:last-child)::after {
+            content: '→';
+            margin-left: 8px;
+            color: var(--primary);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .page-header {
+            padding: 40px 0 60px;
+            background: white;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .page-header p {
+            color: var(--gray);
+            font-size: 1.25rem;
+            max-width: 800px;
+        }
+        
+        .services-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .service-mini-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-mini-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+        }
+        
+        .service-mini-card i {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        
+        .service-mini-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        
+        .service-mini-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 1024px) {
+            .services-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail-grid,
+            .service-detail-grid.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            
+            .services-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+			    <a class="navbar-brand logo" href="index.html">
+    				<img src="images/FinalLogo-With.png" alt="Viantha Solutions" height="115">
+				</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                    <li><a href="banking.html">Banking</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Services</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Enterprise IT <span class="gradient-text">Services</span></h1>
+            <p>Comprehensive technology solutions engineered for global enterprises. From digital transformation to managed services, we deliver excellence at scale.</p>
+        </div>
+    </section>
+
+    <!-- Quick Service Overview -->
+    <section class="core-services" style="padding-top: 0;">
+        <div class="container">
+            <div class="services-showcase">
+                <div class="service-mini-card fade-in-up">
+                    <i class="fas fa-digital-tiling"></i>
+                    <h3>Digital Transformation</h3>
+                    <p>End-to-end digital evolution for legacy enterprises</p>
+                </div>
+                <div class="service-mini-card fade-in-up" style="animation-delay: 0.1s">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Cloud-native architecture and automation</p>
+                </div>
+                <div class="service-mini-card fade-in-up" style="animation-delay: 0.2s">
+                    <i class="fas fa-code"></i>
+                    <h3>Enterprise Development</h3>
+                    <p>Custom applications for mission-critical operations</p>
+                </div>
+                <div class="service-mini-card fade-in-up" style="animation-delay: 0.3s">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Platform Integration</h3>
+                    <p>Seamless connection of enterprise systems</p>
+                </div>
+                <div class="service-mini-card fade-in-up" style="animation-delay: 0.4s">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Engineering</h3>
+                    <p>Intelligent systems for competitive advantage</p>
+                </div>
+                <div class="service-mini-card fade-in-up" style="animation-delay: 0.5s">
+                    <i class="fas fa-headset"></i>
+                    <h3>Managed IT Services</h3>
+                    <p>24/7 enterprise infrastructure management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Digital Transformation -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-detail-content slide-in-left">
+                    <div class="service-icon-large">
+                        <i class="fas fa-digital-tiling"></i>
+                    </div>
+                    <h2>Digital Transformation</h2>
+                    <p>Modernize legacy systems and reinvent business processes for the digital age. We help enterprises navigate complex transformation journeys with minimal disruption and maximum impact.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>30-40% operational efficiency increase, faster time-to-market, enhanced customer experience</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>Successful digital adoption across 100+ employees, legacy modernization completed in 12 months</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-chart-line"></i> 100+ enterprise transformations delivered
+                    </div>
+                </div>
+                <div class="service-visual slide-in-right">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Cloud Architecture & DevOps -->
+    <section class="service-detail-section" style="background: var(--light);">
+        <div class="container">
+            <div class="service-detail-grid reverse">
+                <div class="service-detail-content slide-in-right">
+                    <div class="service-icon-large">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h2>Cloud Architecture & DevOps</h2>
+                    <p>Design, build, and operate cloud-native solutions on AWS, Azure, and GCP. Our DevOps practices ensure continuous delivery and infrastructure reliability at scale.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>99.99% uptime, 50% faster deployments, 30% reduction in infrastructure costs</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>Successful migration of 80+ applications, automated CI/CD pipelines serving 50+ developers</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-cloud"></i> 100+ cloud migrations completed
+                    </div>
+                </div>
+                <div class="service-visual slide-in-left">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Enterprise Application Development -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-detail-content slide-in-left">
+                    <div class="service-icon-large">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2>Enterprise Application Development</h2>
+                    <p>Build robust, scalable applications that power core business operations. From custom ERP systems to customer-facing portals, we deliver mission-critical software.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>Custom solutions aligned with unique workflows, seamless integration with existing systems</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>Applications handling 1M+ daily transactions, supporting 10,000+ concurrent users</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-code-branch"></i> 100+ enterprise applications delivered
+                    </div>
+                </div>
+                <div class="service-visual slide-in-right">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Platform Integration -->
+    <section class="service-detail-section" style="background: var(--light);">
+        <div class="container">
+            <div class="service-detail-grid reverse">
+                <div class="service-detail-content slide-in-right">
+                    <div class="service-icon-large">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h2>Platform Integration</h2>
+                    <p>Connect disparate systems, applications, and data sources into unified platforms. Our integration solutions enable seamless data flow and process automation.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>Real-time data synchronization, elimination of manual data entry, unified customer view</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>Integration of 50+ enterprise systems, processing 5M+ daily API calls</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-link"></i> 1000+ successful integrations
+                    </div>
+                </div>
+                <div class="service-visual slide-in-left">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. AI Engineering -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-detail-content slide-in-left">
+                    <div class="service-icon-large">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h2>AI Engineering</h2>
+                    <p>Harness the power of artificial intelligence to solve complex business challenges. We build and deploy custom ML models that drive competitive advantage.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>Predictive insights, automated decision-making, 40% improvement in forecasting accuracy</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>AI models processing 10TB+ daily data, real-time fraud detection saving $10M annually</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-robot"></i> 50+ AI solutions in production
+                    </div>
+                </div>
+                <div class="service-visual slide-in-right">
+                    <i class="fas fa-robot"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Managed IT Services -->
+    <section class="service-detail-section" style="background: var(--light);">
+        <div class="container">
+            <div class="service-detail-grid reverse">
+                <div class="service-detail-content slide-in-right">
+                    <div class="service-icon-large">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h2>Managed IT Services</h2>
+                    <p>24/7 monitoring, maintenance, and support for your entire IT infrastructure. We ensure optimal performance, security, and reliability of your technology investments.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>Reduce IT overhead by 40%, prevent downtime, focus on core business</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>99.99% infrastructure availability, 15-minute incident response, 24/7 global coverage</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-clock"></i> 24/7/365 enterprise support
+                    </div>
+                </div>
+                <div class="service-visual slide-in-left">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Remote Technical Delivery -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div class="service-detail-content slide-in-left">
+                    <div class="service-icon-large">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2>Remote Technical Delivery</h2>
+                    <p>Access top-tier technical talent through our global delivery model. We provide dedicated engineering teams that work as an extension of your organization.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Business Benefits</strong>
+                                <span>Scale teams quickly, reduce costs by 40%, access specialized expertise</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <strong>Enterprise Outcomes</strong>
+                                <span>50+ dedicated engineers deployed, 2 global delivery centers, follow-the-sun support</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="outcome-tag">
+                        <i class="fas fa-users"></i> 50+ remote engineers worldwide
+                    </div>
+                </div>
+                <div class="service-visual slide-in-right">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Services -->
+    <section class="why-choose">
+        <div class="container">
+            <h2>Why Global Enterprises Trust Our Services</h2>
+            <div class="choose-grid">
+                <div class="choose-item">
+                    <i class="fas fa-medal"></i>
+                    <h4>Proven Excellence</h4>
+                    <p>5+ years serving Fortune 500 companies</p>
+                </div>
+                <div class="choose-item">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h4>Scalable Solutions</h4>
+                    <p>From startups to global enterprises</p>
+                </div>
+                <div class="choose-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Enterprise Security</h4>
+                    <p>Banking-grade security and compliance</p>
+                </div>
+                <div class="choose-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>Fast Time-to-Market</h4>
+                    <p>Agile delivery, rapid deployment</p>
+                </div>
+                <div class="choose-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Dedicated Support</h4>
+                    <p>24/7 enterprise-grade support</p>
+                </div>
+                <div class="choose-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <h4>Measurable Results</h4>
+                    <p>Clear KPIs and ROI tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's discuss how our enterprise services can drive your digital evolution.</p>
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">NexGen<span>Tech</span></div>
+                    <p>Engineering the future of enterprise technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                        <li><a href="banking.html">Banking</a></li>
+                        <li><a href="services.html">Cloud & DevOps</a></li>
+                        <li><a href="services.html">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +65 8269 9157</li>
+                        <li><i class="fas fa-envelope"></i> contact@vianthait.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Global Headquarters: Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Viantha Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

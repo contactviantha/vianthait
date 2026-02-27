@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Global Technology Consulting | Viantha Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to about page */
+        .about-hero {
+            padding: 120px 0 60px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .about-hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .mission-vision-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .mission-card, .vision-card {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mission-card::before, .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+        
+        .mission-icon, .vision-icon {
+            font-size: 3rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 24px;
+        }
+        
+        .mission-card h2, .vision-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .mission-card p, .vision-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .leadership-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .leader-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 102, 255, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .leader-image {
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .leader-image i {
+            font-size: 6rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+        
+        .leader-info {
+            padding: 30px;
+        }
+        
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .leader-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .leader-bio {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .expertise-showcase {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .expertise-item {
+            background: white;
+            padding: 40px 24px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .expertise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+        }
+        
+        .expertise-item i {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .expertise-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .expertise-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .industry-experience {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .industry-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .industry-stat {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--light);
+            border-radius: 16px;
+            transition: transform 0.3s;
+        }
+        
+        .industry-stat:hover {
+            transform: translateY(-5px);
+        }
+        
+        .industry-stat .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .industry-stat .stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .timeline-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .timeline {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-year {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            width: calc(50% - 80px);
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        .timeline-content p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .global-presence {
+            padding: 100px 0;
+            background: var(--gradient-1);
+            color: white;
+        }
+        
+        .global-presence h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: white;
+        }
+        
+        .global-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .global-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .global-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .global-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .global-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        
+        .global-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .future-roadmap {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .roadmap-card {
+            padding: 40px;
+            background: var(--light);
+            border-radius: 24px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .roadmap-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .roadmap-year {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+        
+        .roadmap-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .roadmap-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .roadmap-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 0 0 24px 24px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .roadmap-card:hover::before {
+            opacity: 1;
+        }
+        
+        @media (max-width: 1024px) {
+            .leadership-grid,
+            .expertise-grid,
+            .industry-stats,
+            .global-grid,
+            .roadmap-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline::before {
+                left: 40px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 80px;
+            }
+            
+            .timeline-year {
+                margin-bottom: 20px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .leadership-grid,
+            .expertise-grid,
+            .industry-stats,
+            .global-grid,
+            .roadmap-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                margin-left: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a class="navbar-brand logo" href="index.html">
+    				<img src="images/FinalLogo-With.png" alt="Viantha Solutions" height="115">
+				</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                    <li><a href="banking.html">Banking</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content fade-in">
+                <h1>Engineering the <span class="gradient-text">Future</span> of Enterprise Technology</h1>
+                <p>For over two decades, Viantha Solutions has partnered with the world's leading organizations to architect, build, and deliver transformative technology solutions. We combine deep industry expertise with cutting-edge innovation to solve the most complex business challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision-section">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card slide-in-left">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h2>Our Mission</h2>
+                    <p>To empower global enterprises with transformative technology that drives sustainable growth, operational excellence, and competitive advantage. We are committed to delivering innovative solutions that not only meet today's challenges but anticipate tomorrow's opportunities.</p>
+                </div>
+                <div class="vision-card slide-in-right">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h2>Our Vision</h2>
+                    <p>To be the undisputed global leader in enterprise technology transformation, recognized for pioneering innovations in AI, quantum computing, and financial technology that redefine what's possible for businesses worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Philosophy -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Executive Leadership</h2>
+                <p>Visionary leaders driving innovation and excellence across global operations</p>
+            </div>
+            <div class="leadership-grid">
+                <div class="leader-card fade-in-up">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Michael Chen</h3>
+                        <span class="leader-title">Chief Executive Officer</span>
+                        <p class="leader-bio">Former CTO of Global Financial Systems with 25+ years in enterprise technology. Leads our vision for AI-driven transformation.</p>
+                    </div>
+                </div>
+                <div class="leader-card fade-in-up" style="animation-delay: 0.1s">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Sarah Williams</h3>
+                        <span class="leader-title">President, Global Operations</span>
+                        <p class="leader-bio">20+ years scaling technology operations across 40+ countries. Oversees our global delivery model and client partnerships.</p>
+                    </div>
+                </div>
+                <div class="leader-card fade-in-up" style="animation-delay: 0.2s">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Dr. James Kumar</h3>
+                        <span class="leader-title">Chief Technology Officer</span>
+                        <p class="leader-bio">PhD in Quantum Computing, MIT. Leads our R&D initiatives in quantum algorithms and advanced AI architectures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Expertise -->
+    <section class="expertise-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technology Expertise</h2>
+                <p>Deep technical capabilities across the enterprise technology stack</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <i class="fas fa-brain"></i>
+                    <h4>Artificial Intelligence</h4>
+                    <p>Machine Learning, Deep Learning, NLP, Computer Vision</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-atom"></i>
+                    <h4>Quantum Computing</h4>
+                    <p>Quantum Algorithms, Hybrid Systems, Quantum Security</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Cloud Platforms</h4>
+                    <p>AWS, Azure, GCP, Multi-Cloud Architecture</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>Blockchain</h4>
+                    <p>Distributed Ledger, Smart Contracts, DeFi</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Cybersecurity</h4>
+                    <p>Zero Trust, Threat Detection, Compliance</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-database"></i>
+                    <h4>Data Engineering</h4>
+                    <p>Big Data, Real-time Analytics, Data Lakes</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>Intelligent Automation</h4>
+                    <p>RPA, Autonomous Systems, Process Mining</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Digital Experience</h4>
+                    <p>Omnichannel, Mobile, Progressive Web Apps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Experience -->
+    <section class="industry-experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry Experience</h2>
+                <p>Serving the world's most demanding industries with specialized expertise</p>
+            </div>
+            
+            <div class="industry-stats">
+                <div class="industry-stat">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+                <div class="industry-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Fortune 500 Clients</span>
+                </div>
+                <div class="industry-stat">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Industry Verticals</span>
+                </div>
+                <div class="industry-stat">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Client Retention</span>
+                </div>
+            </div>
+            
+            <div class="services-grid" style="margin-top: 60px;">
+                <div class="service-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Banking & Finance</h3>
+                    <p>Top 10 global banks, asset managers, payment processors</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthcare</h3>
+                    <p>Leading providers, insurers, life sciences</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Retail & E-commerce</h3>
+                    <p>Global retailers, omnichannel platforms</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Manufacturing</h3>
+                    <p>Industry 4.0, smart factories, supply chain</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Commitment -->
+    <section class="ai-highlight" style="background: var(--light);">
+        <div class="container">
+            <div class="highlight-grid">
+                <div class="highlight-content">
+                    <div class="highlight-tag">INNOVATION COMMITMENT</div>
+                    <h2>Pioneering the Next Generation of Technology</h2>
+                    <p>We invest $10M+ annually in research and development across AI, quantum computing, and emerging technologies. Our innovation labs in Silicon Valley, London, and Singapore push the boundaries of what's possible.</p>
+                    <ul class="highlight-list">
+                        <li><i class="fas fa-flask"></i> 3 dedicated R&D centers globally</li>
+                        <li><i class="fas fa-file-alt"></i> 150+ technology patents filed</li>
+                        <li><i class="fas fa-award"></i> 25+ industry innovation awards</li>
+                        <li><i class="fas fa-handshake"></i> Partnerships with leading research universities</li>
+                    </ul>
+                </div>
+                <div class="highlight-visual">
+                    <div class="ai-visual">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Delivery Model -->
+    <section class="global-presence">
+        <div class="container">
+            <h2>Global Delivery Model</h2>
+            <div class="global-grid">
+                <div class="global-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>North America</h4>
+                    <p>New York (HQ) • San Francisco • Toronto</p>
+                </div>
+                <div class="global-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Europe</h4>
+                    <p>London • Berlin • Paris • Dublin</p>
+                </div>
+                <div class="global-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Asia Pacific</h4>
+                    <p>Singapore • Tokyo • Sydney • Bangalore</p>
+                </div>
+                <div class="global-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Middle East</h4>
+                    <p>Dubai • Riyadh • Tel Aviv</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <p style="color: white; opacity: 0.9; max-width: 800px; margin: 0 auto;">Follow-the-sun support across 2 global delivery centers, providing 24/7 coverage and local expertise in every major market.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Future Roadmap -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Journey & Future Roadmap</h2>
+                <p>Two decades of innovation and a clear vision for the future</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">
+                        <h3>Company Founded</h3>
+                        <p>Viantha Solutions established in New York with a vision to transform enterprise technology.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>Global Expansion</h3>
+                        <p>Opened delivery centers in London and Singapore, establishing our global footprint.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h3>AI Innovation Lab</h3>
+                        <p>Launched dedicated AI research facility in Silicon Valley.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>Quantum Computing Initiative</h3>
+                        <p>Established quantum research program in partnership with leading universities.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>50+ Enterprise Clients</h3>
+                        <p>Reached milestone of serving over 50 enterprise clients globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Roadmap -->
+    <section class="future-roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2>Future Roadmap</h2>
+                <p>Our vision for the next decade of innovation</p>
+            </div>
+            
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <span class="roadmap-year">2026</span>
+                    <h3>Quantum Advantage</h3>
+                    <p>First commercial quantum computing solutions for financial optimization and drug discovery.</p>
+                </div>
+                
+                <div class="roadmap-card">
+                    <span class="roadmap-year">2027</span>
+                    <h3>Autonomous AI</h3>
+                    <p>Self-learning AI systems that autonomously optimize business processes.</p>
+                </div>
+                
+                <div class="roadmap-card">
+                    <span class="roadmap-year">2028</span>
+                    <h3>Global Expansion</h3>
+                    <p>Expand to 20 global delivery centers serving 50+ countries.</p>
+                </div>
+                
+                <div class="roadmap-card">
+                    <span class="roadmap-year">2029</span>
+                    <h3>Post-Quantum Security</h3>
+                    <p>Enterprise-grade security solutions resistant to quantum computing threats.</p>
+                </div>
+                
+                <div class="roadmap-card">
+                    <span class="roadmap-year">2030</span>
+                    <h3>AGI Research</h3>
+                    <p>Pioneering research in artificial general intelligence for enterprise applications.</p>
+                </div>
+                
+                <div class="roadmap-card">
+                    <span class="roadmap-year">2031</span>
+                    <h3>Carbon Neutral</h3>
+                    <p>Achieve carbon neutrality across all global operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Partner with Us</h2>
+                <p>Join the world's leading enterprises in shaping the future of technology.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Our Leadership Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">NexGen<span>Tech</span></div>
+                    <p>Engineering the future of enterprise technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="ai-quantum.html">AI & Quantum</a></li>
+                        <li><a href="banking.html">Banking</a></li>
+                        <li><a href="services.html">Cloud & DevOps</a></li>
+                        <li><a href="services.html">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 (4322) 223-098</li>
+                        <li><i class="fas fa-envelope"></i> info@vianthait.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Global Headquarters: India & Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Viantha Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
