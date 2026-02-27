@@ -1,0 +1,10 @@
+# Redirect rules for clean URLs
+/           /index.html
+/about      /about.html
+/services   /services.html
+/contact    /contact.html
+/ai-quantum /ai-quantum.html
+/banking    /banking.html
+
+# Handle 404 errors
+/* /index.html 200
