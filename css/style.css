@@ -1,5 +1,7 @@
 @charset "UTF-8";
-* {
+* 
+ /* Set global page zoom to 67% */
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1094,4 +1096,9 @@ header {
     .client-logos {
         gap: 24px;
     }
+}
+html {
+    zoom: 0.75;        /* Standard zoom property */
+    -moz-transform: scale(0.75);  /* For older Firefox */
+    -moz-transform-origin: 0 0;
 }
