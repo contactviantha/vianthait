@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.vianthait.com/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.vianthait.com/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vianthait.com/services.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vianthait.com/ai-quantum.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vianthait.com/banking.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vianthait.com/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
