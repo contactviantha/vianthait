@@ -14,6 +14,454 @@
 }
 </script>
 <head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0a1928;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 8px 0;
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text-fallback {
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #0a2b4e, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e2f47;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #2563eb;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #1e2f47;
+            transition: 0.2s;
+        }
+
+        /* ===== HERO SECTION — FULL WIDTH, SPLIT LAYOUT WITH VISUAL CARD ===== */
+        .hero {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(105deg, #fafcff 0%, #f0f4fe 100%);
+            overflow: hidden;
+            padding: 70px 0 90px;
+        }
+        
+        /* abstract modern background */
+        .hero-bg-elements {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .bg-blur-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.35;
+        }
+        .bg-1 { width: 550px; height: 550px; background: #3b82f6; top: -180px; right: -100px; }
+        .bg-2 { width: 450px; height: 450px; background: #a855f7; bottom: -120px; left: -80px; opacity: 0.25; }
+        .bg-3 { width: 300px; height: 300px; background: #06b6d4; top: 40%; left: 70%; opacity: 0.2; }
+        
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 56px;
+        }
+        .hero-left {
+            flex: 1.2;
+        }
+        .hero-right {
+            flex: 0.85;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Visual Card - inspired by second image: server/cloud unit + stats + icons */
+        .hero-visual-card {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 44px;
+            padding: 28px 26px;
+            box-shadow: 0 32px 48px -20px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.6);
+            width: 100%;
+            max-width: 420px;
+            transition: transform 0.3s ease;
+        }
+        .hero-visual-card:hover {
+            transform: translateY(-6px);
+        }
+        .tech-stack-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+        .icon-badge {
+            background: white;
+            width: 68px;
+            height: 68px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #2563eb;
+            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+        .server-core {
+            background: linear-gradient(145deg, #ffffff, #f0f4ff);
+            border-radius: 32px;
+            padding: 22px 16px;
+            text-align: center;
+            border: 1px solid rgba(37,99,235,0.2);
+            margin-bottom: 20px;
+        }
+        .server-core i {
+            font-size: 52px;
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+        .server-core h4 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .server-core p {
+            font-size: 0.8rem;
+            color: #4b5565;
+        }
+        .visual-metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+        .metric {
+            text-align: center;
+        }
+        .metric .number {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #0f2b4d;
+        }
+        .metric .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5b6e8c;
+        }
+        .hybrid-badge {
+            background: #eef2ff;
+            border-radius: 40px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 18px;
+        }
+        
+        /* typography left side */
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 22px;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(125deg, #1e3a8a, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+         .hero-subtitle {
+            font-size: 1rem;
+            color: #2c3e5c;
+            margin-bottom: 28px;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .expertise-block {
+            margin: 24px 0 12px;
+        }
+        .expertise-block h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 18px 0 8px 0;
+            color: #0a2b4e;
+            letter-spacing: -0.2px;
+        }
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .bullet-list li {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+        .bullet-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 30px;
+            border-radius: 44px;
+            font-weight: 600;
+            transition: 0.25s;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: #0f2b4d;
+            color: white;
+            box-shadow: 0 8px 18px rgba(15,43,77,0.2);
+        }
+        .btn-primary:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 1.5px solid #0f2b4d;
+            color: #0f2b4d;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: #0f2b4d;
+            color: white;
+        }
+        
+        /* Trusted By Section */
+        .trusted-by {
+            padding: 44px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #eef2ff;
+        }
+        .trusted-label {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #5a6e8a;
+            margin-bottom: 28px;
+        }
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 52px;
+            flex-wrap: wrap;
+        }
+        .logo-placeholder {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c3e66;
+            background: #f8fafd;
+            padding: 8px 24px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        
+        /* Overview section - redefining tech */
+        .overview {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        .overview-grid {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+        }
+        .overview-content {
+            flex: 1;
+        }
+        .overview-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #0a2b4e;
+        }
+        .stats-container {
+            display: flex;
+            gap: 48px;
+            margin-top: 36px;
+        }
+        .stat-item {
+            text-align: left;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #2563eb;
+            display: block;
+            line-height: 1.2;
+        }
+        .overview-visual {
+            flex: 1;
+            background: linear-gradient(125deg, #eef2ff, #ffffff);
+            border-radius: 48px;
+            padding: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+            border: 1px solid rgba(37,99,235,0.1);
+        }
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .visual-cell {
+            background: rgba(37,99,235,0.08);
+            border-radius: 28px;
+            height: 130px;
+            transition: 0.2s;
+            background-image: radial-gradient(circle at 20% 35%, rgba(37,99,235,0.2) 1.2px, transparent 1px);
+            background-size: 18px 18px;
+        }
+        
+        /* additional banking expertise section */
+        .banking-expertise {
+            padding: 60px 0;
+            background: #fafcff;
+        }
+        .expertise-inner {
+            display: flex;
+            align-items: center;
+            gap: 56px;
+        }
+        .expertise-text {
+            flex: 1;
+        }
+        .expertise-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .global-badge {
+            background: #eef2ff;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #2563eb;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-grid { flex-direction: column; }
+            .hero-left, .hero-right { width: 100%; }
+            .hero-title { font-size: 2.5rem; }
+            .overview-grid { flex-direction: column; }
+            .expertise-inner { flex-direction: column; }
+            .nav-menu { display: none; }
+            .hamburger { display: flex; }
+            .container { padding: 0 24px; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero { padding: 48px 0 64px; }
+            .hero-title { font-size: 2rem; }
+            .stats-container { flex-wrap: wrap; gap: 24px; }
+            .visual-grid .visual-cell { height: 100px; }
+        }
+        
+        /* Footer styling */
+        .footer {
+            background: #071126;
+            color: #b9c7dd;
+            padding: 56px 0 32px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+        }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col a, .footer-col li { color: #b9c7dd; text-decoration: none; line-height: 2; font-size: 0.85rem; }
+        .footer-logo { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; color: white; }
+        .footer-logo span { color: #3b82f6; }
+        .footer-bottom { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #1f2a44; }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viantha Solutions - Engineering the Future</title>
@@ -25,6 +473,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -54,55 +503,73 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-    <div class="hero-content fade-in">
-    <!-- Main Hero Title -->
-    <h1 class="hero-title">
-        <span class="gradient-text">Viantha</span> – Engineering the Future of Banking, AI, and Quantum Innovation
-    </h1>
-
-    <!-- Hero Subtitle - Using your existing .hero-subtitle class -->
-    <p class="hero-subtitle" style="text-align: justify; text-justify: inter-word;">
-        At <strong>Viantha</strong>, we architect and deliver <strong>enterprise-grade digital transformation solutions</strong> that redefine what's possible. We empower the world's leading <strong>financial institutions</strong> with <strong>next-generation technology</strong>, enabling businesses to innovate, optimize operations, and thrive.
-    </p>
-
-    <!-- Subsections for SEO & Readability -->
-    <div class="hero-subsections">
-        <h2>Our Expertise</h2>
-        <ul class="bullet-list" style="padding-left: 0; list-style-position: outside;">
-            <li style="text-align: justify; text-justify: inter-word; margin-left: 1.5em; padding-left: 0; margin-bottom: 0.75rem;">
-                <strong>Digital Transformation Strategy:</strong> Align technology with business goals for measurable impact.
-            </li>
-            <li style="text-align: justify; text-justify: inter-word; margin-left: 1.5em; padding-left: 0; margin-bottom: 0.75rem;">
-                <strong>Next-Generation Technology:</strong> Cloud, AI, and advanced analytics solutions.
-            </li>
-            <li style="text-align: justify; text-justify: inter-word; margin-left: 1.5em; padding-left: 0; margin-bottom: 0.75rem;">
-                <strong>Financial Services Innovation:</strong> Secure, scalable, and efficient systems for global banks and institutions.
-            </li>
-        </ul>
-
-        <h2>Why Choose Viantha</h2>
-        <ul class="bullet-list" style="padding-left: 0; list-style-position: outside;">
-            <li style="text-align: justify; text-justify: inter-word; margin-left: 1.5em; padding-left: 0; margin-bottom: 0.75rem;">
-                Proven track record with <strong>enterprise clients</strong>.
-            </li>
-            <li style="text-align: justify; text-justify: inter-word; margin-left: 1.5em; padding-left: 0; margin-bottom: 0.75rem;">
-                Cutting-edge <strong>technology solutions</strong> tailored to your needs.
-            </li>
-            <li style="text-align: justify; text-justify: inter-word; margin-left: 1.5em; padding-left: 0; margin-bottom: 0.75rem;">
-                Commitment to <strong>innovation, scalability, and long-term growth</strong>.
-            </li>
-        </ul>
+   <!-- HERO SECTION: FULL WIDTH + SPLIT LAYOUT + VISUAL (similar to 2nd image windows) -->
+<section class="hero">
+    <div class="hero-bg-elements">
+        <div class="bg-blur-circle bg-1"></div>
+        <div class="bg-blur-circle bg-2"></div>
+        <div class="bg-blur-circle bg-3"></div>
     </div>
-
-    <!-- Call-to-Action Buttons -->
-    <div class="hero-buttons">
-        <a href="contact.html" class="btn btn-primary">Start Your Transformation</a>
-        <a href="services.html" class="btn btn-outline">Explore Solutions</a>
+    <div class="container">
+        <div class="hero-grid">
+            <!-- LEFT: textual content from image -->
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Viantha</span> – Engineering the Future of Banking, AI, and Quantum Innovation
+                </h1>
+                <p class="hero-subtitle">
+                    At <strong>Viantha</strong>, we architect and deliver <strong>enterprise-grade digital transformation solutions</strong> that redefine what's possible. We empower the world's leading <strong>financial institutions</strong> with <strong>next-generation technology</strong>, enabling businesses to innovate, optimize operations, and thrive.
+                </p>
+                
+                <div class="expertise-block">
+                    <h3>Our Expertise</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Digital Transformation Strategy:</strong> Align technology with business goals for measurable impact.</li>
+                        <li><strong>Next-Generation Technology:</strong> Cloud, AI, and advanced analytics solutions.</li>
+                        <li><strong>Financial Services Innovation:</strong> Secure, scalable, and efficient systems for global banks and institutions.</li>
+                    </ul>
+                    
+                    <h3>Why Choose Viantha</h3>
+                    <ul class="bullet-list">
+                        <li>Proven track record with <strong>enterprise clients</strong>.</li>
+                        <li>Cutting-edge <strong>technology solutions</strong> tailored to your needs.</li>
+                        <li>Commitment to <strong>innovation, scalability, and long-term growth</strong>.</li>
+                    </ul>
+                </div>
+                
+             <!-- Call-to-Action Buttons -->
+		    <div class="hero-buttons">
+		        <a href="contact.html" class="btn btn-primary">Start Your Transformation</a>
+		        <a href="services.html" class="btn btn-outline">Explore Solutions</a>
+		    </div>    
+            </div>
+            
+            <!-- RIGHT: MODERN VISUAL CARD (server/cloud unit + stats) horizontal windows fit -->
+            <div class="hero-right">
+                <div class="hero-visual-card">
+                    <div class="tech-stack-icons">
+                        <div class="icon-badge"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <div class="icon-badge"><i class="fas fa-microchip"></i></div>
+                        <div class="icon-badge"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="server-core">
+                        <i class="fas fa-server"></i>
+                        <h4>Quantum-Ready Cloud Core</h4>
+                        <p>AI-native fabric · Hybrid infrastructure</p>
+                    </div>
+                    <div class="visual-metrics">
+                        <div class="metric"><span class="number">99.99%</span><div class="label">Uptime SLA</div></div>
+                        <div class="metric"><span class="number">2.3M</span><div class="label">Txns/sec</div></div>
+                        <div class="metric"><span class="number">ISO 27001</span><div class="label">Certified</div></div>
+                    </div>
+                    <div class="hybrid-badge">
+                        <i class="fas fa-globe"></i> 70+ engineers · 2 global delivery centers · 7+ countries
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 </div>
         <div class="hero-background">
             <div class="gradient-orb"></div>
