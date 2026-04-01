@@ -438,6 +438,20 @@
             transform: translateY(-2px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
+        /* JUSTIFY MODE for all text content in hero */
+        .banking-hero .hero-description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .launch-text p {
+    	text-align: justify;
+    	text-justify: inter-word;
+		}
         
         @media (max-width: 1024px) {
             .stats-grid,
@@ -506,7 +520,25 @@
         <div class="container">
             <div class="banking-hero-content fade-in">
                 <h1>Banking Technology <span class="gradient-text">Solutions</span></h1>
-                <p>Secure, scalable, and innovative technology platforms for the world's leading financial institutions. Powering the future of global finance.</p>
+              
+               <!-- Main Description - JUSTIFIED -->
+                <p class="hero-description">
+                    Secure, scalable, and innovative technology platforms for the world's leading financial institutions. Powering the future of global finance.
+                </p>
+                
+                <!-- New Launch Text Section - JUSTIFIED -->
+                <div class="launch-text">
+                    <p><i class="fas fa-rocket"></i> <strong>Launch your business finances in minutes</strong> – with core banking and payment integration, report framework, regulatory reconciliation framework, and compliance framework. Our comprehensive suite of enterprise-grade frameworks enables financial institutions to go from concept to production rapidly, ensuring seamless integration with existing systems while maintaining the highest standards of security and regulatory compliance.</p>
+                    <div class="framework-list">
+                        <span class="framework-badge"><i class="fas fa-university"></i> Core Banking Integration</span>
+                        <span class="framework-badge"><i class="fas fa-credit-card"></i> Payment Integration</span>
+                        <span class="framework-badge"><i class="fas fa-chart-bar"></i> Report Framework</span>
+                        <span class="framework-badge"><i class="fas fa-balance-scale"></i> Regulatory Reconciliation Framework</span>
+                        <span class="framework-badge"><i class="fas fa-shield-alt"></i> Compliance Framework</span>
+                    </div>
+                </div>
+                  
+                
                 <div class="hero-buttons">
                     <a href="#solutions" class="btn btn-primary">Explore Solutions</a>
                     <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Contact Banking Team</a>
