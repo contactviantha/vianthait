@@ -24,7 +24,6 @@
       max-width: 700px;
     }
     
-    /* Job Listings */
     .jobs-section {
       padding: 60px 0;
     }
@@ -82,9 +81,14 @@
       font-weight: 600;
       color: var(--blue);
       text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .apply-btn:hover {
+      gap: 12px;
     }
     
-    /* Application Form */
     .apply-section {
       background: var(--off-white);
       padding: 60px 0;
@@ -128,10 +132,12 @@
       border-radius: var(--radius-sm);
       font-family: inherit;
       font-size: 0.9rem;
+      transition: var(--transition);
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
       border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,95,212,0.1);
     }
     .form-group textarea {
       min-height: 100px;
@@ -147,24 +153,24 @@
       width: 100%;
       justify-content: center;
     }
-    .success-msg, .error-msg {
+    .message-box {
       display: none;
       border-radius: var(--radius-sm);
       padding: 14px;
       margin-top: 20px;
       text-align: center;
     }
-    .success-msg {
+    .message-box.success {
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
       color: #15803d;
     }
-    .error-msg {
+    .message-box.error {
       background: #fef2f2;
       border: 1px solid #fecaca;
       color: #b91c1c;
     }
-    .success-msg.show, .error-msg.show {
+    .message-box.show {
       display: block;
     }
     
@@ -206,7 +212,6 @@
   </div>
 </section>
 
-<!-- Open Positions -->
 <section class="jobs-section">
   <div class="container">
     <div class="section-header">
@@ -220,48 +225,47 @@
         <h3>Senior AI/ML Engineer</h3>
         <p>Design and deploy custom LLMs, predictive models, and computer vision systems for enterprise clients.</p>
         <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
-        <a href="#apply" class="apply-btn" onclick="setPosition('Senior AI/ML Engineer')">Apply Now <i class="fas fa-arrow-right"></i></a>
+        <button class="apply-btn" onclick="setPosition('Senior AI/ML Engineer')">Apply Now <i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="job-card">
         <span class="job-location"><i class="fas fa-map-marker-alt"></i> India / Remote</span>
         <h3>Quantum Computing Researcher</h3>
         <p>Develop hybrid quantum-classical algorithms for portfolio optimization and cryptography.</p>
         <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
-        <a href="#apply" class="apply-btn" onclick="setPosition('Quantum Computing Researcher')">Apply Now <i class="fas fa-arrow-right"></i></a>
+        <button class="apply-btn" onclick="setPosition('Quantum Computing Researcher')">Apply Now <i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="job-card">
         <span class="job-location"><i class="fas fa-map-marker-alt"></i> Singapore / India</span>
         <h3>Full Stack Developer</h3>
         <p>Build scalable enterprise applications using React, Node.js, Python, and cloud-native architectures.</p>
         <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
-        <a href="#apply" class="apply-btn" onclick="setPosition('Full Stack Developer')">Apply Now <i class="fas fa-arrow-right"></i></a>
+        <button class="apply-btn" onclick="setPosition('Full Stack Developer')">Apply Now <i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="job-card">
         <span class="job-location"><i class="fas fa-map-marker-alt"></i> Singapore / Remote</span>
         <h3>Cloud Architect</h3>
         <p>Design and implement multi-cloud solutions on AWS, Azure, and GCP for enterprise clients.</p>
         <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
-        <a href="#apply" class="apply-btn" onclick="setPosition('Cloud Architect')">Apply Now <i class="fas fa-arrow-right"></i></a>
+        <button class="apply-btn" onclick="setPosition('Cloud Architect')">Apply Now <i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="job-card">
         <span class="job-location"><i class="fas fa-map-marker-alt"></i> India / Remote</span>
         <h3>Banking Technology Consultant</h3>
         <p>Lead core banking modernization, open banking API, and digital payment transformation projects.</p>
         <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
-        <a href="#apply" class="apply-btn" onclick="setPosition('Banking Technology Consultant')">Apply Now <i class="fas fa-arrow-right"></i></a>
+        <button class="apply-btn" onclick="setPosition('Banking Technology Consultant')">Apply Now <i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="job-card">
         <span class="job-location"><i class="fas fa-map-marker-alt"></i> Remote (Global)</span>
         <h3>DevOps Engineer</h3>
         <p>Build CI/CD pipelines, manage Kubernetes clusters, and automate cloud infrastructure.</p>
         <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
-        <a href="#apply" class="apply-btn" onclick="setPosition('DevOps Engineer')">Apply Now <i class="fas fa-arrow-right"></i></a>
+        <button class="apply-btn" onclick="setPosition('DevOps Engineer')">Apply Now <i class="fas fa-arrow-right"></i></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Application Form -->
 <section class="apply-section" id="apply">
   <div class="container">
     <div class="apply-container">
@@ -271,7 +275,7 @@
       <form id="applicationForm" action="https://formsubmit.co/hr@vianthait.com" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="New Career Application - Viantha Solutions">
-        <input type="hidden" name="_next" value="https://vianthasolutions.com/careers.html?success=true">
+        <input type="hidden" name="_next" value="careers.html?success=true">
         
         <div class="form-row">
           <div class="form-group">
@@ -317,17 +321,16 @@
         </button>
       </form>
       
-      <div id="successMsg" class="success-msg">
+      <div id="successMsg" class="message-box success">
         <i class="fas fa-check-circle"></i> Application submitted successfully! Our HR team will contact you soon.
       </div>
-      <div id="errorMsg" class="error-msg">
+      <div id="errorMsg" class="message-box error">
         <i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again or email directly to hr@vianthait.com
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -362,37 +365,43 @@
     document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
   }
   
-  // Show success message if redirected with success param
+  // Check for success parameter in URL (only show success message, not error)
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('success') === 'true') {
-    document.getElementById('successMsg').classList.add('show');
-    setTimeout(() => {
-      document.getElementById('successMsg').classList.remove('show');
-    }, 5000);
+    const successDiv = document.getElementById('successMsg');
+    if (successDiv) {
+      successDiv.classList.add('show');
+      setTimeout(() => {
+        successDiv.classList.remove('show');
+      }, 5000);
+    }
+    // Clean URL without reloading the page
     window.history.replaceState({}, document.title, window.location.pathname);
   }
   
   // Form validation
   const form = document.getElementById('applicationForm');
-  form.addEventListener('submit', function(e) {
-    const fullName = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const position = document.getElementById('position').value;
-    const cvFile = document.getElementById('cvFile').files[0];
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (!fullName || !email || !position || !cvFile || !emailRe.test(email)) {
-      e.preventDefault();
-      alert('Please fill in all required fields with valid information.');
-      return false;
-    }
-    if (cvFile.size > 5 * 1024 * 1024) {
-      e.preventDefault();
-      alert('CV file size should be less than 5MB.');
-      return false;
-    }
-    return true;
-  });
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const position = document.getElementById('position').value;
+      const cvFile = document.getElementById('cvFile').files[0];
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!fullName || !email || !position || !cvFile || !emailRe.test(email)) {
+        e.preventDefault();
+        alert('Please fill in all required fields with valid information.');
+        return false;
+      }
+      if (cvFile.size > 5 * 1024 * 1024) {
+        e.preventDefault();
+        alert('CV file size should be less than 5MB.');
+        return false;
+      }
+      return true;
+    });
+  }
 </script>
 </body>
 </html>
