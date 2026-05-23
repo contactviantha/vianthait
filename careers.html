@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Viantha Solutions</title>
+  <meta name="description" content="Join Viantha Solutions - Build your career in AI, Quantum Computing, Banking Technology, and Cloud Engineering.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .careers-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f2f4a 100%);
+      padding: 120px 0 70px;
+      color: var(--white);
+    }
+    .careers-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+    .careers-hero p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 700px;
+    }
+    
+    /* Job Listings */
+    .jobs-section {
+      padding: 60px 0;
+    }
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .job-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .job-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue);
+    }
+    .job-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .job-location {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: rgba(26,95,212,0.1);
+      color: var(--blue);
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .job-card p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .job-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-right: 16px;
+    }
+    .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    /* Application Form */
+    .apply-section {
+      background: var(--off-white);
+      padding: 60px 0;
+    }
+    .apply-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+    .apply-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .apply-container > p {
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .file-hint {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-top: 5px;
+      display: block;
+    }
+    .submit-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .success-msg, .error-msg {
+      display: none;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .success-msg {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+    }
+    .error-msg {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+    }
+    .success-msg.show, .error-msg.show {
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .jobs-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .apply-container { padding: 28px; }
+      .careers-hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/FinalLogo-With.png" alt="Viantha Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="logo-fallback" style="display:none">Viantha<span>Solutions</span></div>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="ai-quantum.html">AI &amp; Quantum</a>
+        <a href="banking.html">Banking</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<section class="careers-hero">
+  <div class="container">
+    <div class="tag" style="background: rgba(255,255,255,0.15); color: white;">Join Our Team</div>
+    <h1>Build the Future of <span style="color: var(--green-light);">Enterprise Technology</span></h1>
+    <p>Work with cutting-edge AI, Quantum Computing, and Banking Technology alongside industry experts from around the world.</p>
+  </div>
+</section>
+
+<!-- Open Positions -->
+<section class="jobs-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Open Positions</div>
+      <h2>Current Opportunities</h2>
+      <p>Join a team that's shaping the future of global financial technology</p>
+    </div>
+    <div class="jobs-grid">
+      <div class="job-card">
+        <span class="job-location"><i class="fas fa-map-marker-alt"></i> Singapore / Remote</span>
+        <h3>Senior AI/ML Engineer</h3>
+        <p>Design and deploy custom LLMs, predictive models, and computer vision systems for enterprise clients.</p>
+        <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
+        <a href="#apply" class="apply-btn" onclick="setPosition('Senior AI/ML Engineer')">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="job-card">
+        <span class="job-location"><i class="fas fa-map-marker-alt"></i> India / Remote</span>
+        <h3>Quantum Computing Researcher</h3>
+        <p>Develop hybrid quantum-classical algorithms for portfolio optimization and cryptography.</p>
+        <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
+        <a href="#apply" class="apply-btn" onclick="setPosition('Quantum Computing Researcher')">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="job-card">
+        <span class="job-location"><i class="fas fa-map-marker-alt"></i> Singapore / India</span>
+        <h3>Full Stack Developer</h3>
+        <p>Build scalable enterprise applications using React, Node.js, Python, and cloud-native architectures.</p>
+        <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
+        <a href="#apply" class="apply-btn" onclick="setPosition('Full Stack Developer')">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="job-card">
+        <span class="job-location"><i class="fas fa-map-marker-alt"></i> Singapore / Remote</span>
+        <h3>Cloud Architect</h3>
+        <p>Design and implement multi-cloud solutions on AWS, Azure, and GCP for enterprise clients.</p>
+        <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
+        <a href="#apply" class="apply-btn" onclick="setPosition('Cloud Architect')">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="job-card">
+        <span class="job-location"><i class="fas fa-map-marker-alt"></i> India / Remote</span>
+        <h3>Banking Technology Consultant</h3>
+        <p>Lead core banking modernization, open banking API, and digital payment transformation projects.</p>
+        <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
+        <a href="#apply" class="apply-btn" onclick="setPosition('Banking Technology Consultant')">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="job-card">
+        <span class="job-location"><i class="fas fa-map-marker-alt"></i> Remote (Global)</span>
+        <h3>DevOps Engineer</h3>
+        <p>Build CI/CD pipelines, manage Kubernetes clusters, and automate cloud infrastructure.</p>
+        <div><span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span><span class="job-badge"><i class="fas fa-calendar"></i> Immediate</span></div>
+        <a href="#apply" class="apply-btn" onclick="setPosition('DevOps Engineer')">Apply Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Form -->
+<section class="apply-section" id="apply">
+  <div class="container">
+    <div class="apply-container">
+      <h2><i class="fas fa-paper-plane" style="color: var(--blue); margin-right: 8px;"></i> Apply Now</h2>
+      <p>Fill out the form below. Our HR team will review your application and get back to you within 5 business days.</p>
+      
+      <form id="applicationForm" action="https://formsubmit.co/hr@vianthait.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Career Application - Viantha Solutions">
+        <input type="hidden" name="_next" value="https://vianthasolutions.com/careers.html?success=true">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="Full Name" id="fullName" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="Email" id="email" required placeholder="john@example.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="Phone" id="phone" placeholder="+65 XXXX XXXX">
+          </div>
+          <div class="form-group">
+            <label>Position Applying For *</label>
+            <select name="Position" id="position" required>
+              <option value="">Select a position</option>
+              <option>Senior AI/ML Engineer</option>
+              <option>Quantum Computing Researcher</option>
+              <option>Full Stack Developer</option>
+              <option>Cloud Architect</option>
+              <option>Banking Technology Consultant</option>
+              <option>DevOps Engineer</option>
+              <option>Data Scientist</option>
+              <option>Cybersecurity Specialist</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Cover Letter / Message</label>
+          <textarea name="Cover Letter" id="coverMessage" placeholder="Tell us why you'd be a great fit..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Upload CV (PDF, DOC, DOCX) *</label>
+          <input type="file" name="CV" id="cvFile" accept=".pdf,.doc,.docx" required>
+          <span class="file-hint">Max 5MB. PDF or Word documents only.</span>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">
+          Submit Application <i class="fas fa-upload"></i>
+        </button>
+      </form>
+      
+      <div id="successMsg" class="success-msg">
+        <i class="fas fa-check-circle"></i> Application submitted successfully! Our HR team will contact you soon.
+      </div>
+      <div id="errorMsg" class="error-msg">
+        <i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again or email directly to hr@vianthait.com
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Viantha<span>Solutions</span></div><p>Engineering the future of enterprise technology — AI, Banking, and Quantum innovation for global institutions.</p><div class="social-links"><a href="https://www.linkedin.com/company/viantha/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://github.com/contactviantha" target="_blank"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="careers.html">Careers</a></li><li><a href="#">Newsroom</a></li></ul></div>
+      <div class="footer-col"><h4>Solutions</h4><ul><li><a href="ai-quantum.html">AI &amp; Quantum</a></li><li><a href="banking.html">Banking Technology</a></li><li><a href="services.html">Cloud &amp; DevOps</a></li><li><a href="services.html">Digital Transformation</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +65 8269 9157</li><li><i class="fas fa-phone"></i> +91 (4322) 223-098</li><li><i class="fas fa-envelope"></i> info@vianthait.com</li><li><i class="fas fa-map-marker-alt"></i> Singapore &amp; India</li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Viantha Solutions. All rights reserved.</span><span>ISO 27001 Certified &nbsp;|&nbsp; SOC 2 Compliant</span></div>
+  </div>
+</footer>
+
+<script>
+  // Navbar
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+  const hamburger = document.getElementById('hamburger'), navMenu = document.getElementById('navMenu');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('active'); navMenu.classList.remove('active'); }));
+  }
+  
+  // Set position from job card
+  function setPosition(pos) {
+    const select = document.getElementById('position');
+    for(let i = 0; i < select.options.length; i++) {
+      if(select.options[i].text === pos) {
+        select.selectedIndex = i;
+        break;
+      }
+    }
+    document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+  }
+  
+  // Show success message if redirected with success param
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    document.getElementById('successMsg').classList.add('show');
+    setTimeout(() => {
+      document.getElementById('successMsg').classList.remove('show');
+    }, 5000);
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+  
+  // Form validation
+  const form = document.getElementById('applicationForm');
+  form.addEventListener('submit', function(e) {
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const position = document.getElementById('position').value;
+    const cvFile = document.getElementById('cvFile').files[0];
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!fullName || !email || !position || !cvFile || !emailRe.test(email)) {
+      e.preventDefault();
+      alert('Please fill in all required fields with valid information.');
+      return false;
+    }
+    if (cvFile.size > 5 * 1024 * 1024) {
+      e.preventDefault();
+      alert('CV file size should be less than 5MB.');
+      return false;
+    }
+    return true;
+  });
+</script>
+</body>
+</html>
