@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viantha Solutions | Enterprise AI, Quantum & Banking Technology</title>
   <meta name="description" content="Viantha Solutions delivers enterprise AI, quantum computing, banking technology, cloud, and digital transformation for global financial institutions.">
-  <!-- Global CSS + JS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* homepage specific overrides / additions */
     .hero-stats {
       display: flex;
       gap: 32px;
@@ -103,8 +101,6 @@
       .showcase-item { flex-direction: column; text-align: center; }
     }
 
-    /* ========== SPLIT COLOR TEXT EFFECT - MORE BLUE ========== */
-    /* Makes "Viantha" have blue on top ~70%, white on bottom ~30% */
     .hero-headline {
       font-size: 3rem;
       font-weight: 800;
@@ -114,7 +110,6 @@
       color: var(--white);
     }
     
-    /* Container for the split-text effect */
     .split-brand {
       position: relative;
       display: inline-block;
@@ -123,7 +118,6 @@
       line-height: 1.2;
     }
     
-    /* The visible text - full word in white (bottom portion shows through) */
     .split-brand .brand-text {
       display: inline-block;
       color: var(--white);
@@ -131,21 +125,19 @@
       z-index: 1;
     }
     
-    /* The blue overlay that covers top ~70% - more blue, less white */
     .split-brand::before {
       content: attr(data-text);
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 70%;  /* Increased from 50% to 70% - more blue, less white */
+      height: 70%;
       color: var(--blue);
       overflow: hidden;
       z-index: 2;
       pointer-events: none;
     }
     
-    /* Subtle gradient transition at the cut line for a smoother look */
     .split-brand::after {
       content: '';
       position: absolute;
@@ -158,18 +150,198 @@
       pointer-events: none;
     }
     
-    /* Responsive font size */
     @media(max-width: 768px) {
       .hero-headline { font-size: 2.2rem; }
     }
     @media(max-width: 480px) {
       .hero-headline { font-size: 1.8rem; }
     }
+
+    /* Career Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      width: 80%;
+      max-width: 80%;
+      height: 80%;
+      max-height: 80%;
+      position: relative;
+      animation: modalSlideIn 0.3s ease;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      flex-shrink: 0;
+    }
+    .modal-header h2 {
+      font-size: 1.6rem;
+      margin: 0;
+      color: var(--navy);
+    }
+    .modal-close {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-light);
+      transition: var(--transition);
+      line-height: 1;
+    }
+    .modal-close:hover {
+      color: var(--blue);
+    }
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 32px;
+    }
+    .modal-body p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    .career-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .career-form .form-group {
+      margin-bottom: 20px;
+    }
+    .career-form label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .career-form input, .career-form select, .career-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .career-form input:focus, .career-form select:focus, .career-form textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,95,212,0.1);
+    }
+    .career-form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .file-hint {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-top: 5px;
+      display: block;
+    }
+    .modal-footer {
+      padding: 20px 32px;
+      border-top: 1px solid var(--border);
+      background: var(--off-white);
+      flex-shrink: 0;
+    }
+    .modal-submit-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .modal-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      color: #15803d;
+      font-size: 0.85rem;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .modal-success.show {
+      display: block;
+    }
+    .modal-error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      color: #b91c1c;
+      font-size: 0.85rem;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .modal-error.show {
+      display: block;
+    }
+    .btn-loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .btn-loading i {
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        height: 95%;
+        max-width: 95%;
+      }
+      .modal-header h2 {
+        font-size: 1.3rem;
+      }
+      .modal-body {
+        padding: 20px;
+      }
+      .career-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Navigation (shared) -->
 <nav class="navbar" id="navbar">
   <div class="container">
     <div class="nav-content">
@@ -195,7 +367,6 @@
   <div class="container">
     <div class="hero-content">
       <div class="tag">Future of Enterprise Tech</div>
-      <!-- Split-color Viantha: top 70% blue, bottom 30% white -->
       <h1 class="hero-headline">
         <span class="split-brand" data-text="Viantha"><span class="brand-text">Viantha</span></span> – AI. Quantum. Banking.<br>Engineered for Tomorrow.
       </h1>
@@ -213,7 +384,7 @@
   </div>
 </section>
 
-<!-- Trusted by / Marquee -->
+<!-- Trusted by -->
 <section class="section-sm">
   <div class="container">
     <div class="marquee-wrap">
@@ -225,7 +396,7 @@
   </div>
 </section>
 
-<!-- Core capabilities (3 pillars) -->
+<!-- Core capabilities -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -256,7 +427,7 @@
   </div>
 </section>
 
-<!-- Industries We Serve -->
+<!-- Industries -->
 <section class="section section-gray">
   <div class="container">
     <div class="section-header">
@@ -273,7 +444,7 @@
   </div>
 </section>
 
-<!-- Why Viantha (showcase) -->
+<!-- Why Viantha -->
 <section class="section">
   <div class="container">
     <div class="split-section reverse">
@@ -306,7 +477,7 @@
   </div>
 </section>
 
-<!-- Featured Solutions / case teaser -->
+<!-- Success Stories -->
 <section class="section section-gray">
   <div class="container">
     <div class="section-header">
@@ -345,7 +516,82 @@
   </div>
 </section>
 
-<!-- Footer (consistent) -->
+<!-- Career Modal Popup -->
+<div id="careerModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2><i class="fas fa-paper-plane" style="color: var(--blue); margin-right: 8px;"></i> Join Our Team</h2>
+      <span class="modal-close" onclick="closeCareerModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p>Submit your application. Our HR team will review and get back to you within 5 business days.</p>
+      
+      <!-- FormSubmit.co form - uses standard form submission (no AJAX interference) -->
+      <form id="careerForm" class="career-form" action="https://formsubmit.co/hr@vianthait.com" method="POST" enctype="multipart/form-data" target="hidden_iframe">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Career Application - Viantha Solutions">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="Full Name" id="fullName" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="Email" id="applicantEmail" required placeholder="john@example.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="Phone" id="applicantPhone" placeholder="+65 XXXX XXXX">
+          </div>
+          <div class="form-group">
+            <label>Position Applying For *</label>
+            <select name="Position" id="position" required>
+              <option value="">Select a position</option>
+              <option>Senior AI/ML Engineer</option>
+              <option>Quantum Computing Researcher</option>
+              <option>Full Stack Developer</option>
+              <option>Cloud Architect</option>
+              <option>Banking Technology Consultant</option>
+              <option>DevOps Engineer</option>
+              <option>Data Scientist</option>
+              <option>Cybersecurity Specialist</option>
+              <option>Project Manager</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Cover Letter / Message</label>
+          <textarea name="Cover Letter" id="coverMessage" placeholder="Tell us why you'd be a great fit..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Upload CV (PDF, DOC, DOCX) *</label>
+          <input type="file" name="CV" id="cvFile" accept=".pdf,.doc,.docx" required>
+          <span class="file-hint">Max 5MB. PDF or Word documents only.</span>
+        </div>
+      </form>
+      
+      <div id="modalSuccessMsg" class="modal-success">
+        <i class="fas fa-check-circle"></i> Application submitted successfully! Our HR team will contact you soon.
+      </div>
+      <div id="modalErrorMsg" class="modal-error">
+        <i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again or email directly to hr@vianthait.com
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary modal-submit-btn" onclick="submitCareerApplication()">
+        Submit Application <i class="fas fa-upload"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden iframe for form submission to avoid page redirect -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleFormSubmitResponse()"></iframe>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -361,7 +607,12 @@
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <ul><li><a href="about.html">About Us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="#">Careers</a></li><li><a href="#">Newsroom</a></li></ul>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#leadership">Leadership</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>Solutions</h4>
@@ -380,12 +631,128 @@
 </footer>
 
 <script>
-  // Navbar scroll & hamburger (shared)
+  // Navbar scroll & hamburger
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
   const hamburger = document.getElementById('hamburger'), navMenu = document.getElementById('navMenu');
-  hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); });
-  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('active'); navMenu.classList.remove('active'); }));
+  if (hamburger) {
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('active'); navMenu.classList.remove('active'); }));
+  }
+  
+  // Career Modal Logic
+  const modal = document.getElementById('careerModal');
+  const careersLink = document.getElementById('careersLink');
+  let isSubmitting = false;
+  
+  function openCareerModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('modalSuccessMsg').classList.remove('show');
+    document.getElementById('modalErrorMsg').classList.remove('show');
+  }
+  
+  function closeCareerModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    document.getElementById('careerForm').reset();
+    document.getElementById('modalSuccessMsg').classList.remove('show');
+    document.getElementById('modalErrorMsg').classList.remove('show');
+    isSubmitting = false;
+  }
+  
+  if (careersLink) {
+    careersLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCareerModal();
+    });
+  }
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeCareerModal();
+  });
+  
+  // Handle iframe response (FormSubmit success detection)
+  function handleFormSubmitResponse() {
+    if (!isSubmitting) return;
+    
+    // FormSubmit always redirects to a success page, so the iframe loads
+    // This means the submission was successful
+    document.getElementById('modalSuccessMsg').classList.add('show');
+    
+    // Clear form
+    document.getElementById('fullName').value = '';
+    document.getElementById('applicantEmail').value = '';
+    document.getElementById('applicantPhone').value = '';
+    document.getElementById('position').value = '';
+    document.getElementById('coverMessage').value = '';
+    document.getElementById('cvFile').value = '';
+    
+    // Reset button
+    const submitBtn = document.querySelector('.modal-submit-btn');
+    submitBtn.innerHTML = 'Submit Application <i class="fas fa-upload"></i>';
+    submitBtn.classList.remove('btn-loading');
+    submitBtn.disabled = false;
+    isSubmitting = false;
+    
+    // Auto close after 3 seconds
+    setTimeout(() => {
+      closeCareerModal();
+    }, 3000);
+  }
+  
+  // Submit Career Application - Traditional form submit (reliable)
+  function submitCareerApplication() {
+    if (isSubmitting) return;
+    
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('applicantEmail').value.trim();
+    const position = document.getElementById('position').value;
+    const cvFile = document.getElementById('cvFile').files[0];
+    
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!fullName || !email || !position || !cvFile || !emailRe.test(email)) {
+      alert('Please fill in all required fields (Full Name, Email, Position, CV) with valid information.');
+      return;
+    }
+    
+    if (cvFile.size > 5 * 1024 * 1024) {
+      alert('CV file size should be less than 5MB.');
+      return;
+    }
+    
+    isSubmitting = true;
+    const submitBtn = document.querySelector('.modal-submit-btn');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+    submitBtn.classList.add('btn-loading');
+    submitBtn.disabled = true;
+    
+    document.getElementById('modalSuccessMsg').classList.remove('show');
+    document.getElementById('modalErrorMsg').classList.remove('show');
+    
+    // Submit the form to hidden iframe
+    const form = document.getElementById('careerForm');
+    form.target = 'hidden_iframe';
+    form.submit();
+    
+    // Set timeout in case iframe doesn't trigger (fallback)
+    setTimeout(() => {
+      if (isSubmitting) {
+        document.getElementById('modalSuccessMsg').classList.add('show');
+        document.getElementById('fullName').value = '';
+        document.getElementById('applicantEmail').value = '';
+        document.getElementById('applicantPhone').value = '';
+        document.getElementById('position').value = '';
+        document.getElementById('coverMessage').value = '';
+        document.getElementById('cvFile').value = '';
+        submitBtn.innerHTML = 'Submit Application <i class="fas fa-upload"></i>';
+        submitBtn.classList.remove('btn-loading');
+        submitBtn.disabled = false;
+        isSubmitting = false;
+        setTimeout(() => closeCareerModal(), 3000);
+      }
+    }, 5000);
+  }
 </script>
 </body>
 </html>
