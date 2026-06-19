@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Staff Augmentation | Specialist Banking & AI Talent | Viantha Solutions</title>
+  <meta name="description" content="Viantha Solutions provides IT staffing and staff augmentation for Indian MNCs (TCS, Infosys, HCL) and US/UK remote clients. Banking tech, AI, cloud, and full-stack specialists.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .model-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:24px; }
+    .model-card {
+      background:var(--white); border-radius:var(--radius-md); padding:28px 22px;
+      border:1px solid var(--border); transition:var(--transition);
+      border-top:3px solid var(--blue);
+    }
+    .model-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); }
+    .model-card i { font-size:1.6rem; color:var(--blue); margin-bottom:14px; display:block; }
+    .model-card h3 { font-size:1rem; margin-bottom:8px; }
+    .model-card p { font-size:0.85rem; color:var(--text-light); line-height:1.65; }
+    .model-card ul { list-style:none; margin-top:12px; }
+    .model-card ul li { font-size:0.82rem; color:var(--text-light); padding:3px 0; display:flex; gap:8px; align-items:center; }
+    .model-card ul li::before { content:'▹'; color:var(--blue); font-weight:bold; flex-shrink:0; }
+
+    .roles-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .roles-table th { background:var(--navy); color:rgba(255,255,255,0.8); padding:10px 14px; text-align:left; font-weight:500; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; }
+    .roles-table td { padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); vertical-align:top; }
+    .roles-table tr:nth-child(even) td { background:var(--off-white); }
+    .roles-table tr:hover td { background:#EBF3FF; }
+    .roles-table td:first-child { font-weight:600; }
+
+    .client-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .client-card {
+      background:var(--white); border-radius:var(--radius-md); padding:24px;
+      border:1px solid var(--border);
+    }
+    .client-card .cc-tag { font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue); margin-bottom:8px; }
+    .client-card h3 { font-size:1rem; margin-bottom:10px; }
+    .client-card p { font-size:0.85rem; color:var(--text-light); line-height:1.65; }
+    .client-card ul { list-style:none; margin-top:10px; }
+    .client-card ul li { font-size:0.83rem; color:var(--text-light); padding:3px 0; display:flex; gap:8px; }
+    .client-card ul li::before { content:'→'; color:var(--blue); font-weight:bold; flex-shrink:0; }
+
+    .margin-visual {
+      background:linear-gradient(135deg,var(--navy),#1B3A5C);
+      border-radius:var(--radius-lg); padding:36px 32px; color:white;
+    }
+    .margin-row { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+    .margin-label { font-size:12px; color:rgba(255,255,255,0.6); width:160px; flex-shrink:0; text-align:right; }
+    .margin-bar-track { flex:1; background:rgba(255,255,255,0.1); border-radius:4px; height:28px; overflow:hidden; }
+    .margin-bar-fill { height:100%; display:flex; align-items:center; padding-left:10px; font-size:12px; font-weight:600; color:white; border-radius:4px; }
+
+    .process-steps { display:flex; flex-direction:column; gap:0; }
+    .process-step { display:flex; gap:20px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--border); }
+    .process-step:last-child { border-bottom:none; }
+    .ps-num { width:36px; height:36px; border-radius:50%; background:var(--blue); color:white; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+    .ps-body h4 { font-size:14px; font-weight:600; margin-bottom:5px; }
+    .ps-body p { font-size:13px; color:var(--text-light); line-height:1.6; }
+
+    .compliance-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .comp-badge { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-sm); padding:18px 14px; text-align:center; }
+    .comp-badge i { font-size:1.4rem; color:var(--blue); margin-bottom:8px; display:block; }
+    .comp-badge h4 { font-size:0.83rem; margin-bottom:3px; }
+    .comp-badge p { font-size:0.75rem; color:var(--text-light); }
+
+    .req-form-wrap { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:40px 36px; box-shadow:var(--shadow-md); }
+    .req-form-wrap h3 { font-size:1.25rem; margin-bottom:6px; }
+    .req-form-wrap > p { font-size:0.88rem; color:var(--text-light); margin-bottom:24px; }
+
+    @media(max-width:900px){ .model-grid{grid-template-columns:1fr 1fr;} .client-grid{grid-template-columns:1fr;} .compliance-row{grid-template-columns:1fr 1fr;} }
+    @media(max-width:540px){ .model-grid{grid-template-columns:1fr;} .compliance-row{grid-template-columns:1fr 1fr;} .margin-label{width:100px;} .req-form-wrap{padding:28px 20px;} }
+  </style>
+</head>
+<body>
+
+      <div class="utility-right">
+        <span class="utility-tagline">Banking Technology · AI · Enterprise IT</span>
+        <div class="utility-social">
+          <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/FinalLogo-With.png" alt="Viantha Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="logo-fallback" style="display:none">Viantha<span>Solutions</span></div>
+      </a>
+      <div class="nav-menu" id="navMenu">
+ <a href="index.html">Home</a>
+ <a href="about.html">About</a>
+ <a href="banking.html">Banking Tech</a>
+ <a href="services.html">Services</a>
+ <a href="staffing.html" class="active">IT Staffing</a>
+ <a href="careers.html">Careers</a>
+ <span class="nav-sep"></span>
+ <a href="contact.html" class="nav-cta">Contact Us</a>
+ </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="tag">IT Staff Augmentation</div>
+      <h1>The Right Engineers —<br><span style="color:#4caf50">On Your Team. Fast.</span></h1>
+      <p>Specialist contract engineers in banking technology, AI, cloud, and full-stack — deployed to your team within days. Viantha manages compliance, payroll, and HR end-to-end. You focus on the work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Our Client Types</div>
+      <h2>Who We Place Talent With</h2>
+    </div>
+    <div class="client-grid">
+      <div class="client-card">
+        <div class="cc-tag">Enterprise Clients</div>
+        <h3>Large Indian IT Companies & MNCs</h3>
+        <p>We are empanelling as a staffing subvendor with Infosys, TCS, HCLTech, Wipro, and Tech Mahindra. MSME-registered vendors receive preferred procurement status under government guidelines.</p>
+        <ul>
+          <li>Vendor empanelment in progress — TCS, Infosys, HCL</li>
+          <li>MSME status gives preferential entry</li>
+          <li>GST-compliant invoicing, EPF/ESIC covered</li>
+          <li>Banking tech roles are our primary specialisation</li>
+        </ul>
+      </div>
+      <div class="client-card">
+        <div class="cc-tag">Enterprise Clients</div>
+        <h3>Banks, NBFCs & Fintech Companies</h3>
+        <p>Banks, NBFCs, and fintech companies globally who need specialist IT talent without the overhead of permanent hiring.</p>
+        <ul>
+          <li>Core banking developers on contract</li>
+          <li>RBI compliance specialists</li>
+          <li>UPI / payment tech engineers</li>
+          <li>Short-term project-based placements available</li>
+        </ul>
+      </div>
+      <div class="client-card">
+        <div class="cc-tag">Global Market</div>
+        <h3>US & UK Startups (Remote Placement)</h3>
+        <p>Series A/B SaaS and fintech startups in the US and UK who want experienced Indian engineers without setting up a local entity. Viantha acts as the employer of record.</p>
+        <ul>
+          <li>Remote-first, async-capable engineers</li>
+          <li>Billing in USD / GBP — invoice to your entity</li>
+          <li>Full compliance under Indian labour law</li>
+          <li>Cost-effective vs. hiring locally in the US/UK</li>
+        </ul>
+      </div>
+      <div class="client-card">
+        <div class="cc-tag">Global Market</div>
+        <h3>GCCs (Global Capability Centres)</h3>
+        <p>JPMorgan India, Goldman Sachs India, Citi Tech, HSBC Tech, and other GCCs operating in India that need niche banking tech and AI specialists on short-term contracts.</p>
+        <ul>
+          <li>Highest billing rates in the Indian market</li>
+          <li>Fintech, payments, compliance tech focus</li>
+          <li>MSA-ready with PI insurance coverage</li>
+          <li>Background verification arranged on request</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARGIN VISUAL -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="split-section">
+      <div class="split-content">
+        <div class="tag">Why It Works</div>
+        <h2>The Staff Augmentation Advantage — For You as the Client</h2>
+        <p>Traditional permanent hiring takes 45–90 days and costs 3–4 months' salary in recruitment fees. Staff augmentation through Viantha gives you the talent in days, with full flexibility to scale up or down.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> No recruitment fee — just a monthly invoice</li>
+          <li><i class="fas fa-check-circle"></i> No employer PF/ESIC liability on your company</li>
+          <li><i class="fas fa-check-circle"></i> Flexibility to end contract with 30-day notice</li>
+          <li><i class="fas fa-check-circle"></i> Replacement guarantee if resource doesn't perform</li>
+          <li><i class="fas fa-check-circle"></i> Fully GST-compliant invoicing for your ITC claim</li>
+        </ul>
+        <div style="margin-top:28px">
+          <a href="contact.html" class="btn btn-primary">Submit a Requirement <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="split-visual">
+        <div class="margin-visual">
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:20px">Time to deploy — Staff Aug vs Traditional Hire</div>
+          <div class="margin-row">
+            <span class="margin-label">Viantha placement</span>
+            <div class="margin-bar-track"><div class="margin-bar-fill" style="width:15%;background:#1D9E75">2–7 days</div></div>
+          </div>
+          <div class="margin-row">
+            <span class="margin-label">Direct agency hire</span>
+            <div class="margin-bar-track"><div class="margin-bar-fill" style="width:55%;background:#BA7517">30–45 days</div></div>
+          </div>
+          <div class="margin-row" style="margin-bottom:28px">
+            <span class="margin-label">Internal HR hire</span>
+            <div class="margin-bar-track"><div class="margin-bar-fill" style="width:90%;background:#C0392B">60–90 days</div></div>
+          </div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px">Cost vs. US/UK in-house hire (equivalent role)</div>
+          <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:16px;font-size:13px;color:rgba(255,255,255,0.8)">
+            Indian resource via Viantha is typically <strong style="color:#60C4A8">40–70% less expensive</strong> than hiring the equivalent role in the US or UK — without sacrificing quality.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="split-section reverse">
+      <div class="split-content">
+        <div class="tag">Our Process</div>
+        <h2>How We Fill Your Requirement</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="ps-num">1</div>
+            <div class="ps-body"><h4>Requirement submission</h4><p>Share the role, skills, experience, duration, and whether on-site or remote. Use our contact form or email us directly.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="ps-num">2</div>
+            <div class="ps-body"><h4>Shortlist in 2–5 days</h4><p>We send you 2–4 pre-screened CVs from our talent pool. Every profile is reviewed for skills, communication, and availability.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="ps-num">3</div>
+            <div class="ps-body"><h4>You interview & select</h4><p>Conduct your own technical interview. Select the candidate. We handle the offer letter and onboarding paperwork.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="ps-num">4</div>
+            <div class="ps-body"><h4>Resource deployed</h4><p>Resource joins your team on Viantha's payroll. We handle salary, EPF, ESIC, PT, and TDS monthly. You receive one GST invoice.</p></div>
+          </div>
+          <div class="process-step">
+            <div class="ps-num">5</div>
+            <div class="ps-body"><h4>Ongoing support</h4><p>Any HR or payroll issues are handled by Viantha. You focus on the work. We ensure continuity and replace if needed.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="split-visual">
+        <div class="req-form-wrap">
+          <h3>Submit a Staffing Requirement</h3>
+          <p>Tell us what you need — we'll respond within one business day.</p>
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" id="rName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Company & Email *</label>
+            <input type="email" id="rEmail" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label>Role Required *</label>
+            <input type="text" id="rRole" placeholder="e.g. Banking Tech Developer, Java Developer...">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>No. of Resources</label>
+              <input type="number" id="rCount" placeholder="e.g. 2" min="1">
+            </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <input type="text" id="rDuration" placeholder="e.g. 6 months">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>On-site or Remote?</label>
+            <select id="rType">
+              <option value="">Select</option>
+              <option>On-site (India)</option>
+              <option>Remote (India)</option>
+              <option>Remote (US/UK)</option>
+              <option>Hybrid</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Additional Details</label>
+            <textarea id="rDetails" placeholder="Skills, tech stack, experience level, budget range..."></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitReq()">
+            Submit Requirement <i class="fas fa-paper-plane"></i>
+          </button>
+          <div id="reqSuccess" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:14px;color:#15803d;font-size:13px;font-weight:500;margin-top:14px;text-align:center">
+            <i class="fas fa-check-circle"></i> Requirement received! We'll respond within 1 business day.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Compliance</div>
+      <h2>Fully Compliant — Every Statutory Obligation Covered</h2>
+      <p>Every resource placed through Viantha is on our payroll with full statutory compliance</p>
+    </div>
+    <div class="compliance-row">
+      <div class="comp-badge">
+        <i class="fas fa-file-invoice"></i>
+        <h4>GST Registered</h4>
+        <p>18% GST invoicing — claim full ITC on payments to Viantha</p>
+      </div>
+      <div class="comp-badge">
+        <i class="fas fa-shield-alt"></i>
+        <h4>EPF & ESIC</h4>
+        <p>All placed resources covered under EPF (12%) and ESIC</p>
+      </div>
+      <div class="comp-badge">
+        <i class="fas fa-certificate"></i>
+        <h4>MSME Registered</h4>
+        <p>Udyam certificate — MSME preferred vendor for large IT cos</p>
+      </div>
+      <div class="comp-badge">
+        <i class="fas fa-lock"></i>
+        <h4>PI Insurance</h4>
+        <p>Professional Indemnity coverage for all placed resources</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready to Fill Your IT Requirement?</h2>
+      <p>Submit your requirement above or contact us directly. We match and deploy specialist IT talent faster than traditional hiring.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-white">Contact Us <i class="fas fa-arrow-right"></i></a>
+        <a href="careers.html" class="btn btn-outline">Looking for Work?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Viantha<span>Solutions</span></div>
+        <p>Banking Technology, AI Solutions &amp; Enterprise IT Services for global financial institutions.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/contactviantha" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="staffing.html">IT Staffing</a></li><li><a href="banking.html">Banking Technology</a></li><li><a href="services.html">AI & Automation</a></li><li><a href="services.html">Cloud & DevOps</a></li></ul></div>
+      <div class="footer-col"><h4>Headquarters</h4><ul><li><i class="fas fa-map-marker-alt"></i> Singapore (HQ)</li><li><i class="fas fa-phone"></i><a href="tel:+6582699157"> +65 8269 9157</a></li><li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 4322-223098</a></li><li><i class="fas fa-envelope"></i><a href="mailto:info@vianthait.com"> info@vianthait.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Viantha Solutions. All rights reserved.</span><span>ISO 27001 Aligned &nbsp;|&nbsp; Globally Trusted</span></div>
+  </div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar'),hamburger=document.getElementById('hamburger'),navMenu=document.getElementById('navMenu');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+  hamburger.addEventListener('click',()=>{const o=navMenu.classList.toggle('active');hamburger.classList.toggle('active',o);});
+  navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navMenu.classList.remove('active');hamburger.classList.remove('active');}));
+
+  function submitReq(){
+    const n=document.getElementById('rName').value.trim();
+    const e=document.getElementById('rEmail').value.trim();
+    const r=document.getElementById('rRole').value.trim();
+    if(!n||!e||!r){alert('Please fill Name, Email and Role Required.');return;}
+    document.getElementById('reqSuccess').style.display='block';
+    ['rName','rEmail','rRole','rCount','rDuration','rDetails'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+    document.getElementById('rType').value='';
+  }
+</script>
+
+
+
+
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
+(function () {
+  var s1 = document.createElement("script");
+  var s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6a34b43051481a1d48758f8f/1jretvo5t';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!-- End Tawk.to Live Chat -->
+</body>
+</html>

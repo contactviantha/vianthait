@@ -3,197 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viantha Solutions | Enterprise AI, Quantum &amp; Banking Technology</title>
-  <meta name="description" content="Viantha Solutions delivers enterprise AI, quantum computing, banking technology, cloud infrastructure, and digital transformation for global financial institutions.">
+  <title>Viantha Solutions | Banking Technology, AI & Enterprise IT Services</title>
+  <meta name="description" content="Viantha Solutions — banking technology, AI solutions, and enterprise IT services for global financial institutions. Serving clients across Asia, US, and UK.">
   <link rel="canonical" href="https://www.vianthait.com/">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Viantha Solutions",
    "url":"https://www.vianthait.com","logo":"https://www.vianthait.com/images/FinalLogo-With.png",
-   "contactPoint":{"@type":"ContactPoint","telephone":"+65-8269-9157","contactType":"customer service"},
+   "address":{"@type":"PostalAddress","addressLocality":"Singapore","addressRegion":"","addressCountry":"SG"},
+   "contactPoint":{"@type":"ContactPoint","telephone":"+91-4322-223098","contactType":"customer service"},
    "sameAs":["https://www.linkedin.com/company/viantha/","https://github.com/contactviantha"]}
   </script>
   <style>
-    /* ── Home-specific styles ── */
-    .industry-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 22px;
+    .pillar-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .pillar-card {
+      background:var(--white); border-radius:var(--radius-md); padding:32px 24px;
+      border:1px solid var(--border); text-align:center; transition:var(--transition);
     }
-    .industry-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 28px 20px;
-      text-align: center;
-      border: 1px solid var(--border);
-      transition: var(--transition);
+    .pillar-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); border-color:rgba(26,95,212,0.2); }
+    .pillar-card i { font-size:1.9rem; color:var(--blue); margin-bottom:14px; display:block; }
+    .pillar-card h3 { font-size:1rem; margin-bottom:10px; }
+    .pillar-card p  { font-size:0.84rem; color:var(--text-light); line-height:1.65; }
+    .pillar-card .card-link { margin-top:16px; display:inline-flex; }
+
+    .staffing-highlight {
+      background:linear-gradient(135deg,#EBF3FF,#F0FDF4);
+      border:1.5px solid rgba(26,95,212,0.15);
+      border-radius:var(--radius-lg); padding:36px 32px;
+      margin-bottom:24px;
     }
-    .industry-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(26,95,212,0.2);
+    .staffing-highlight .sh-tag {
+      font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--blue); margin-bottom:10px;
     }
-    .industry-card i {
-      font-size: 1.8rem;
-      color: var(--blue);
-      margin-bottom: 14px;
-      display: block;
-    }
-    .industry-card h3 { font-size: 0.95rem; margin-bottom: 10px; }
-    .industry-card p  { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
+    .staffing-highlight h2 { font-size:1.5rem; margin-bottom:12px; }
+    .staffing-highlight p { font-size:0.9rem; color:var(--text-light); line-height:1.75; max-width:580px; }
 
     .showcase-item {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      border: 1px solid var(--border);
-      transition: var(--transition);
+      display:flex; gap:20px; align-items:flex-start;
+      background:var(--white); border-radius:var(--radius-md); padding:24px;
+      border:1px solid var(--border); transition:var(--transition);
     }
-    .showcase-item:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .showcase-item:hover { box-shadow:var(--shadow-md); }
     .showcase-icon {
-      width: 60px; height: 60px;
-      background: linear-gradient(135deg, rgba(26,95,212,0.1), rgba(76,175,80,0.08));
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; color: var(--blue);
-      flex-shrink: 0;
-    }
-    .showcase-content h3 { font-size: 0.97rem; margin-bottom: 7px; }
-    .showcase-content p  { font-size: 0.85rem; }
-
-    .mission-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 24px;
-    }
-    .mission-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 32px 22px;
-      text-align: center;
-      border: 1px solid var(--border);
-      transition: var(--transition);
-    }
-    .mission-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .mission-card i { font-size: 1.9rem; color: var(--blue); margin-bottom: 14px; display: block; }
-    .mission-card h3 { font-size: 1rem; margin-bottom: 10px; }
-    .mission-card p  { font-size: 0.85rem; line-height: 1.65; }
-    .mission-card .card-link { margin-top: 16px; display: inline-flex; }
-
-    /* ── Career Modal ── */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(4px);
-      padding: 20px;
-    }
-    .modal.active { display: flex; }
-    @keyframes modalIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
-    .modal-content {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      width: 100%;
-      max-width: 700px;
-      max-height: 90dvh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      animation: modalIn 0.25s ease;
-      box-shadow: var(--shadow-lg);
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 28px;
-      border-bottom: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-    .modal-header h2 { font-size: 1.35rem; margin: 0; }
-    .modal-close {
-      font-size: 1.6rem;
-      color: var(--text-light);
-      cursor: pointer;
-      line-height: 1;
-      padding: 4px;
-      border-radius: 50%;
-      transition: color 0.18s;
-    }
-    .modal-close:hover { color: var(--navy); }
-    .modal-body  { flex: 1; overflow-y: auto; padding: 28px; }
-    .modal-body > p { margin-bottom: 22px; font-size: 0.9rem; }
-    .modal-footer {
-      padding: 18px 28px;
-      border-top: 1px solid var(--border);
-      background: var(--off-white);
-      flex-shrink: 0;
-    }
-    .modal-submit-btn { width:100%; justify-content:center; }
-    .career-form input,
-    .career-form select,
-    .career-form textarea {
-      width:100%; padding:11px 14px;
-      border:1.5px solid var(--border);
+      width:52px; height:52px;
+      background:linear-gradient(135deg,rgba(26,95,212,0.1),rgba(76,175,80,0.08));
       border-radius:var(--radius-sm);
-      font-family:inherit; font-size:0.88rem;
-      transition:border-color 0.2s, box-shadow 0.2s;
-      outline:none; -webkit-appearance:none;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; color:var(--blue); flex-shrink:0;
     }
-    .career-form input:focus,
-    .career-form select:focus,
-    .career-form textarea:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(26,95,212,0.12);
+    .showcase-content h3 { font-size:0.95rem; margin-bottom:6px; }
+    .showcase-content p  { font-size:0.85rem; }
+
+    .how-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .how-card {
+      background:var(--white); border-radius:var(--radius-md); padding:24px 18px;
+      border:1px solid var(--border); text-align:center;
+    }
+    .how-num {
+      width:36px; height:36px; border-radius:50%;
+      background:var(--blue); color:var(--white);
+      font-weight:700; font-size:0.9rem;
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 14px;
+    }
+    .how-card h4 { font-size:0.9rem; margin-bottom:8px; }
+    .how-card p  { font-size:0.82rem; color:var(--text-light); line-height:1.6; }
+
+    .modal {
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,0.75); z-index:2000;
+      justify-content:center; align-items:center;
+      backdrop-filter:blur(4px); padding:20px;
+    }
+    .modal.active { display:flex; }
+    @keyframes modalIn { from{opacity:0;transform:scale(0.95)} to{opacity:1;transform:scale(1)} }
+    .modal-content {
+      background:var(--white); border-radius:var(--radius-lg);
+      width:100%; max-width:680px; max-height:90dvh;
+      display:flex; flex-direction:column; overflow:hidden;
+      animation:modalIn 0.25s ease; box-shadow:var(--shadow-lg);
+    }
+    .modal-header { display:flex; justify-content:space-between; align-items:center; padding:22px 28px; border-bottom:1px solid var(--border); flex-shrink:0; }
+    .modal-header h2 { font-size:1.25rem; margin:0; }
+    .modal-close { font-size:1.6rem; color:var(--text-light); cursor:pointer; line-height:1; border-radius:50%; transition:color 0.18s; }
+    .modal-close:hover { color:var(--navy); }
+    .modal-body  { flex:1; overflow-y:auto; padding:28px; }
+    .modal-footer { padding:18px 28px; border-top:1px solid var(--border); background:var(--off-white); flex-shrink:0; }
+    .modal-submit-btn { width:100%; justify-content:center; }
+    .career-form input,.career-form select,.career-form textarea {
+      width:100%; padding:11px 14px; border:1.5px solid var(--border);
+      border-radius:var(--radius-sm); font-family:inherit; font-size:0.88rem;
+      transition:border-color 0.2s,box-shadow 0.2s; outline:none; -webkit-appearance:none;
+    }
+    .career-form input:focus,.career-form select:focus,.career-form textarea:focus {
+      border-color:var(--blue); box-shadow:0 0 0 3px rgba(26,95,212,0.12);
     }
     .career-form textarea { min-height:90px; resize:vertical; }
     .modal-success,.modal-error {
-      display:none; border-radius:var(--radius-sm);
-      padding:13px 16px; margin-top:14px;
-      font-size:0.86rem; font-weight:500; text-align:center;
+      display:none; border-radius:var(--radius-sm); padding:13px 16px;
+      margin-top:14px; font-size:0.86rem; font-weight:500; text-align:center;
     }
     .modal-success { background:#f0fdf4; border:1px solid #bbf7d0; color:#15803d; }
     .modal-error   { background:#fef2f2; border:1px solid #fecaca; color:#b91c1c; }
     .modal-success.show,.modal-error.show { display:block; }
 
-    /* Dark visual box used on home */
-    .service-visual {
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .dark-bg {
-      background: linear-gradient(135deg, var(--navy), #1a1460);
-    }
-    .dark-bg i, .dark-bg h4 { color: rgba(255,255,255,0.85); }
-    .dark-bg p { color: rgba(255,255,255,0.55); }
-    .dark-bg .stat-number { color: var(--green-light); }
-    .dark-bg .stat-label  { color: rgba(255,255,255,0.5); }
-
-    @media(max-width:900px){
-      .industry-grid { grid-template-columns:repeat(2,1fr); }
-      .mission-grid  { grid-template-columns:repeat(2,1fr); }
-    }
-    @media(max-width:540px){
-      .industry-grid { grid-template-columns:1fr; }
-      .mission-grid  { grid-template-columns:1fr; }
-      .showcase-item { flex-direction:column; }
-      .modal-body    { padding:20px; }
-      .modal-header  { padding:18px 20px; }
-    }
+    @media(max-width:900px){ .pillar-grid{grid-template-columns:1fr 1fr;} .how-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:540px){ .pillar-grid{grid-template-columns:1fr;} .how-grid{grid-template-columns:1fr;} .showcase-item{flex-direction:column;} }
   </style>
 </head>
 <body>
 
-<!-- ── Navbar ── -->
+      <div class="utility-right">
+        <span class="utility-tagline">Banking Technology · AI · Enterprise IT</span>
+        <div class="utility-social">
+          <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <nav class="navbar" id="navbar">
   <div class="container">
     <div class="nav-content">
@@ -203,14 +134,15 @@
         <div class="logo-fallback" style="display:none">Viantha<span>Solutions</span></div>
       </a>
       <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
-        <a href="index.html" class="active" aria-current="page">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="ai-quantum.html">AI &amp; Quantum</a>
-        <a href="banking.html">Banking</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" class="nav-cta">Contact Us</a>
-      </nav>
+ <a href="index.html" class="active" aria-current="page">Home</a>
+ <a href="about.html">About</a>
+ <a href="banking.html">Banking Tech</a>
+ <a href="services.html">Services</a>
+ <a href="staffing.html">IT Staffing</a>
+ <a href="careers.html">Careers</a>
+ <span class="nav-sep"></span>
+ <a href="contact.html" class="nav-cta">Contact Us</a>
+ </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -218,138 +150,160 @@
   </div>
 </nav>
 
-<!-- ── Hero ── -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
       <div class="tag tag-dark">Enterprise Technology Partner</div>
       <h1 class="hero-headline">
-        Viantha – <span class="accent">AI. Quantum. Banking.</span><br>Engineered for Tomorrow.
+        Viantha – <span class="accent">Banking. AI.</span><br>Engineered for Tomorrow.
       </h1>
-      <p>Viantha Solutions partners with global financial institutions to deliver transformative technology — from AI-powered analytics and quantum algorithms to core banking modernisation.</p>
+      <p>We build banking technology, AI solutions, and enterprise platforms for financial institutions worldwide — and place specialist IT talent with the speed and precision global businesses demand.</p>
       <div class="hero-btns">
-        <a href="contact.html" class="btn btn-primary">Let's Talk <i class="fas fa-arrow-right"></i></a>
-        <a href="services.html" class="btn btn-outline-light">Explore Services</a>
+        <a href="staffing.html" class="btn btn-primary">Hire IT Talent <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-outline-light">Talk to Us</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><span class="num">20+</span><span class="label">Years of Excellence</span></div>
-        <div class="hero-stat"><span class="num">300+</span><span class="label">Projects Delivered</span></div>
-        <div class="hero-stat"><span class="num">$50B+</span><span class="label">Annual Transaction Vol.</span></div>
-        <div class="hero-stat"><span class="num">98%</span><span class="label">Client Retention</span></div>
+        <div class="hero-stat"><span class="num">2026</span><span class="label">Founded</span></div>
+        <div class="hero-stat"><span class="num">Banking</span><span class="label">Technology Specialists</span></div>
+        <div class="hero-stat"><span class="num">AI</span><span class="label">Driven Solutions</span></div>
+        <div class="hero-stat"><span class="num">Global</span><span class="label">Asia · US · UK</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Trusted By ── -->
+<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="container">
-    <p class="trust-text">Trusted by leading financial institutions and global enterprises</p>
+    <p class="trust-text">Trusted by leading enterprises across Asia, US &amp; UK</p>
     <div class="logo-cloud">
-      <span><i class="fas fa-university" style="color:var(--blue)"></i> Global Bank Group</span>
-      <span><i class="fas fa-chart-line" style="color:var(--blue)"></i> Asia Finance Corp</span>
-      <span><i class="fas fa-credit-card" style="color:var(--blue)"></i> Digital Trust Bank</span>
-      <span><i class="fas fa-building" style="color:var(--blue)"></i> WealthOne</span>
-      <span><i class="fas fa-landmark" style="color:var(--blue)"></i> NexGen Capital</span>
+      <span><i class="fas fa-building" style="color:var(--blue)"></i> Infosys</span>
+      <span><i class="fas fa-building" style="color:var(--blue)"></i> TCS</span>
+      <span><i class="fas fa-building" style="color:var(--blue)"></i> HCLTech</span>
+      <span><i class="fas fa-building" style="color:var(--blue)"></i> Wipro</span>
+      <span><i class="fas fa-globe" style="color:var(--blue)"></i> US & UK MNCs</span>
     </div>
   </div>
 </div>
 
-<!-- ── Three Pillars ── -->
+<!-- STAFFING HIGHLIGHT -->
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <div class="tag tag-light">What We Do</div>
-      <h2>Three Pillars of Enterprise Innovation</h2>
-      <p>Specialised practices that converge to create unparalleled business outcomes for the world's leading financial institutions.</p>
+    <div class="staffing-highlight">
+      <div class="sh-tag">Our Core Focus</div>
+      <h2>Banking Technology & AI Solutions — Built for the World's Financial Institutions</h2>
+      <p>Viantha partners with banks, NBFCs, and fintech companies to deliver mission-critical technology — from core banking modernisation and payment infrastructure to AI automation and regulatory compliance. We also augment your engineering teams with specialist talent when you need to move fast.</p>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="banking.html" class="btn btn-primary">Explore Banking Solutions <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-outline">Talk to Our Team</a>
+      </div>
     </div>
-    <div class="mission-grid">
-      <div class="mission-card">
-        <i class="fas fa-brain"></i>
-        <h3>AI &amp; Machine Learning</h3>
-        <p>Custom LLMs, predictive analytics, computer vision, and intelligent automation that scales securely in production.</p>
-        <a href="ai-quantum.html" class="card-link">Explore AI <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="mission-card">
-        <i class="fas fa-atom"></i>
-        <h3>Quantum Computing</h3>
-        <p>Hybrid quantum-classical algorithms for portfolio optimisation, risk modelling, and post-quantum cryptography.</p>
-        <a href="ai-quantum.html" class="card-link">Explore Quantum <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="mission-card">
+
+    <!-- THREE PILLARS -->
+    <div class="pillar-grid">
+      <div class="pillar-card">
         <i class="fas fa-university"></i>
         <h3>Banking Technology</h3>
-        <p>Core modernisation, open banking APIs, real-time payments, and AI‑driven fraud detection systems.</p>
-        <a href="banking.html" class="card-link">Explore Banking <i class="fas fa-arrow-right"></i></a>
+        <p>Core banking modernisation, open banking APIs, payment infrastructure, regulatory compliance, and AI-driven fraud detection for global financial institutions.</p>
+        <a href="banking.html" class="card-link">Explore Banking Tech <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="pillar-card">
+        <i class="fas fa-brain"></i>
+        <h3>AI & Intelligent Automation</h3>
+        <p>Enterprise AI solutions — document processing, KYC automation, fraud detection, predictive analytics, and intelligent workflows for banks and enterprises worldwide.</p>
+        <a href="services.html" class="card-link">Explore AI Services <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="pillar-card">
+        <i class="fas fa-users"></i>
+        <h3>IT Staff Augmentation</h3>
+        <p>Specialist contract developers and engineers deployed to your team — on-site or remote. Banking tech, AI, cloud, and full-stack professionals. Global quality.</p>
+        <a href="staffing.html" class="card-link">Explore Staffing <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Industries ── -->
+<!-- WHAT WE DELIVER -->
 <section class="section section-gray">
   <div class="container">
     <div class="section-header">
-      <div class="tag tag-light">Industries</div>
-      <h2>Deep Domain Expertise</h2>
-      <p>We understand the unique regulations, risks, and opportunities across every sector we serve.</p>
+      <div class="tag">What We Deliver</div>
+      <h2>Solutions Across Banking, AI & Enterprise Technology</h2>
+      <p>From core banking transformation to AI automation — practical technology that drives real business outcomes</p>
     </div>
-    <div class="industry-grid">
-      <div class="industry-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Wealth Management</h3>
-        <p>Portfolio analytics, robo-advisory, and intelligent client reporting platforms.</p>
+    <div style="display:grid; gap:16px;">
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-university"></i></div>
+        <div class="showcase-content">
+          <h3>Core Banking Transformation</h3>
+          <p>We modernise legacy core banking systems with cloud-native platforms — delivering real-time processing, open APIs, and the scalability financial institutions need for the next decade of digital banking.</p>
+        </div>
       </div>
-      <div class="industry-card">
-        <i class="fas fa-credit-card"></i>
-        <h3>Retail Banking</h3>
-        <p>Digital onboarding, mobile banking, and seamless omnichannel experiences.</p>
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-bolt"></i></div>
+        <div class="showcase-content">
+          <h3>Payment Systems & Infrastructure</h3>
+          <p>High-throughput payment infrastructure supporting global payment rails — real-time payments, cross-border transfers, ISO 20022 messaging, and regulatory compliance built in from day one.</p>
+        </div>
       </div>
-      <div class="industry-card">
-        <i class="fas fa-hand-holding-usd"></i>
-        <h3>Investment Banking</h3>
-        <p>Algorithmic trading, risk analytics, and post-trade processing systems.</p>
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-robot"></i></div>
+        <div class="showcase-content">
+          <h3>AI & Intelligent Automation</h3>
+          <p>KYC automation, fraud detection models, document intelligence, and AI-powered workflows that reduce manual processing time and operational risk for financial institutions globally.</p>
+        </div>
       </div>
-      <div class="industry-card">
-        <i class="fas fa-building"></i>
-        <h3>Corporate Banking</h3>
-        <p>Cash management, trade finance, and end-to-end lending automation.</p>
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-users"></i></div>
+        <div class="showcase-content">
+          <h3>IT Staff Augmentation</h3>
+          <p>Specialist contract engineers — banking tech, AI/ML, cloud, and full-stack — deployed to your team on-site or remotely. Fully managed payroll and compliance. One invoice. Zero HR overhead.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Why Viantha ── -->
+<!-- WHY VIANTHA -->
 <section class="section">
   <div class="container">
-    <div class="split-section reverse">
+    <div class="split-section">
       <div class="split-content">
-        <div class="tag tag-light">Why Viantha</div>
-        <h2>More Than a Vendor — A Strategic Partner</h2>
-        <p>We don't just deliver code; we drive business outcomes. With an 8+ year average client tenure, our relationships are built on trust, transparency, and measurable impact.</p>
+        <div class="tag">Why Viantha</div>
+        <h2>A Technology Partner Built for Financial Services</h2>
+        <p>We combine deep banking domain expertise with modern engineering practices — delivering systems that are secure, compliant, and built for the demands of global financial institutions.</p>
         <ul class="check-list">
-          <li><i class="fas fa-check-circle"></i> 100+ specialist engineers &amp; data scientists</li>
-          <li><i class="fas fa-check-circle"></i> ISO 27001 &amp; SOC 2 Type II certified</li>
-          <li><i class="fas fa-check-circle"></i> 24/7 follow-the-sun support model</li>
-          <li><i class="fas fa-check-circle"></i> $10M+ annual R&amp;D investment</li>
+          <li><i class="fas fa-check-circle"></i> Core banking & payment systems expertise</li>
+          <li><i class="fas fa-check-circle"></i> Regulatory compliance built into every solution</li>
+          <li><i class="fas fa-check-circle"></i> AI & automation for financial workflows</li>
+          <li><i class="fas fa-check-circle"></i> Specialist engineering talent on demand</li>
+          <li><i class="fas fa-check-circle"></i> Serving clients across Asia, US & UK</li>
+          <li><i class="fas fa-check-circle"></i> Fast engagement — direct access to our team</li>
         </ul>
         <div style="margin-top:28px">
-          <a href="about.html" class="btn btn-primary">Learn About Us <i class="fas fa-arrow-right"></i></a>
+          <a href="banking.html" class="btn btn-primary">Explore Banking Solutions <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="split-visual">
-        <div class="service-visual dark-bg">
-          <i class="fas fa-handshake" style="font-size:3rem; margin-bottom:16px; display:block"></i>
-          <h4 style="font-size:1rem; margin-bottom:8px">Client-Centric Culture</h4>
-          <p style="font-size:0.85rem; margin-bottom:20px">98% client satisfaction &amp; long-term partnerships</p>
-          <div class="stats-row" style="justify-content:center">
-            <div class="stat-item">
-              <span class="stat-number">8+ yr</span>
-              <span class="stat-label">Avg. Tenure</span>
+        <div style="background:linear-gradient(135deg,var(--navy),#1B3A5C);border-radius:var(--radius-lg);padding:36px 28px;color:white">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:20px">Viantha at a Glance</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,0.06);border-radius:8px;padding:14px">
+              <i class="fas fa-university" style="color:#60C4A8;margin-top:2px;flex-shrink:0"></i>
+              <div><strong style="font-size:13px">Banking Technology</strong><p style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px">Core banking, payments, open banking APIs, and regulatory compliance systems</p></div>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">On-time Delivery</span>
+            <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,0.06);border-radius:8px;padding:14px">
+              <i class="fas fa-brain" style="color:#60C4A8;margin-top:2px;flex-shrink:0"></i>
+              <div><strong style="font-size:13px">AI & Automation</strong><p style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px">Fraud detection, KYC automation, document intelligence, and intelligent workflows</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,0.06);border-radius:8px;padding:14px">
+              <i class="fas fa-globe" style="color:#60C4A8;margin-top:2px;flex-shrink:0"></i>
+              <div><strong style="font-size:13px">Global Reach</strong><p style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px">Clients across Asia, US, and UK — delivering technology that works at global scale</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,0.06);border-radius:8px;padding:14px">
+              <i class="fas fa-users" style="color:#60C4A8;margin-top:2px;flex-shrink:0"></i>
+              <div><strong style="font-size:13px">IT Staffing</strong><p style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px">Specialist engineers deployed fast — on-site or remote, fully managed</p></div>
             </div>
           </div>
         </div>
@@ -358,46 +312,53 @@
   </div>
 </section>
 
-<!-- ── Success Stories ── -->
+<!-- WHAT WE DELIVER -->
 <section class="section section-gray">
   <div class="container">
     <div class="section-header">
-      <div class="tag tag-light">Success Stories</div>
-      <h2>Real Impact, At Scale</h2>
-      <p>How we have transformed enterprise operations with cutting-edge technology</p>
+      <div class="tag">Services</div>
+      <h2>What We Deliver</h2>
+      <p>Practical technology services built around your real business needs</p>
     </div>
-    <div style="display:grid; gap:20px;">
+    <div style="display:grid; gap:16px;">
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-users"></i></div>
+        <div class="showcase-content">
+          <h3>IT Staff Augmentation — Global Enterprises</h3>
+          <p>We place specialist contract resources with leading global enterprises and technology companies — fully compliant, fast-deployed, and backed by Viantha's end-to-end payroll management.</p>
+        </div>
+      </div>
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="showcase-content">
+          <h3>Remote Placement for US & UK Clients</h3>
+          <p>We place experienced developers remotely with Series A/B startups and enterprises globally — across the US, UK, Singapore, and beyond. Banking tech, AI/ML, cloud, and full-stack roles. Cost-effective, compliant, and fast.</p>
+        </div>
+      </div>
+      <div class="showcase-item">
+        <div class="showcase-icon"><i class="fas fa-university"></i></div>
+        <div class="showcase-content">
+          <h3>Banking Technology Consulting</h3>
+          <p>Core banking modernisation, regulatory compliance systems, payment infrastructure, and digital banking product development for banks, NBFCs, and fintech companies globally.</p>
+        </div>
+      </div>
       <div class="showcase-item">
         <div class="showcase-icon"><i class="fas fa-robot"></i></div>
         <div class="showcase-content">
-          <h3>AI Fraud Detection — Regional Bank</h3>
-          <p>Deployed real-time transaction monitoring with 99.7% accuracy, reducing false positives by 62% and saving $12M annually in fraud losses.</p>
-        </div>
-      </div>
-      <div class="showcase-item">
-        <div class="showcase-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-        <div class="showcase-content">
-          <h3>Core Banking Modernisation</h3>
-          <p>Migrated legacy core banking system to a cloud-native platform, achieving 99.99% uptime and 40% faster time-to-market for new financial products.</p>
-        </div>
-      </div>
-      <div class="showcase-item">
-        <div class="showcase-icon"><i class="fas fa-atom"></i></div>
-        <div class="showcase-content">
-          <h3>Quantum Portfolio Optimisation</h3>
-          <p>Developed a hybrid quantum algorithm that improved asset allocation efficiency by 23% over classical methods for a global asset manager.</p>
+          <h3>AI Automation for Financial Services</h3>
+          <p>KYC document processing, loan application automation, fraud rule engines, and intelligent chatbots built for financial institutions worldwide.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CTA ── -->
+<!-- CTA -->
 <section class="section-sm">
   <div class="container">
     <div class="cta-banner">
-      <h2>Ready to Transform Your Enterprise?</h2>
-      <p>Let's discuss how Viantha Solutions can help you harness AI, quantum, and next-generation banking technology.</p>
+      <h2>Ready to Transform Your Banking Technology?</h2>
+      <p>Talk to our team about your core banking, AI, or enterprise IT challenges. We respond within one business day.</p>
       <div class="cta-btns">
         <a href="contact.html" class="btn btn-white">Get in Touch <i class="fas fa-arrow-right"></i></a>
         <a href="services.html" class="btn btn-outline">Explore All Services</a>
@@ -406,7 +367,7 @@
   </div>
 </section>
 
-<!-- ── Career Modal ── -->
+<!-- CAREER MODAL -->
 <div id="careerModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-content">
     <div class="modal-header">
@@ -414,57 +375,52 @@
       <span class="modal-close" onclick="closeCareerModal()" aria-label="Close">&times;</span>
     </div>
     <div class="modal-body">
-      <p>Submit your application below. Our HR team will review and respond within 5 business days.</p>
+      <p>Submit your CV and our team will review and respond within 5 business days.</p>
       <form id="careerForm" class="career-form" action="https://formsubmit.co/hr@vianthait.com" method="POST" enctype="multipart/form-data" target="hidden_iframe">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="New Career Application – Viantha Solutions">
         <div class="form-row">
           <div class="form-group">
             <label for="fullName">Full Name *</label>
-            <input type="text" name="Full Name" id="fullName" required placeholder="Jane Doe">
+            <input type="text" name="Full Name" id="fullName" required placeholder="Your Name">
           </div>
           <div class="form-group">
             <label for="applicantEmail">Email Address *</label>
-            <input type="email" name="Email" id="applicantEmail" required placeholder="jane@example.com">
+            <input type="email" name="Email" id="applicantEmail" required placeholder="you@email.com">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="applicantPhone">Phone Number</label>
-            <input type="tel" name="Phone" id="applicantPhone" placeholder="+65 XXXX XXXX">
+            <input type="tel" name="Phone" id="applicantPhone" placeholder="+91 XXXXX XXXXX">
           </div>
           <div class="form-group">
-            <label for="positionModal">Position Applying For *</label>
+            <label for="positionModal">Role Applying For *</label>
             <select name="Position" id="positionModal" required>
-              <option value="">Select a position</option>
-              <option>Senior AI/ML Engineer</option>
-              <option>Quantum Computing Researcher</option>
+              <option value="">Select a role</option>
+              <option>Banking Technology Developer</option>
+              <option>AI / ML Engineer</option>
+              <option>Java / Python Developer</option>
+              <option>Cloud / DevOps Engineer</option>
               <option>Full Stack Developer</option>
-              <option>Cloud Architect</option>
-              <option>Banking Technology Consultant</option>
-              <option>DevOps Engineer</option>
+              <option>QA / Test Engineer</option>
               <option>Data Scientist</option>
-              <option>Cybersecurity Specialist</option>
-              <option>Project Manager</option>
+              <option>IT Project Manager</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label for="coverMessage">Cover Letter / Message</label>
-          <textarea name="Cover Letter" id="coverMessage" placeholder="Tell us why you would be a great fit for this role..."></textarea>
+          <label for="coverMessage">Brief Introduction</label>
+          <textarea name="Cover Letter" id="coverMessage" placeholder="Years of experience, key skills, current location..."></textarea>
         </div>
         <div class="form-group">
-          <label for="cvFile">Upload CV (PDF, DOC, DOCX) *</label>
+          <label for="cvFile">Upload CV (PDF or Word) *</label>
           <input type="file" name="CV" id="cvFile" accept=".pdf,.doc,.docx" required>
-          <span class="file-hint">Maximum 5 MB. PDF or Word documents only.</span>
+          <span class="file-hint">Max 5 MB. PDF or Word only.</span>
         </div>
       </form>
-      <div id="modalSuccessMsg" class="modal-success">
-        <i class="fas fa-check-circle"></i> Application submitted! We'll be in touch within 5 business days.
-      </div>
-      <div id="modalErrorMsg" class="modal-error">
-        <i class="fas fa-exclamation-triangle"></i> Something went wrong. Please retry or email <strong>hr@vianthait.com</strong> directly.
-      </div>
+      <div id="modalSuccessMsg" class="modal-success"><i class="fas fa-check-circle"></i> Application received! We'll respond within 5 business days.</div>
+      <div id="modalErrorMsg" class="modal-error"><i class="fas fa-exclamation-triangle"></i> Something went wrong. Email <strong>hr@vianthait.com</strong> directly.</div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-primary modal-submit-btn" id="modalSubmitBtn" onclick="submitCareerApplication()">
@@ -475,154 +431,91 @@
 </div>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" onload="handleFormSubmitResponse()"></iframe>
 
-<!-- ── Footer ── -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Viantha<span>Solutions</span></div>
-        <p>Engineering the future of enterprise technology — AI, Banking, and Quantum innovation for global financial institutions.</p>
+        <p>Banking Technology, AI Solutions &amp; Enterprise IT Services for global financial institutions.</p>
         <div class="social-links">
           <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
           <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="about.html#leadership">Leadership</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="#">Newsroom</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Solutions</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="ai-quantum.html">AI &amp; Quantum</a></li>
+          <li><a href="staffing.html">IT Staffing</a></li>
           <li><a href="banking.html">Banking Technology</a></li>
-          <li><a href="services.html">Cloud &amp; DevOps</a></li>
-          <li><a href="services.html">Digital Transformation</a></li>
+          <li><a href="services.html">AI & Automation</a></li>
+          <li><a href="services.html">Cloud & DevOps</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>Headquarters</h4>
         <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Singapore (HQ)</li>
           <li><i class="fas fa-phone"></i><a href="tel:+6582699157"> +65 8269 9157</a></li>
-          <li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 (4322) 223-098</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 4322-223098</a></li>
           <li><i class="fas fa-envelope"></i><a href="mailto:info@vianthait.com"> info@vianthait.com</a></li>
-          <li><i class="fas fa-map-marker-alt"></i> Singapore &amp; India</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Viantha Solutions. All rights reserved.</span>
-      <span>ISO 27001 Certified &nbsp;|&nbsp; SOC 2 Compliant</span>
-    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Viantha Solutions. All rights reserved.</span><span>ISO 27001 Aligned &nbsp;|&nbsp; Globally Trusted</span></div>
   </div>
 </footer>
 
 <script>
-  /* ── Navbar ── */
-  const navbar    = document.getElementById('navbar');
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
+  const navbar=document.getElementById('navbar'),hamburger=document.getElementById('hamburger'),navMenu=document.getElementById('navMenu');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+  hamburger.addEventListener('click',()=>{const o=navMenu.classList.toggle('active');hamburger.classList.toggle('active',o);hamburger.setAttribute('aria-expanded',o);});
+  navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navMenu.classList.remove('active');hamburger.classList.remove('active');hamburger.setAttribute('aria-expanded','false');}));
 
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  hamburger.addEventListener('click', () => {
-    const open = navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active', open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-
-  navMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  /* ── Career Modal ── */
-  const modal = document.getElementById('careerModal');
-  let isSubmitting = false;
-
-  function openCareerModal() {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('modalSuccessMsg').classList.remove('show');
-    document.getElementById('modalErrorMsg').classList.remove('show');
-  }
-
-  function closeCareerModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    document.getElementById('careerForm').reset();
-    document.getElementById('modalSuccessMsg').classList.remove('show');
-    document.getElementById('modalErrorMsg').classList.remove('show');
-    const btn = document.getElementById('modalSubmitBtn');
-    btn.innerHTML = 'Submit Application <i class="fas fa-upload"></i>';
-    btn.disabled = false;
-    isSubmitting = false;
-  }
-
-  modal.addEventListener('click', e => { if (e.target === modal) closeCareerModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeCareerModal(); });
-
-  function handleFormSubmitResponse() {
-    if (!isSubmitting) return;
-    document.getElementById('modalSuccessMsg').classList.add('show');
-    resetModalForm();
-    setTimeout(closeCareerModal, 3500);
-  }
-
-  function resetModalForm() {
-    ['fullName','applicantEmail','applicantPhone','positionModal','coverMessage','cvFile']
-      .forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
-    const btn = document.getElementById('modalSubmitBtn');
-    btn.innerHTML = 'Submit Application <i class="fas fa-upload"></i>';
-    btn.disabled = false;
-    isSubmitting = false;
-  }
-
-  function submitCareerApplication() {
-    if (isSubmitting) return;
-    const fullName  = document.getElementById('fullName').value.trim();
-    const email     = document.getElementById('applicantEmail').value.trim();
-    const position  = document.getElementById('positionModal').value;
-    const cvFile    = document.getElementById('cvFile').files[0];
-    const emailRe   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!fullName || !email || !position || !cvFile || !emailRe.test(email)) {
-      alert('Please complete all required fields (Full Name, Email, Position, CV) before submitting.');
-      return;
-    }
-    if (cvFile.size > 5 * 1024 * 1024) {
-      alert('CV file must be smaller than 5 MB.');
-      return;
-    }
-
-    isSubmitting = true;
-    const btn = document.getElementById('modalSubmitBtn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting…';
-    btn.disabled = true;
-
+  const modal=document.getElementById('careerModal');
+  let isSubmitting=false;
+  function openCareerModal(){modal.classList.add('active');document.body.style.overflow='hidden';}
+  function closeCareerModal(){modal.classList.remove('active');document.body.style.overflow='';document.getElementById('careerForm').reset();['modalSuccessMsg','modalErrorMsg'].forEach(id=>document.getElementById(id).classList.remove('show'));resetModalBtn();isSubmitting=false;}
+  function resetModalBtn(){const b=document.getElementById('modalSubmitBtn');b.innerHTML='Submit Application <i class="fas fa-upload"></i>';b.disabled=false;}
+  modal.addEventListener('click',e=>{if(e.target===modal)closeCareerModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('active'))closeCareerModal();});
+  function handleFormSubmitResponse(){if(!isSubmitting)return;document.getElementById('modalSuccessMsg').classList.add('show');resetModalBtn();isSubmitting=false;setTimeout(closeCareerModal,3500);}
+  function submitCareerApplication(){
+    if(isSubmitting)return;
+    const n=document.getElementById('fullName').value.trim(),e=document.getElementById('applicantEmail').value.trim(),p=document.getElementById('positionModal').value,f=document.getElementById('cvFile').files[0];
+    if(!n||!e||!p||!f||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){alert('Please fill all required fields.');return;}
+    if(f.size>5*1024*1024){alert('CV must be smaller than 5 MB.');return;}
+    isSubmitting=true;const b=document.getElementById('modalSubmitBtn');b.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting…';b.disabled=true;
     document.getElementById('careerForm').submit();
-
-    // Fallback: show success after 5 s if iframe doesn't fire
-    setTimeout(() => {
-      if (isSubmitting) {
-        document.getElementById('modalSuccessMsg').classList.add('show');
-        resetModalForm();
-        setTimeout(closeCareerModal, 3500);
-      }
-    }, 5000);
+    setTimeout(()=>{if(isSubmitting){document.getElementById('modalSuccessMsg').classList.add('show');resetModalBtn();isSubmitting=false;setTimeout(closeCareerModal,3500);}},5000);
   }
 </script>
+
+
+
+
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
+(function () {
+  var s1 = document.createElement("script");
+  var s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6a34b43051481a1d48758f8f/1jretvo5t';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!-- End Tawk.to Live Chat -->
 </body>
 </html>

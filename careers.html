@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Careers | Join Viantha Solutions</title>
-  <meta name="description" content="Build your career at Viantha Solutions — AI, Quantum Computing, Banking Technology, Cloud Engineering and more. Apply online today.">
+  <title>Careers at Viantha Solutions | Join Our Engineering Team</title>
+  <meta name="description" content="Build your career at Viantha Solutions — Banking Technology, AI Engineering, Cloud, DevOps and enterprise IT. Apply online today.">
   <link rel="canonical" href="https://www.vianthait.com/careers.html">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -145,6 +145,16 @@
 <body>
 
 <!-- ── Navbar ── -->
+      <div class="utility-right">
+        <span class="utility-tagline">Banking Technology · AI · Enterprise IT</span>
+        <div class="utility-social">
+          <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <nav class="navbar" id="navbar">
   <div class="container">
     <div class="nav-content">
@@ -154,14 +164,15 @@
         <div class="logo-fallback" style="display:none">Viantha<span>Solutions</span></div>
       </a>
       <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="ai-quantum.html">AI &amp; Quantum</a>
-        <a href="banking.html">Banking</a>
-        <a href="careers.html" class="active" aria-current="page">Careers</a>
-        <a href="contact.html" class="nav-cta">Contact Us</a>
-      </nav>
+ <a href="index.html">Home</a>
+ <a href="about.html">About</a>
+ <a href="banking.html">Banking Tech</a>
+ <a href="services.html">Services</a>
+ <a href="staffing.html">IT Staffing</a>
+ <a href="careers.html" class="active">Careers</a>
+ <span class="nav-sep"></span>
+ <a href="contact.html" class="nav-cta">Contact Us</a>
+ </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -174,8 +185,8 @@
   <div class="container">
     <div class="page-hero-content">
       <div class="tag tag-dark">Join Our Team</div>
-      <h1>Build the Future of <span style="color:var(--green-light)">Enterprise Technology</span></h1>
-      <p>Work with cutting-edge AI, Quantum Computing, and Banking Technology alongside world-class engineers and domain experts from across the globe.</p>
+      <h1>Build What Matters —<br><span style="color:var(--green-light)">Join the Viantha Team.</span></h1>
+      <p>Work on banking technology, AI systems, and enterprise platforms that power real financial institutions. We are building something meaningful — and we want exceptional people to build it with us.</p>
     </div>
   </div>
 </section>
@@ -248,13 +259,13 @@
 
       <div class="job-card">
         <span class="job-location"><i class="fas fa-map-marker-alt"></i> India / Remote</span>
-        <h3>Quantum Computing Researcher</h3>
+        <h3>AI Research Engineer</h3>
         <p>Develop hybrid quantum-classical algorithms for portfolio optimisation, risk modelling, and post-quantum cryptography.</p>
         <div class="job-meta">
           <span class="job-badge"><i class="fas fa-briefcase"></i> Full-time</span>
           <span class="job-badge"><i class="fas fa-clock"></i> Immediate Start</span>
         </div>
-        <button class="apply-btn" onclick="setPositionAndScroll('Quantum Computing Researcher')">
+        <button class="apply-btn" onclick="setPositionAndScroll('AI Research Engineer')">
           Apply Now <i class="fas fa-arrow-right"></i>
         </button>
       </div>
@@ -373,7 +384,7 @@
             <select name="Position" id="position" required>
               <option value="">Select a position</option>
               <option>Senior AI/ML Engineer</option>
-              <option>Quantum Computing Researcher</option>
+              <option>AI Research Engineer</option>
               <option>Full Stack Developer</option>
               <option>Cloud Architect</option>
               <option>Banking Technology Consultant</option>
@@ -442,19 +453,16 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>Headquarters</h4>
         <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Singapore (HQ)</li>
           <li><i class="fas fa-phone"></i><a href="tel:+6582699157"> +65 8269 9157</a></li>
-          <li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 (4322) 223-098</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 4322-223098</a></li>
           <li><i class="fas fa-envelope"></i><a href="mailto:info@vianthait.com"> info@vianthait.com</a></li>
-          <li><i class="fas fa-map-marker-alt"></i> Singapore &amp; India</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Viantha Solutions. All rights reserved.</span>
-      <span>ISO 27001 Certified &nbsp;|&nbsp; SOC 2 Compliant</span>
-    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Viantha Solutions. All rights reserved.</span><span>ISO 27001 Aligned &nbsp;|&nbsp; Globally Trusted</span></div>
   </div>
 </footer>
 
@@ -465,7 +473,7 @@
   const navMenu   = document.getElementById('navMenu');
 
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 
   hamburger.addEventListener('click', () => {
@@ -556,5 +564,25 @@
     }
   }
 </script>
+
+
+
+
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
+(function () {
+  var s1 = document.createElement("script");
+  var s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6a34b43051481a1d48758f8f/1jretvo5t';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!-- End Tawk.to Live Chat -->
 </body>
 </html>
