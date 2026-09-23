@@ -65,8 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Observe elements with animation classes
     document.querySelectorAll('.fade-in, .fade-in-up, .slide-in-left, .slide-in-right').forEach(el => {
+        const cs = getComputedStyle(el);
+        const fallbackName = el.classList.contains('slide-in-left') ? 'slideInLeft'
+                           : el.classList.contains('slide-in-right') ? 'slideInRight'
+                           : 'fadeIn';
+        // Detect multiple comma-separated animations (we only animate a single one)
+        const multi = (cs.animationDuration || '').indexOf(',') !== -1;
+        const name = (!multi && cs.animationName && cs.animationName !== 'none') ? cs.animationName : fallbackName;
+        const duration = (!multi && cs.animationDuration) ? cs.animationDuration : '1s';
+        const timing = (!multi && cs.animationTimingFunction) ? cs.animationTimingFunction : 'ease-out';
+        const delay = (!multi && cs.animationDelay) ? cs.animationDelay : '0s';
+        // Full shorthand: <name> <duration> <timing-function> <delay> <iteration> <direction> <fill-mode>
+        // "forwards" keeps the element visible after the animation ends (opacity was set to 0 above).
+        el.dataset.animation = name + ' ' + duration + ' ' + timing + ' ' + delay + ' 1 normal forwards';
         el.style.opacity = '0';
-        el.dataset.animation = el.style.animation;
         observer.observe(el);
     });
 });

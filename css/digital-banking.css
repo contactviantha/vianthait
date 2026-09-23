@@ -1,0 +1,307 @@
+/* ================================================================
+   VIANTHA SOLUTIONS — digital-banking.css
+   Component classes for the Digital Banking Solutions page
+   Loaded AFTER css/style.css — uses the same design tokens
+   ================================================================ */
+
+/* ── Service cards grid — stacks vertically on mobile ─────────── */
+.db-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* ── Service card ─────────────────────────────────────────────── */
+.db-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.db-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--green-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.db-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+.db-card:hover::before { transform: scaleX(1); }
+
+.db-card-icon {
+  width: 48px; height: 48px;
+  background: rgba(26,95,212,0.09);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.db-card h3 { margin-bottom: 10px; font-size: 1.05rem; }
+.db-card p  { font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; flex: 1; }
+
+/* Compliance / positioning tag — pinned to the bottom of each card */
+.db-card-tag {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 60px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: rgba(76,175,80,0.12);
+  color: var(--green);
+}
+
+/* ── Ecosystem row ────────────────────────────────────────────── */
+.db-label {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 28px;
+}
+.db-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.db-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border);
+  background: var(--off-white);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+.db-pill i { color: var(--blue); font-size: 0.9rem; }
+.db-pill:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(26,95,212,0.06);
+}
+
+/* ── How it works — 3 steps ───────────────────────────────────── */
+.db-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.db-step {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 26px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+.db-step:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.db-step-num {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 4px 12px rgba(26,95,212,0.3);
+}
+.db-step h3 { font-size: 1rem; margin-bottom: 8px; }
+.db-step p  { font-size: 0.88rem; line-height: 1.65; margin-bottom: 14px; }
+.db-step-time {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(26,95,212,0.09);
+  padding: 5px 14px;
+  border-radius: 60px;
+}
+
+/* ── Use case cards ───────────────────────────────────────────── */
+.db-usecases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.db-usecase {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+}
+.db-usecase h3 {
+  font-size: 0.98rem;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+.db-usecase p { font-size: 0.9rem; line-height: 1.75; color: var(--text-light); }
+
+/* ── Demo banner ──────────────────────────────────────────────── */
+.db-demo-banner {
+  background: linear-gradient(120deg, var(--navy) 0%, #0f3355 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+.db-demo-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: rgba(26,95,212,0.22);
+  filter: blur(50px);
+}
+.db-demo-banner h2, .db-demo-banner p {
+  position: relative;
+  z-index: 1;
+}
+.db-demo-banner h2 { color: var(--white); margin-bottom: 12px; }
+.db-demo-banner p  { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+.db-demo-banner .btn-outline {
+  position: relative;
+  z-index: 1;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: var(--white);
+}
+.db-demo-link[aria-disabled="true"] {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ── Contact form (careers-style, FormSubmit) ─────────────────── */
+.db-contact-wrap {
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+.db-contact-wrap h2 { margin-bottom: 6px; }
+.db-contact-wrap > p { font-size: 0.9rem; margin-bottom: 28px; }
+.db-submit { width: 100%; justify-content: center; }
+.db-form-success {
+  display: none;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  color: #15803d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 16px;
+  align-items: center;
+  gap: 10px;
+}
+.db-form-success.show { display: flex; }
+.db-form-error {
+  display: none;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  color: #b91c1c;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 16px;
+  align-items: center;
+  gap: 10px;
+}
+.db-form-error.show { display: flex; }
+
+/* breadcrumb — defined in style.css */
+
+/* ── Contact form (careers-style fields) ──────────────────────── */
+.db-contact-wrap .career-form { width: 100%; max-width: 520px; margin: 0 auto; }
+.db-contact-wrap .form-group { margin-bottom: 18px; }
+.db-contact-wrap .form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.db-contact-wrap .form-group input,
+.db-contact-wrap .form-group select,
+.db-contact-wrap .form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color 0.2s;
+}
+.db-contact-wrap .form-group input:focus,
+.db-contact-wrap .form-group select:focus,
+.db-contact-wrap .form-group textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26,95,212,0.10);
+}
+.db-contact-wrap .form-group textarea { resize: vertical; min-height: 110px; }
+.db-contact-wrap .form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23475569'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .db-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .db-contact-wrap { padding: 32px 24px; }
+  .db-cards-grid,
+  .db-usecases { grid-template-columns: 1fr; }
+}

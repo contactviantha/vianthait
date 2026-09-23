@@ -18,6 +18,12 @@
   --off-white:   #f8fafc;
   --light-gray:  #eef2f6;
   --border:      #e2e8f0;
+  /* Legacy tokens used by older pages (e.g. ai-quantum.html) */
+  --gray:        #64748b;
+  --light:       #f8fafc;
+  --dark:        #1e293b;
+  --primary:     #1a5fd4;
+  --gradient-1:  linear-gradient(90deg, #1a5fd4, #4caf50);
   --text:        #1e293b;
   --text-light:  #475569;
   --mid-gray:    #64748b;
@@ -70,6 +76,17 @@ h2 { font-size: clamp(1.55rem, 3vw, 2.1rem); }
 h3 { font-size: 1.1rem; }
 h4 { font-size: 0.95rem; }
 p  { color: var(--text-light); line-height: 1.75; }
+
+/* Gradient accent text — with solid fallback so words are always visible
+   (used by ai-quantum.html headings: "Innovation Lab", "Automation", etc.) */
+.gradient-text {
+  color: var(--navy);
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text strong { color: inherit; }
 
 /* ── Tag / Pill badge ─────────────────────────────────────────── */
 .tag {
@@ -142,6 +159,7 @@ p  { color: var(--text-light); line-height: 1.75; }
   background: transparent;
 }
 .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
 
 /* ── Navbar ───────────────────────────────────────────────────── */
 /* ── Navbar — single-tier, HCLTech-style ─────────────────────────── */
@@ -687,6 +705,21 @@ p  { color: var(--text-light); line-height: 1.75; }
   flex-wrap: wrap;
   gap: 8px;
 }
+.footer-gstin {
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  background: #0f172a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.footer-gstin strong {
+  color: #ffffff;
+  font-weight: 800;
+}
 
 /* ── Forms ────────────────────────────────────────────────────── */
 .form-row {
@@ -808,3 +841,165 @@ p  { color: var(--text-light); line-height: 1.75; }
   .form-row    { grid-template-columns: 1fr; }
   .hero-stats  { gap: 20px; }
 }
+
+/* Dropdown nav */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-dropdown > a i {
+  font-size: 0.62rem;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+.nav-dropdown:hover > a i,
+.nav-dropdown:focus-within > a i { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 250px;
+  background: #0a2540;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  padding: 8px;
+  z-index: 1001;
+  transition: all 0.22s ease;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 30px;
+  width: 12px;
+  height: 12px;
+  background: #0a2540;
+  border-left: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  transform: rotate(45deg);
+}
+.nav-dropdown:hover > .nav-dropdown-menu,
+.nav-dropdown:focus-within > .nav-dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 8px;
+  letter-spacing: 0.01em;
+  transition: color 0.18s, background 0.18s;
+}
+.nav-dropdown-menu a:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.08);
+}
+@media (max-width: 992px) {
+  .nav-dropdown-menu { top: calc(100% + 8px); }
+}
+@media (max-width: 860px) {
+  /* Collapse dropdown hidden by default on mobile */
+  .nav-dropdown-menu {
+    display: none;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid rgba(255,255,255,0.15);
+    min-width: auto;
+    width: 100%;
+    padding: 4px 0 4px 12px;
+    margin: 4px 0 0 14px;
+    background: transparent;
+    border-radius: 0;
+  }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu::before { display: none; }
+  .nav-dropdown-menu a {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    border-radius: 6px;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+  }
+  .nav-dropdown > a { width: 100%; }
+  .nav-dropdown > a i { opacity: 0.6; }
+  .nav-menu { overflow-y: auto; }
+}
+
+/* ── Reveal animations (driven by js/main.js) ─────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.fade-in, .fade-in-up { animation: fadeIn 1s ease-out; }
+.slide-in-left  { animation: slideInLeft 1s ease-out; }
+.slide-in-right { animation: slideInRight 1s ease-out; }
+
+/* ── Utility bar (used by mutual-funds, personal-loans) ────────── */
+.utility-bar {
+  background: var(--navy);
+  padding: 8px 0;
+  font-size: 0.75rem;
+}
+.utility-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+.utility-tagline { color: rgba(255,255,255,0.6); font-weight: 500; }
+.utility-social { display: flex; gap: 10px; }
+.utility-social a {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+  font-size: 0.8rem;
+}
+.utility-social a:hover { color: var(--white); }
+
+
+/* ── Breadcrumb (shared — used by api-integration, digital-banking, etc.) */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+  color: rgba(255,255,255,0.75);
+}
+.breadcrumb a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.15s;
+}
+.breadcrumb a:hover { color: var(--white); }
+.breadcrumb span { opacity: 0.45; }
+
+/* ── Footer GSTIN ─────────────────────────────────────────────── */
+.footer-gstin { font-size: 0.75rem; color: rgba(255,255,255,0.35); }

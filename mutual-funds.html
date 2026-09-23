@@ -3,46 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banking Technology Solutions | Core Banking, Payments & RegTech | Viantha</title>
-  <meta name="description" content="Viantha Solutions delivers banking technology consulting — core banking integration, RBI compliance systems, UPI/payment tech, and fintech development for banks and NBFCs in India.">
+  <title>Mutual Funds & Wealth Technology Solutions | AMC & Distributor Platforms | Viantha</title>
+  <meta name="description" content="Viantha Solutions delivers mutual fund technology — distributor platforms, AMC integration, SIP automation, KYC/AML workflows, and SEBI-compliant wealth management infrastructure for asset managers, RIAs, and fintech distributors.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    .banking-solutions { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-    .banking-solution {
+    .wealth-solutions { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+    .wealth-solution {
       background:var(--white); border-radius:var(--radius-md); padding:28px 24px;
       border:1px solid var(--border); transition:var(--transition); position:relative; overflow:hidden;
     }
-    .banking-solution::before {
+    .wealth-solution::before {
       content:''; position:absolute; top:0;left:0;right:0; height:3px;
       background:linear-gradient(90deg,var(--blue),var(--green));
       transform:scaleX(0); transform-origin:left; transition:transform var(--transition);
     }
-    .banking-solution:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
-    .banking-solution:hover::before { transform:scaleX(1); }
-    .banking-solution i { font-size:1.6rem; color:var(--blue); margin-bottom:14px; display:block; }
-    .banking-solution h3 { font-size:1rem; margin-bottom:8px; }
-    .banking-solution p { font-size:0.85rem; color:var(--text-light); line-height:1.65; }
-    .banking-solution ul { list-style:none; margin-top:12px; }
-    .banking-solution ul li { font-size:0.82rem; color:var(--text-light); padding:3px 0; display:flex; gap:8px; }
-    .banking-solution ul li::before { content:'▹'; color:var(--blue); font-weight:bold; flex-shrink:0; }
-    .compliance-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-    .compliance-badge { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 14px; text-align:center; }
-    .compliance-badge i { font-size:1.4rem; color:var(--blue); margin-bottom:10px; display:block; }
-    .compliance-badge h4 { font-size:0.83rem; margin-bottom:3px; }
-    .compliance-badge p { font-size:0.75rem; color:var(--text-light); }
-    .client-type-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .ct-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); padding:22px 18px; text-align:center; }
-    .ct-card i { font-size:1.6rem; color:var(--blue); margin-bottom:12px; display:block; }
-    .ct-card h4 { font-size:0.9rem; margin-bottom:6px; }
-    .ct-card p { font-size:0.82rem; color:var(--text-light); line-height:1.55; }
-    @media(max-width:900px){ .banking-solutions{grid-template-columns:1fr;} .compliance-grid{grid-template-columns:1fr 1fr;} .client-type-grid{grid-template-columns:1fr 1fr;} }
-    @media(max-width:500px){ .compliance-grid{grid-template-columns:1fr;} .client-type-grid{grid-template-columns:1fr;} }
+    .wealth-solution:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+    .wealth-solution:hover::before { transform:scaleX(1); }
+    .wealth-solution i { font-size:1.6rem; color:var(--blue); margin-bottom:14px; display:block; }
+    .wealth-solution h3 { font-size:1rem; margin-bottom:8px; }
+    .wealth-solution p { font-size:0.85rem; color:var(--text-light); line-height:1.65; }
+    .wealth-solution ul { list-style:none; margin-top:12px; }
+    .wealth-solution ul li { font-size:0.82rem; color:var(--text-light); padding:3px 0; display:flex; gap:8px; }
+    .wealth-solution ul li::before { content:'▹'; color:var(--blue); font-weight:bold; flex-shrink:0; }
+    .wealth-compliance-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .wealth-compliance-badge { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-sm); padding:20px 14px; text-align:center; }
+    .wealth-compliance-badge i { font-size:1.4rem; color:var(--blue); margin-bottom:10px; display:block; }
+    .wealth-compliance-badge h4 { font-size:0.83rem; margin-bottom:3px; }
+    .wealth-compliance-badge p { font-size:0.75rem; color:var(--text-light); }
+    .investor-type-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .it-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); padding:22px 18px; text-align:center; }
+    .it-card i { font-size:1.6rem; color:var(--blue); margin-bottom:12px; display:block; }
+    .it-card h4 { font-size:0.9rem; margin-bottom:6px; }
+    .it-card p { font-size:0.82rem; color:var(--text-light); line-height:1.55; }
+    @media(max-width:900px){ .wealth-solutions{grid-template-columns:1fr;} .wealth-compliance-grid{grid-template-columns:1fr 1fr;} .investor-type-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:500px){ .wealth-compliance-grid{grid-template-columns:1fr;} .investor-type-grid{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
-      <div class="utility-right">
-        <span class="utility-tagline">Banking Technology · AI · Enterprise IT</span>
+  <div class="utility-bar">
+  <div class="container">
+    <div class="utility-right">
+        <span class="utility-tagline">Mutual Funds · Wealth Technology · RegTech</span>
         <div class="utility-social">
           <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -62,9 +64,9 @@
  <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
  <a href="index.html" >Home</a>
  <a href="about.html" >About</a>
- <a href="banking.html" class="active" aria-current="page">Banking Tech</a>
+ <a href="banking.html" >Banking Tech</a>
  <div class="nav-dropdown">
- <a href="services.html" >Services <i class="fas fa-caret-down"></i></a>
+ <a href="services.html" class="active" aria-current="page">Services <i class="fas fa-caret-down"></i></a>
  <div class="nav-dropdown-menu">
  <a href="api-integration.html">API Integration</a>
  <a href="digital-banking.html">Digital Banking Solutions</a>
@@ -89,9 +91,9 @@
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-content">
-      <div class="tag">Banking Technology</div>
-      <h1>Banking Technology —<br><span style="color:#4caf50">Built for the Institutions That Matter.</span></h1>
-      <p>Core banking modernisation, payment infrastructure, regulatory compliance, and AI-powered banking solutions — engineered for financial institutions that demand precision, security, and scale.</p>
+      <div class="tag">Mutual Funds &amp; Wealth Technology</div>
+      <h1>Mutual Funds &amp; Wealth Tech —<br><span style="color:#4caf50">Powering the Next Generation of Investing.</span></h1>
+      <p>Distributor platforms, AMC integrations, SIP automation, and SEBI-compliant wealth management infrastructure — engineered for asset managers, RIAs, and investment platforms.</p>
     </div>
   </div>
 </section>
@@ -101,102 +103,102 @@
   <div class="container">
     <div class="section-header">
       <div class="tag">Who We Serve</div>
-      <h2>Built for India's Banking Ecosystem</h2>
-      <p>From regional banks to global NBFCs and fintech companies building the next generation of financial products</p>
+      <h2>Built for India's Wealth &amp; Asset Management Ecosystem</h2>
+      <p>From asset management companies to MF distributors, RIAs, and investing apps building the next generation of wealth products</p>
     </div>
-    <div class="client-type-grid">
-      <div class="ct-card">
-        <i class="fas fa-university"></i>
-        <h4>Cooperative Banks</h4>
-        <p>District and urban cooperative banks needing IT support, core banking integration, and digital banking capabilities.</p>
+    <div class="investor-type-grid">
+      <div class="it-card">
+        <i class="fas fa-chart-pie"></i>
+        <h4>Asset Management Companies</h4>
+        <p>AMC transaction systems, distributor integrations, and investor servicing platforms for mutual fund houses.</p>
       </div>
-      <div class="ct-card">
-        <i class="fas fa-hand-holding-usd"></i>
-        <h4>NBFCs & MFIs</h4>
-        <p>Non-banking finance companies and microfinance institutions building loan management, collections, and KYC systems.</p>
+      <div class="it-card">
+        <i class="fas fa-store"></i>
+        <h4>MF Distributors & RIAs</h4>
+        <p>Advisor dashboards, client onboarding, commission reconciliation, and compliance-ready advisory workflows.</p>
       </div>
-      <div class="ct-card">
+      <div class="it-card">
         <i class="fas fa-mobile-alt"></i>
-        <h4>Fintech Startups</h4>
-        <p>Early-stage and growth-stage fintech companies building payment, lending, or insurance products on top of banking APIs.</p>
+        <h4>Wealth & Investing Fintech</h4>
+        <p>Direct mutual fund platforms, SIP automation, goal-based investing, and portfolio analytics for digital-first investors.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BANKING SOLUTIONS -->
+<!-- WEALTH SOLUTIONS -->
 <section class="section section-gray">
   <div class="container">
     <div class="section-header">
       <div class="tag">Solutions</div>
-      <h2>Banking Technology Services</h2>
-      <p>Practical, India-compliant solutions for the challenges banks and NBFCs face today</p>
+      <h2>Mutual Funds &amp; Wealth Technology Services</h2>
+      <p>Practical, market-compliant solutions for the challenges asset managers and distributors face today</p>
     </div>
-    <div class="banking-solutions">
-      <div class="banking-solution">
+    <div class="wealth-solutions">
+      <div class="wealth-solution">
         <i class="fas fa-university"></i>
-        <h3>Core Banking Integration & Support</h3>
-        <p>Implementation support, customisation, and ongoing maintenance for core banking platforms commonly used by Indian banks and NBFCs.</p>
+        <h3>AMC Transaction Systems</h3>
+        <p>Core transaction processing, investor onboarding, redemption, switches, and servicing integration for mutual fund asset management.</p>
         <ul>
-          <li>Finacle, BaNCS, Temenos T24 integration</li>
-          <li>API layer development for third-party connectivity</li>
-          <li>Data migration and system upgrades</li>
-          <li>L2/L3 production support and monitoring</li>
+          <li>Purchase, SIP, switch, and redemption workflows</li>
+          <li>Investor KYC and FATCA/CRS capture</li>
+          <li>NAV processing and transaction exception handling</li>
+          <li>RTA (CAMS / KFintech) integration</li>
         </ul>
       </div>
-      <div class="banking-solution">
-        <i class="fas fa-bolt"></i>
-        <h3>Payment Systems — UPI, IMPS & NEFT</h3>
-        <p>Implementation and integration of real-time payment systems compliant with NPCI and RBI guidelines for Indian banks and payment aggregators.</p>
+      <div class="wealth-solution">
+        <i class="fas fa-plug"></i>
+        <h3>MF Distributor & B2B Platforms</h3>
+        <p>Distributor onboarding, client account setup, order management, and commission processing for MF resellers and advisors.</p>
         <ul>
-          <li>UPI switch integration and testing</li>
-          <li>IMPS / NEFT / RTGS connectivity</li>
-          <li>Payment reconciliation automation</li>
-          <li>NPCI compliance and certification support</li>
+          <li>Advisor and sub-broker onboarding portals</li>
+          <li>Consolidated client holdings and transaction views</li>
+          <li>Commission and trail fee reconciliation</li>
+          <li>RIA compliance-ready advisory workflows</li>
         </ul>
       </div>
-      <div class="banking-solution">
+      <div class="wealth-solution">
+        <i class="fas fa-sync-alt"></i>
+        <h3>SIP Automation & Recurring Investing</h3>
+        <p>End-to-end automated SIP infrastructure — enrolment, bank mandate processing, debits, follow-on purchases, and notifications.</p>
+        <ul>
+          <li>eNACH / NACH mandate registration</li>
+          <li>SIP date management and portfolio tracking</li>
+          <li>Advance investment and top-up SIPs</li>
+          <li>Payments via UPI AutoPay and NetBanking</li>
+        </ul>
+      </div>
+      <div class="wealth-solution">
+        <i class="fas fa-user-check"></i>
+        <h3>Investor KYC & Compliance</h3>
+        <p>SEBI-compliant KYC and AML workflows for mutual fund onboarding, covering CKYC, FATCA, and ongoing due diligence.</p>
+        <ul>
+          <li>eKYC via Aadhaar OTP and offline XML</li>
+          <li>PAN verification and CKYC registration</li>
+          <li>FATCA / CRS declaration capture</li>
+          <li>AML screening and PEP monitoring</li>
+        </ul>
+      </div>
+      <div class="wealth-solution">
+        <i class="fas fa-chart-line"></i>
+        <h3>Portfolio Analytics & Investor Apps</h3>
+        <p>Investor-facing experiences with live NAV, holdings, performance, and goal-based investing — across web and mobile.</p>
+        <ul>
+          <li>Consolidated portfolio and XIRR reporting</li>
+          <li>Goal-based investing and rebalancing advice</li>
+          <li>Investor mobile apps (iOS + Android)</li>
+          <li>Digital onboarding journeys and statements</li>
+        </ul>
+      </div>
+      <div class="wealth-solution">
         <i class="fas fa-shield-alt"></i>
-        <h3>RBI Compliance & RegTech</h3>
-        <p>Technology solutions to meet RBI, SEBI, and IRDAI regulatory requirements — reducing manual compliance effort and audit risk.</p>
+        <h3>RegTech & Audit Infrastructure</h3>
+        <p>Technology to satisfy SEBI, AMFI, KYC Registration Agency, and data protection requirements across the investment lifecycle.</p>
         <ul>
-          <li>KYC / eKYC automation (Aadhaar OTP, CKYC)</li>
-          <li>AML transaction monitoring systems</li>
-          <li>Regulatory reporting automation (RBI returns)</li>
-          <li>FEMA and PMLA compliance workflows</li>
-        </ul>
-      </div>
-      <div class="banking-solution">
-        <i class="fas fa-code-branch"></i>
-        <h3>Banking API Development & Integration</h3>
-        <p>Custom API development to connect banking systems with fintech partners, aggregators, and third-party applications securely and reliably.</p>
-        <ul>
-          <li>REST / SOAP banking API development</li>
-          <li>Account aggregator (AA) framework integration</li>
-          <li>OCEN (Open Credit Enablement Network) APIs</li>
-          <li>Partner and distributor API portals</li>
-        </ul>
-      </div>
-      <div class="banking-solution">
-        <i class="fas fa-robot"></i>
-        <h3>AI & Automation for Banking</h3>
-        <p>Intelligent automation solutions for banking operations — reducing manual processing time, error rates, and operational cost.</p>
-        <ul>
-          <li>Loan application processing automation</li>
-          <li>Document verification and extraction (OCR + AI)</li>
-          <li>Fraud rule engine development</li>
-          <li>Customer service chatbot for banking queries</li>
-        </ul>
-      </div>
-      <div class="banking-solution">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Digital Banking Products</h3>
-        <p>End-to-end development of mobile banking apps, internet banking portals, and digital onboarding journeys for banks and NBFCs.</p>
-        <ul>
-          <li>Mobile banking app (iOS + Android)</li>
-          <li>Digital account opening and eKYC</li>
-          <li>Internet banking portal development</li>
-          <li>Digital loan origination systems</li>
+          <li>SEBI / AMFI guideline mapping</li>
+          <li>Regulatory filing and reporting automation</li>
+          <li>Data localisation and consent management (DPDP)</li>
+          <li>Audit trails and role-based access control</li>
         </ul>
       </div>
     </div>
@@ -208,26 +210,26 @@
   <div class="container">
     <div class="section-header">
       <div class="tag">Regulatory Knowledge</div>
-      <h2>Deep Understanding of Indian Banking Regulations</h2>
-      <p>Our team understands the specific compliance requirements that Indian banks and NBFCs must navigate</p>
+      <h2>Compliance-Grade Wealth Infrastructure</h2>
+      <p>Our team understands the specific regulatory environment that mutual fund platforms and asset managers must navigate</p>
     </div>
-    <div class="compliance-grid">
-      <div class="compliance-badge">
-        <i class="fas fa-university"></i>
-        <h4>RBI Guidelines</h4>
-        <p>Master circulars, IT framework, cyber security guidelines</p>
+    <div class="wealth-compliance-grid">
+      <div class="wealth-compliance-badge">
+        <i class="fas fa-file-contract"></i>
+        <h4>SEBI / AMFI</h4>
+        <p>SEBI MF regulations, circulars, and AMFI industry standards</p>
       </div>
-      <div class="compliance-badge">
+      <div class="wealth-compliance-badge">
         <i class="fas fa-id-card"></i>
         <h4>KYC / AML</h4>
-        <p>PMLA, FATF, CKYC registry, eKYC compliance</p>
+        <p>PMLA, CKYC registry, FATCA / CRS, and ongoing due diligence</p>
       </div>
-      <div class="compliance-badge">
-        <i class="fas fa-credit-card"></i>
-        <h4>NPCI / UPI</h4>
-        <p>UPI circulars, IMPS guidelines, NACH integration</p>
+      <div class="wealth-compliance-badge">
+        <i class="fas fa-network-wired"></i>
+        <h4>RTA Integration</h4>
+        <p>CAMS and KFintech connectivity, ECS / NACH mandate rails</p>
       </div>
-      <div class="compliance-badge">
+      <div class="wealth-compliance-badge">
         <i class="fas fa-lock"></i>
         <h4>Data Protection</h4>
         <p>DPDP Act, RBI data localisation, IT Act compliance</p>
@@ -241,14 +243,14 @@
   <div class="container">
     <div class="section-header">
       <div class="tag">Why Viantha</div>
-      <h2>A Reliable Banking Technology Partner</h2>
+      <h2>A Reliable Wealth Technology Partner</h2>
     </div>
     <div class="feature-row">
       <div class="feature-item">
         <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
         <div>
           <h4>Domain-First Expertise</h4>
-          <p>Deep expertise in banking regulations, payment systems, and financial compliance across Asia, UK, and global markets.</p>
+          <p>Deep expertise in mutual funds, wealth management, and asset servicing compliance across India and global markets.</p>
         </div>
       </div>
       <div class="feature-item">
@@ -262,14 +264,14 @@
         <div class="feature-icon"><i class="fas fa-handshake"></i></div>
         <div>
           <h4>Honest Scoping</h4>
-          <p>We quote for what you need — not inflated estimates. Fixed-price or T&M, clearly defined before we start.</p>
+          <p>We quote for what you need — not inflated estimates. Fixed-price or T&amp;M, clearly defined before we start.</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feature-icon"><i class="fas fa-headset"></i></div>
         <div>
           <h4>Post-Delivery Support</h4>
-          <p>We don't disappear after go-live. Monthly retainer support available for all banking systems we deliver.</p>
+          <p>We don't disappear after go-live. Monthly retainer support available for all wealth platforms we deliver.</p>
         </div>
       </div>
     </div>
@@ -279,11 +281,11 @@
 <section class="section-sm">
   <div class="container">
     <div class="cta-banner">
-      <h2>Discuss Your Banking Technology Requirement</h2>
-      <p>Whether you need a full system build, API integration, or compliance support — talk to our banking tech team.</p>
+      <h2>Discuss Your Mutual Funds &amp; Wealth Technology Requirement</h2>
+      <p>Whether you need a distributor platform, AMC integration, SIP automation, or compliance support — talk to our wealth technology team.</p>
       <div class="cta-btns">
         <a href="contact.html" class="btn btn-white">Request a Consultation <i class="fas fa-arrow-right"></i></a>
-        <a href="staffing.html" class="btn btn-outline" style="color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.3)">Need Banking Tech Staff?</a>
+        <a href="staffing.html" class="btn btn-outline" style="color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.3)">Need Wealth Tech Staff?</a>
       </div>
     </div>
   </div>
@@ -336,6 +338,7 @@
     </div>
   </div>
 </footer>
+
 
 <!-- Tawk.to Live Chat -->
 <script type="text/javascript">
