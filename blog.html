@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viantha Blog | Fintech API Guides, Banking Tech &amp; Offshore Development</title>
+  <meta name="description" content="Country-by-country guides from Viantha Solutions on fintech API integration, offshore hiring, KYC, payments and banking technology for teams in the USA, Singapore, UAE, UK and beyond.">
+  <meta name="keywords" content="fintech API blog, offshore development guides, API integration company India blog, KYC API integration articles, banking technology insights">
+  <link rel="canonical" href="https://www.vianthait.com/blog.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card.live:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(26,95,212,0.3);
+    }
+    .blog-card.soon { background: var(--off-white); opacity: 0.85; }
+    .blog-flag {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .blog-card h3 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .blog-card p {
+      font-size: 0.84rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mid-gray);
+    }
+    .blog-meta .read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue);
+    }
+    .badge-soon {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray);
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+    .blog-cat {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(26,95,212,0.08);
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .blog-intro { max-width: 720px; }
+    .blog-intro p { font-size: 0.95rem; color: var(--text-light); line-height: 1.8; }
+
+    @media(max-width:960px){ .blog-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:640px){ .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+<!-- hreflang: Viantha targets all 14 markets from one English site -->
+  <link rel="alternate" hreflang="en"     href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-US"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-SG"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-AE"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-GB"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-CH"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="de-DE"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-AU"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-CA"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-NL"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="ar-SA"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="ar-QA"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="ar-KW"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-MY"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-IN"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.vianthait.com/" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/FinalLogo-With.png" alt="Viantha Solutions"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="logo-fallback" style="display:none">Viantha<span>Solutions</span></div>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="banking.html">Banking Tech</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services <i class="fas fa-caret-down"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="api-integration.html">API Integration</a>
+            <a href="digital-banking.html">Digital Banking Solutions</a>
+            <a href="personal-loans.html">Personal Loan Solutions</a>
+            <a href="mutual-funds.html">Mutual Funds &amp; Wealth Tech</a>
+            <a href="ai-quantum.html">AI &amp; Quantum</a>
+            <a href="services.html">Cloud &amp; DevOps</a>
+            <a href="services.html">Digital Transformation</a>
+            <a href="services.html">Managed Services</a>
+          </div>
+        </div>
+        <a href="staffing.html">IT Staffing</a>
+        <a href="careers.html">Careers</a>
+        <a href="blog.html" class="active" aria-current="page">Blog</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="tag tag-dark">Blog</div>
+      <h1>Field Notes on Fintech APIs,<br><span style="color:var(--green-light)">Banking Tech &amp; Offshore Teams.</span></h1>
+      <p>Practical writing from the engineers and consultants who build these systems — organised by the market you are selling into.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Intro ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header blog-intro">
+      <div class="tag tag-light">Country Guides</div>
+      <h2>One Market at a Time</h2>
+      <p>Fintech buying behaviour changes when you cross a border. A regulator in Singapore asks different questions than one in Riyadh, and a credit union CTO in Ohio cares about different integrations than a digital bank in London. Each guide below is written for the compliance rules, payment rails and hiring habits of a single country — not a global overview with the flag swapped at the top.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <a class="blog-card live" href="blog-usa.html">
+        <span class="blog-flag">🇺🇸</span>
+        <span class="blog-cat">United States</span>
+        <h3>Offshore API Developers for US Fintech Teams</h3>
+        <p>What US founders, credit unions and community banks should know before hiring an offshore team for KYC, Stripe, Plaid and payment integrations — including how engagements actually run across time zones.</p>
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 6 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-singapore.html">
+        <span class="blog-flag">🇸🇬</span>
+        <span class="blog-cat">Singapore</span>
+        <h3>MAS, MyInfo and PayNow: Building for Singapore Fintechs</h3>
+        <p>What MAS-regulated digital banks and payment firms expect from an offshore API partner, from MyInfo eKYC to SGQR reconciliation.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-uae.html">
+        <span class="blog-flag">🇦🇪</span>
+        <span class="blog-cat">United Arab Emirates</span>
+        <h3>KYC, AML and Islamic Banking APIs for UAE Fintechs</h3>
+        <p>Building inside DIFC and ADGM — Emirates ID verification, CBUAE Open Banking, and Sharia-compliant product logic.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-uk.html">
+        <span class="blog-flag">🇬🇧</span>
+        <span class="blog-cat">United Kingdom</span>
+        <h3>FCA Open Banking (PSD2) Development for UK Neobanks</h3>
+        <p>How UK fintech teams brief offshore developers on FCA obligations, strong customer authentication and variable recurring payments.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-switzerland.html">
+        <span class="blog-flag">🇨🇭</span>
+        <span class="blog-cat">Switzerland</span>
+        <h3>Swiss Banking and WealthTech API Development</h3>
+        <p>Private banks, FINMA expectations and why Swiss projects demand unusually tight documentation discipline from vendors.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-germany.html">
+        <span class="blog-flag">🇩🇪</span>
+        <span class="blog-cat">Germany</span>
+        <h3>BaFin Compliance and PSD2 Integration for German Fintechs</h3>
+        <p>Working with BaFin-regulated teams, German data protection expectations, and integrating with the SAP-centric enterprise stack.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-australia.html">
+        <span class="blog-flag">🇦🇺</span>
+        <span class="blog-cat">Australia</span>
+        <h3>CDR Open Banking API Development for Australian Fintechs</h3>
+        <p>Consent flows, ACCC accreditation pathways and NPP PayID integrations — what an offshore team needs to get right first.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-canada.html">
+        <span class="blog-flag">🇨🇦</span>
+        <span class="blog-cat">Canada</span>
+        <h3>Open Banking and OSFI Compliance for Canadian Fintechs</h3>
+        <p>Where Canada's open banking rollout stands, and how Canadian startups are structuring offshore backend work during the transition.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-netherlands.html">
+        <span class="blog-flag">🇳🇱</span>
+        <span class="blog-cat">Netherlands</span>
+        <h3>PSD2 and Dutch Bank API Integration from India</h3>
+        <p>ING and Rabobank sandboxes, DNB/AFM expectations, and the working style Dutch engineering managers prefer.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-saudi-arabia.html">
+        <span class="blog-flag">🇸🇦</span>
+        <span class="blog-cat">Saudi Arabia</span>
+        <h3>SAMA Open Banking and Vision 2030 Fintech Projects</h3>
+        <p>Mada payments, SAMA sandbox onboarding and Islamic finance product logic for teams building in the Kingdom.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-qatar.html">
+        <span class="blog-flag">🇶🇦</span>
+        <span class="blog-cat">Qatar</span>
+        <h3>QCB Open Banking APIs: What Qatari Banks Are Building</h3>
+        <p>A look at Qatar Central Bank's open banking framework and the integration work offshore partners are being asked to do.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-kuwait.html">
+        <span class="blog-flag">🇰🇼</span>
+        <span class="blog-cat">Kuwait</span>
+        <h3>CBK Digital Banking and KNET Payment Integration</h3>
+        <p>How Kuwaiti institutions are modernising core systems, and what offshore vendors should understand about CBK rules.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-malaysia.html">
+        <span class="blog-flag">🇲🇾</span>
+        <span class="blog-cat">Malaysia</span>
+        <h3>BNM Open Finance, DuitNow and GXBank API Development</h3>
+        <p>Malaysia's digital banking licences created a new wave of API demand. Here is how the work is typically scoped.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a class="blog-card live" href="blog-india.html">
+        <span class="blog-flag">🇮🇳</span>
+        <span class="blog-cat">India</span>
+        <h3>Inside India's NBFC Tech Stack: RBI, UPI and eKYC</h3>
+        <p>CKYC, AA, NACH and the RBI expectations domestic lenders work with — written for teams building or buying in India.</p>
+        
+        <div class="blog-meta">
+          <span><i class="far fa-calendar"></i> 7 Oct 2026</span>
+          <span class="read">Read <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section section-gray">
+  <div class="container" style="text-align:center">
+    <div class="section-header" style="max-width:640px;margin:0 auto">
+      <div class="tag tag-light">Talk to Us</div>
+      <h2>Have a Project in Mind?</h2>
+      <p>Tell us which market you are building for and what needs integrating. An engineer — not a salesperson — will reply.</p>
+      <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary">Contact the Team <i class="fas fa-arrow-right"></i></a>
+        <a href="services.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border)">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Viantha<span>Solutions</span></div>
+        <p>Banking Technology, AI Solutions &amp; Enterprise IT Services for global financial institutions.</p>
+        <div class="social-links">
+
+            <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+            <a href="https://www.instagram.com/contact.viantha/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+            <a href="https://www.youtube.com/@Vianthait" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+            <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="staffing.html">IT Staffing</a></li>
+          <li><a href="banking.html">Banking Technology</a></li>
+          <li><a href="digital-banking.html">Digital Banking Solutions</a></li>
+          <li><a href="api-integration.html">API Integration</a></li>
+          <li><a href="ai-quantum.html">AI &amp; Quantum</a></li>
+          <li><a href="services.html">Cloud &amp; DevOps</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Singapore (HQ) &amp; India</li>
+          <li><i class="fas fa-phone"></i><a href="tel:+6582699157"> +65 8269 9157</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 4322-223098</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@vianthait.com"> info@vianthait.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Viantha Solutions. All rights reserved.</span>
+      <span>ISO 27001 Aligned &nbsp;|&nbsp; Globally Trusted</span>
+      <span class="footer-gstin">GST Reg. No: <strong>33AALCV7992E1ZU</strong></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar    = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  hamburger.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+  });
+
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

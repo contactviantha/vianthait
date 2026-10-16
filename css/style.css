@@ -919,7 +919,7 @@ p  { color: var(--text-light); line-height: 1.75; }
     transform: none;
     box-shadow: none;
     border: none;
-    border-left: 2px solid rgba(255,255,255,0.15);
+    border-left: 2px solid rgba(10,37,64,0.25);
     min-width: auto;
     width: 100%;
     padding: 4px 0 4px 12px;
@@ -932,12 +932,12 @@ p  { color: var(--text-light); line-height: 1.75; }
   .nav-dropdown-menu a {
     padding: 9px 14px;
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.7);
+    color: var(--navy);
     border-radius: 6px;
   }
   .nav-dropdown-menu a:hover {
-    background: rgba(255,255,255,0.08);
-    color: var(--white);
+    background: rgba(26,95,212,0.08);
+    color: var(--navy);
   }
   .nav-dropdown > a { width: 100%; }
   .nav-dropdown > a i { opacity: 0.6; }

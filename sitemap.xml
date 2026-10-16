@@ -1,15 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.vianthait.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url><loc>https://www.vianthait.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-AE" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-CH" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-NL" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.vianthait.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vianthait.com/"/>
+  </url>
   <url><loc>https://www.vianthait.com/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.vianthait.com/banking.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.vianthait.com/services.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.vianthait.com/api-integration.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/banking.html</loc><priority>0.9</priority><changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-AE" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CH" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-NL" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.vianthait.com/banking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vianthait.com/banking.html"/>
+  </url>
+  <url><loc>https://www.vianthait.com/services.html</loc><priority>0.9</priority><changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-AE" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CH" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-NL" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.vianthait.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vianthait.com/services.html"/>
+  </url>
+  <url><loc>https://www.vianthait.com/api-integration.html</loc><priority>0.9</priority><changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-AE" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CH" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-NL" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.vianthait.com/api-integration.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vianthait.com/api-integration.html"/>
+  </url>
   <url><loc>https://www.vianthait.com/digital-banking.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.vianthait.com/personal-loans.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.vianthait.com/mutual-funds.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.vianthait.com/ai-quantum.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.vianthait.com/staffing.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.vianthait.com/careers.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-usa.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-singapore.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-uae.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-uk.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-switzerland.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-germany.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-australia.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-canada.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-netherlands.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-saudi-arabia.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-qatar.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-kuwait.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-malaysia.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.vianthait.com/blog-india.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.vianthait.com/contact.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
 </urlset>

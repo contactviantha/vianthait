@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBFC Fintech API Development India | RBI, UPI, eKYC</title>
+  <meta name="description" content="RBI compliant LOS development, UPI and NACH e-mandates, Aadhaar eKYC, CKYC, PAN, GST checks and Account Aggregator APIs, built in India by Viantha Solutions.">
+  <meta name="keywords" content="NBFC API integration India, RBI compliant LOS development, UPI payment API integration, Aadhaar eKYC integration developer, CKYC integration India, PAN verification API India, GST verification API fintech, loan origination system NBFC India, Account Aggregator framework integration, NACH e-mandate integration, digital lending guidelines RBI, DigiLocker API integration, Aadhaar offline KYC, fintech developer Tamil Nadu, Trichy software company India, KYC API integration India">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.vianthait.com/blog-india.html">
+  <meta property="og:title" content="NBFC Fintech API Development India | RBI, UPI, eKYC">
+  <meta property="og:description" content="What Indian NBFCs and lenders should know before scoping a lending stack — RBI digital lending guidelines, UPI, NACH, eKYC and Account Aggregator consent flows.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.vianthait.com/blog-india.html">
+  <meta property="og:image" content="https://www.vianthait.com/images/blog/india.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .article-wrap { max-width: 780px; margin: 0 auto; }
+    .article-meta {
+      display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+      font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 18px;
+    }
+    .article-meta i { margin-right: 5px; color: var(--green-light); }
+    .article-body { font-size: 0.95rem; line-height: 1.85; color: var(--text); }
+    .article-body p { margin-bottom: 18px; }
+    .article-body h2 { font-size: 1.45rem; color: var(--navy); margin: 42px 0 16px; line-height: 1.3; }
+    .article-body h3 { font-size: 1.08rem; color: var(--navy); margin: 28px 0 10px; }
+    .article-body ul, .article-body ol { margin: 0 0 20px; padding-left: 22px; }
+    .article-body li { margin-bottom: 9px; }
+    .article-body a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { color: var(--navy); }
+    .article-body strong { color: var(--navy); }
+    .takeaways {
+      background: linear-gradient(135deg,#EBF3FF,#F0FDF4);
+      border: 1.5px solid rgba(26,95,212,0.18);
+      border-radius: var(--radius-md);
+      padding: 26px 28px; margin: 30px 0;
+    }
+    .takeaways h4 {
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 14px;
+    }
+    .takeaways ul { margin: 0; padding-left: 20px; }
+    .takeaways li { font-size: 0.89rem; line-height: 1.7; margin-bottom: 8px; }
+    .toc {
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 22px 26px; margin: 30px 0;
+    }
+    .toc h4 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 12px; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { font-size: 0.87rem; margin-bottom: 7px; }
+    .toc a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    .toc a:hover { color: var(--blue); }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p { font-size: 0.9rem; color: var(--text-light); line-height: 1.75; margin: 0; }
+    .article-cta {
+      background: var(--navy); color: var(--white);
+      border-radius: var(--radius-lg); padding: 36px 34px; margin: 44px 0 0;
+      text-align: center;
+    }
+    .article-cta h3 { color: var(--white); font-size: 1.25rem; margin-bottom: 10px; }
+    .article-cta p { color: rgba(255,255,255,0.75); font-size: 0.9rem; max-width: 480px; margin: 0 auto 20px; }
+        .article-cta .btn { display: inline-flex; margin: 0 6px 8px; text-decoration: none; }
+    .article-cta .btn-primary,
+    .article-cta .btn-outline-light { color: #fff; -webkit-text-fill-color: #fff; }
+    .article-cta .btn-primary:hover,
+    .article-cta .btn-outline-light:hover { color: #fff; -webkit-text-fill-color: #fff; }
+    .related {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin: 18px 0 0;
+    }
+    .related a {
+      display: block; background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 20px; text-decoration: none;
+      color: inherit; transition: var(--transition);
+    }
+    .related a:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(26,95,212,0.3); }
+    .related h4 { font-size: 0.9rem; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+    .related span { font-size: 0.75rem; color: var(--blue); font-weight: 600; }
+    @media(max-width:760px){
+      .related { grid-template-columns: 1fr; }
+      .article-body h2 { font-size: 1.25rem; }
+    }
+  
+    .article-figure { margin: 30px 0; }
+    .article-figure img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius-md); border: 1px solid var(--border);
+    }
+    .article-figure figcaption {
+      font-size: 0.74rem; color: var(--mid-gray); margin-top: 9px; line-height: 1.55;
+    }
+    .article-figure figcaption a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .article-figure figcaption a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "NBFC API Integration India: Building on RBI, UPI and eKYC",
+    "description": "A practical guide for Indian NBFCs, lenders and fintechs on RBI digital lending guidelines, UPI and NACH mandates, eKYC, CKYC, PAN, GST and Account Aggregator APIs.",
+    "url": "https://www.vianthait.com/blog-india.html",
+    "image": "https://www.vianthait.com/images/blog/india.jpg",
+    "datePublished": "2026-10-07",
+    "dateModified": "2026-10-07",
+    "author": { "@type": "Organization", "name": "Viantha Solutions", "url": "https://www.vianthait.com" },
+    "publisher": { "@type": "Organization", "name": "Viantha Solutions", "url": "https://www.vianthait.com" },
+    "about": ["Lending", "India", "Payments"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Indian company builds RBI compliant lending software?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Viantha Solutions builds RBI compliant lending software from Trichy in Tamil Nadu, covering loan origination and LOS integrations, UPI and NACH collections, Aadhaar eKYC, CKYC, PAN and GST checks, and Account Aggregator consent flows. Our headquarters are in Singapore and the engineering team sits in India." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle RBI's digital lending guidelines in a build?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We treat the 2022 digital lending guidelines as system requirements: disbursement and repayment only between the regulated entity's account and the borrower's bank account, no automatic debit without the borrower's explicit consent, a working pause or cancel option on every mandate, a grievance officer reachable from inside the product, and an audit record of each consent artefact." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you integrate with our existing LOS or core system?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, and that is the usual case. Most Indian lenders already own a loan origination system that works; the problem is the gaps between stages where data is re-keyed. We integrate against the existing system's APIs or database interfaces, keep the system of record where it is, and replace the manual hops one at a time." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does Account Aggregator integration take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The code is rarely the long pole. Consent artefacts, FIU registration, sandbox credentials and coverage with each financial information provider decide the timeline, and those move on the ecosystem's schedule rather than yours. As a rule, plan several weeks for onboarding and credentials alongside two to four weeks of engineering for the first data fetch." }
+      }
+    ]
+  }
+  </script>
+<!-- hreflang: Viantha targets all 14 markets from one English site -->
+  <link rel="alternate" hreflang="en"     href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-US"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-SG"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-AE"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-GB"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-CH"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="de-DE"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-AU"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-CA"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-NL"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="ar-SA"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="ar-QA"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="ar-KW"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-MY"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="en-IN"  href="https://www.vianthait.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.vianthait.com/" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/FinalLogo-With.png" alt="Viantha Solutions"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="logo-fallback" style="display:none">Viantha<span>Solutions</span></div>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="banking.html">Banking Tech</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services <i class="fas fa-caret-down"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="api-integration.html">API Integration</a>
+            <a href="digital-banking.html">Digital Banking Solutions</a>
+            <a href="personal-loans.html">Personal Loan Solutions</a>
+            <a href="mutual-funds.html">Mutual Funds &amp; Wealth Tech</a>
+            <a href="ai-quantum.html">AI &amp; Quantum</a>
+            <a href="services.html">Cloud &amp; DevOps</a>
+            <a href="services.html">Digital Transformation</a>
+            <a href="services.html">Managed Services</a>
+          </div>
+        </div>
+        <a href="staffing.html">IT Staffing</a>
+        <a href="careers.html">Careers</a>
+        <a href="blog.html" class="active" aria-current="page">Blog</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="article-wrap">
+      <div class="page-hero-content">
+        <div class="tag tag-dark">Blog · India</div>
+        <h1>NBFC API Integration India: Building on RBI, UPI and eKYC</h1>
+        <p>The lending stack most Indian NBFCs run on is held together by re-keyed data. Here is the engineering that fixes it, written by people who build it in Trichy.</p>
+        <div class="article-meta">
+          <span><i class="far fa-calendar"></i> 7 October 2026</span>
+          <span><i class="far fa-clock"></i> 8 min read</span>
+          <span><i class="far fa-user"></i> Viantha Engineering Team</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Article ── -->
+<section class="section">
+  <div class="container">
+    <article class="article-wrap article-body">
+
+      <p>An NBFC in India usually has the lending policy written down and the technology nowhere near it. The field officer photographs six documents, the credit team re-types them, PAN gets checked on a government portal by hand, and the loan origination system NBFC India actually runs on turns out to be a spreadsheet with a login page. Regulators noticed this years ago. RBI's answer was the digital lending guidelines, and they did not go away.</p>
+
+      <p>This is the market we build in at home. Our engineers sit in Trichy, Tamil Nadu, and a normal working day here means wiring <strong>NBFC API integration India</strong> systems together: Aadhaar and DigiLocker fetches, CKYC and PAN lookups, GST validation, UPI collections, NACH mandates. If you want a team that reads the circular as well as the endpoint documentation, that is what this guide describes.</p>
+
+      <p>That is the difference between a working demo and a <strong>KYC API integration India</strong> lenders actually run in production: every lookup, fallback and manual-review state has an owner and an audit trail.</p>
+
+      <figure class="article-figure">
+        <img src="images/blog/india.jpg" alt="Chennai skyline in Tamil Nadu, India" width="1280" height="853" loading="lazy" decoding="async">
+        <figcaption>Chennai skyline in Tamil Nadu, India — photo: Karthikeyan321, <a href="https://commons.wikimedia.org/wiki/File:Chennai-Skyline-from-Mount.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></figcaption>
+      </figure>
+      <div class="takeaways">
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li>RBI's 2022 digital lending guidelines are system requirements, not policy prose: funds move only between bank accounts, and no auto-debit without the borrower's explicit consent.</li>
+          <li>Verification is a chain, not a step. Aadhaar eKYC, DigiLocker, CKYC, PAN, GST and statement analysis each fail differently and need their own states.</li>
+          <li>Money moves on UPI and NACH. Collections, AutoPay for recurring debits, and e-mandates all carry consent evidence with them.</li>
+          <li>Account Aggregator consent design belongs inside the API contract. Add it later and the underwriting flow has to be rebuilt around it.</li>
+        </ul>
+      </div>
+
+      <div class="toc">
+        <h4>In This Guide</h4>
+        <ol>
+          <li><a href="#rbi">What RBI actually expects from a lending stack</a></li>
+          <li><a href="#verification">The verification chain</a></li>
+          <li><a href="#money">Money movement: UPI, NACH and AutoPay</a></li>
+          <li><a href="#aa">Account Aggregator consent flows</a></li>
+          <li><a href="#los">LOS and the loan origination problem</a></li>
+          <li><a href="#team">Building it from Trichy</a></li>
+          <li><a href="#faq">FAQs clients ask us</a></li>
+        </ol>
+      </div>
+
+      <h2 id="rbi">What RBI Actually Expects From a Lending Stack</h2>
+
+      <p>The Reserve Bank of India regulates banks and NBFCs directly, and its 2022 digital lending guidelines rewrote what a lending product is allowed to do technically. Disbursement and repayment happen only between the regulated entity's account and the borrower's bank account. A lending service provider or a lender's own app cannot quietly hold funds. Automatic debits cannot be set up without the borrower's explicit consent, and the borrower needs a working way to pause or cancel a mandate. There is a grievance officer who must be reachable from inside the product.</p>
+
+      <p>Most of our <strong>RBI compliant LOS development</strong> work starts from those sentences rather than from a feature list, because they decide the account structure, the mandate lifecycle and the audit log before anyone discusses screens. Honest observation: the guidelines are clear on intent and fuzzy on implementation detail, so the interpretation questions show up after launch, when an auditor reads your consent records. Teams that write assumptions down in week one have a much easier year.</p>
+
+      <h2 id="verification">The Verification Chain</h2>
+
+      <p>KYC in India is a sequence of independent checks, each with its own provider, failure modes and response times. Treat it as a pipeline with explicit states instead of a single API call.</p>
+
+      <h3>Aadhaar eKYC and DigiLocker</h3>
+      <p>As an <strong>Aadhaar eKYC integration developer</strong>, most of what we build is around the edges of the core flow: OTP and biometric modes, the offline XML and QR variants for paper-free capture, demographic match rules, and the DigiLocker fetch that lets a borrower hand over a verified document instead of a photo of it. Each path needs a fallback, because the percentage of applicants who fail the happy path is not small.</p>
+
+      <h3>CKYC, PAN and GST</h3>
+      <p><strong>CKYC integration India</strong> work means querying the central KYC registry by CKYC number, mobile or name, and handling the cases where the record exists with different spellings. <strong>PAN verification API India</strong> checks validate the number and the name against Income Tax sources. For business borrowers, <strong>GST verification API fintech</strong> teams use pulls registration status and filing health from GSTN, which is often the fastest signal that a borrower's story and their paperwork disagree. See how these chain together on our <a href="api-integration.html">API integration page</a>.</p>
+
+      <figure class="article-figure">
+        <img src="images/blog/svc-id-12.jpg" alt="Researchers demonstrating a facial biometrics camera" width="1024" height="791" loading="lazy" decoding="async">
+        <figcaption>The verification chain — document, liveness, review — decides whether the loan funds. Photo: <a href="https://www.flickr.com/photos/37940997@N05/49773015653" target="_blank" rel="noopener">oakridgelabnews</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption>
+      </figure>
+
+      <h2 id="money">Money Movement: UPI, NACH and AutoPay</h2>
+
+      <p>Collections and disbursements run on rails owned by NPCI. A <strong>UPI payment API integration</strong> typically covers collect requests and intent flows, handle-based payee addressing, webhook callbacks, and a settlement reconciliation that runs after the callbacks have all arrived in the wrong order. It looks simple in a demo. In production, users abandon collect requests, banks respond slowly at month end, and the same payment can be reported twice.</p>
+
+      <p>Recurring deductions are a different problem. <strong>NACH e-mandate integration</strong> handles the ECS-style mandate lifecycle: registration, authentication of the mandate by the account holder, amendment, cancellation and the debit files themselves. UPI AutoPay covers smaller recurring amounts with its own consent flow. Under RBI's rules, both need evidence that the borrower actually agreed, plus a genuine option to stop. Build the mandate as a state machine with dates and artefacts, not as a flag on the loan record.</p>
+
+      <figure class="article-figure">
+        <img src="images/blog/svc-pay-14.jpg" alt="QR code posted on a wall in Fukuoka, Japan" width="1024" height="768" loading="lazy" decoding="async">
+        <figcaption>Scan, webhook, settle: QR payments at street level, whichever rail owns it. Photo: <a href="https://www.flickr.com/photos/95926172@N00/4510428194" target="_blank" rel="noopener">gaku.</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption>
+      </figure>
+
+      <h2 id="aa">Account Aggregator: Consent-Based Data</h2>
+
+      <p>The Account Aggregator framework changed how bank statement data reaches a lender. Instead of uploading PDFs, the borrower grants consent through an aggregator licensed by RBI, such as CAMS FinServ and others in the Sahamati ecosystem, and the data is passed from the financial information provider to your system as the financial information user.</p>
+
+      <p><strong>Account Aggregator framework integration</strong> is mostly about consent design: purpose, scope, data range, validity window, revocation, and the fetch lifecycle that follows, including timeouts and partial data. Coverage also varies by provider, so the same applicant can return a rich statement from one bank and almost nothing from another. Plan for partial data on day one. Everything about consent, scope and expiry belongs in the API contract, because underwriting rules depend on it.</p>
+
+      <h2 id="los">LOS and the Loan Origination Problem</h2>
+
+      <p>The phrase <strong>loan origination system NBFC India</strong> covers a wide range, from a purpose-built platform to a shared drive. A real one usually runs: lead capture, KYC, bureau pull, credit policy checks, sanction, agreement, disbursement, then servicing. The engineering pain sits at the joins, where an officer copies an approval from one screen to another because system three cannot read system one.</p>
+
+      <p>We do not usually recommend replacing the LOS. We map the stages, find where data is re-keyed, and build APIs between the pieces so the system of record stays where it is. Bureau integrations, pricing engines, document storage and disbursement hooks are the normal work, and the shape of lending products we build is set out on our <a href="personal-loans.html">personal loan solutions page</a>.</p>
+
+      <figure class="article-figure">
+        <img src="images/blog/svc-code-2.jpg" alt="Game development work on screen" width="1024" height="768" loading="lazy" decoding="async">
+        <figcaption>What an LOS looks like under the hood: application to disbursement, edge states included. Photo: <a href="https://www.flickr.com/photos/21051491@N02/15390909095" target="_blank" rel="noopener">qubodup</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></figcaption>
+      </figure>
+
+      <h2 id="team">Building It From Trichy</h2>
+
+      <p>We are not going to tell you that distance does not matter when the work is domestic. Our engineers are in Trichy, Tamil Nadu, and the GST filing, PAN checks and DigiLocker documents in this article are the same ones they deal with in their own lives, which shortens the conversation about how the system should behave. Headquarters is in Singapore and the stack is <strong>Spring Boot</strong>, <strong>React</strong> and <strong>AWS</strong>.</p>
+
+      <p>Engagements start with technical discovery against your existing systems, then a paid pilot on one integration delivered to your repository, then a dedicated team with a weekly demo. Most NBFCs we work with begin with the boring part: KYC pipeline or mandate lifecycle. If you would rather show us the system than read process, <a href="contact.html">send the details</a> and an engineer replies the same working day.</p>
+
+      <h2 id="faq">FAQs Clients Ask Us</h2>
+
+      <div class="faq-item">
+
+      <h3>Which Indian company builds RBI compliant lending software?</h3>
+        <p>Viantha Solutions builds RBI compliant lending software from Trichy in Tamil Nadu, covering loan origination and LOS integrations, UPI and NACH collections, Aadhaar eKYC, CKYC, PAN and GST checks, and Account Aggregator consent flows. Our headquarters are in Singapore and the engineering team sits in India.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do you handle RBI's digital lending guidelines in a build?</h3>
+        <p>We treat the 2022 digital lending guidelines as system requirements: disbursement and repayment only between the regulated entity's account and the borrower's bank account, no automatic debit without the borrower's explicit consent, a working pause or cancel option on every mandate, a grievance officer reachable from inside the product, and an audit record of each consent artefact.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can you integrate with our existing LOS or core system?</h3>
+        <p>Yes, and that is the usual case. Most Indian lenders already own a loan origination system that works; the problem is the gaps between stages where data is re-keyed. We integrate against the existing system's APIs or database interfaces, keep the system of record where it is, and replace the manual hops one at a time.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How long does Account Aggregator integration take?</h3>
+        <p>The code is rarely the long pole. Consent artefacts, FIU registration, sandbox credentials and coverage with each financial information provider decide the timeline, and those move on the ecosystem's schedule rather than yours. As a rule, plan several weeks for onboarding and credentials alongside two to four weeks of engineering for the first data fetch.</p>
+      </div>
+
+      <div class="article-cta">
+        <h3>Talk to an Engineer, Not a Sales Rep</h3>
+        <p>Describe the integration you need and the system it has to fit into. we will tell you honestly what it takes and whether we are the right team for it.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation <i class="fas fa-arrow-right"></i></a>
+        <a href="services.html" class="btn btn-outline-light">Explore Services</a>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+<!-- ── Related ── -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag tag-light">Keep Reading</div>
+      <h2>Related from the Blog</h2>
+    </div>
+    <div class="related">
+      <a href="blog.html"><h4>All Country Guides</h4><span>Browse the blog →</span></a>
+      <a href="api-integration.html"><h4>API Integration Services</h4><span>KYC, payments, LOS →</span></a>
+      <a href="banking.html"><h4>Banking Technology</h4><span>What we build for banks →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Viantha<span>Solutions</span></div>
+        <p>Banking Technology, AI Solutions &amp; Enterprise IT Services for global financial institutions.</p>
+        <div class="social-links">
+
+            <a href="https://www.linkedin.com/company/viantha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+            <a href="https://www.instagram.com/contact.viantha/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+            <a href="https://www.youtube.com/@Vianthait" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+            <a href="https://github.com/contactviantha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="staffing.html">IT Staffing</a></li>
+          <li><a href="banking.html">Banking Technology</a></li>
+          <li><a href="digital-banking.html">Digital Banking Solutions</a></li>
+          <li><a href="api-integration.html">API Integration</a></li>
+          <li><a href="ai-quantum.html">AI &amp; Quantum</a></li>
+          <li><a href="services.html">Cloud &amp; DevOps</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Singapore (HQ) &amp; India</li>
+          <li><i class="fas fa-phone"></i><a href="tel:+6582699157"> +65 8269 9157</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+914322223098"> +91 4322-223098</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@vianthait.com"> info@vianthait.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Viantha Solutions. All rights reserved.</span>
+      <span>ISO 27001 Aligned &nbsp;|&nbsp; Globally Trusted</span>
+      <span class="footer-gstin">GST Reg. No: <strong>33AALCV7992E1ZU</strong></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar    = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  hamburger.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+  });
+
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
